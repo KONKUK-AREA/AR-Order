@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
+using UnityEngine.UIElements;
 using ZXing;
 
 
@@ -25,13 +26,15 @@ public class GetDataFromQR : MonoBehaviour
         screenRect = new Rect(0, 0, Screen.width, Screen.height);
         
     }
+    
     private void Update()
     {
         if (!isGetQR)
         {
             try
             {
-                qrTexture.ReadPixels(screenRect, 0, 0);
+                StartCoroutine("CaptureScreen");
+                //qrTexture.ReadPixels(screenRect, 0, 0);
                 IBarcodeReader barcodeReader = new BarcodeReader();
                 var result = barcodeReader.Decode(qrTexture.GetPixels32(), qrTexture.width, qrTexture.height);
                 if (result != null)
@@ -47,5 +50,10 @@ public class GetDataFromQR : MonoBehaviour
                 Debug.LogWarning(ex.Message);
             }
         }
+    }
+    IEnumerator CaptureScreen()
+    {
+        yield return new WaitForEndOfFrame();
+        qrTexture.ReadPixels(screenRect, 0, 0);
     }
 }
