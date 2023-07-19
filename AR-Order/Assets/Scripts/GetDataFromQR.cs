@@ -12,13 +12,15 @@ public class GetDataFromQR : MonoBehaviour
 {
     private Rect screenRect;
     static string strQRCodeRead;
-    public RawImage image;
     public float waitTime = 1.5f;
+
     Texture2D qrTexture;
     [Header("Feedbacks")]
     public UnityEvent feedBack;
+   
 
     private bool isGetQR = false;
+    private JsonInfo data;
 
     private void Start()
     {
@@ -41,7 +43,8 @@ public class GetDataFromQR : MonoBehaviour
                 {
                     Debug.Log(result.Text);
                     strQRCodeRead = result.Text;
-                    JsonInfo data = JsonLoader.loadJson(result.Text);
+                    data = JsonLoader.loadJson(result.Text);
+                    Debug.Log(data.name);
                     isGetQR= true;
                 }
             }
@@ -55,5 +58,14 @@ public class GetDataFromQR : MonoBehaviour
     {
         yield return new WaitForEndOfFrame();
         qrTexture.ReadPixels(screenRect, 0, 0);
+    }
+    
+    public bool isGetInfo()
+    {
+        return isGetQR;
+    }
+    public JsonInfo marketInfo()
+    {
+        return data;
     }
 }
