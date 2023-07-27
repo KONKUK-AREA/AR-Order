@@ -31,6 +31,10 @@ public class GetDataFromQR : MonoBehaviour
     
     private void Update()
     {
+
+    }
+    public void GetQR()
+    {
         if (!isGetQR)
         {
             try
@@ -45,7 +49,7 @@ public class GetDataFromQR : MonoBehaviour
                     strQRCodeRead = result.Text;
                     data = JsonLoader.loadJson(result.Text);
                     Debug.Log(data.name);
-                    isGetQR= true;
+                    isGetQR = true;
                 }
             }
             catch (Exception ex)
