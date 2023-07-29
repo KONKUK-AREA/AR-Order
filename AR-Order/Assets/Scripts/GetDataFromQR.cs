@@ -6,6 +6,7 @@ using UnityEngine.Events;
 using UnityEngine.UI;
 using UnityEngine.UIElements;
 using ZXing;
+using TMPro;
 
 
 public class GetDataFromQR : MonoBehaviour
@@ -13,7 +14,7 @@ public class GetDataFromQR : MonoBehaviour
     private Rect screenRect;
     static string strQRCodeRead;
     public float waitTime = 1.5f;
-
+    public TextMeshProUGUI Name;
     Texture2D qrTexture;
     [Header("Feedbacks")]
     public UnityEvent feedBack;
@@ -50,6 +51,7 @@ public class GetDataFromQR : MonoBehaviour
                     data = JsonLoader.loadJson(result.Text);
                     Debug.Log(data.name);
                     isGetQR = true;
+                    Name.text = data.name;
                 }
             }
             catch (Exception ex)
