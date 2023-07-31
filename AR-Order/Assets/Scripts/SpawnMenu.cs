@@ -48,8 +48,17 @@ public class SpawnMenu : MonoBehaviour
         }
         Vector3 vec;
         Touch touch = Input.touches[0];
-        Vector3 pos = touch.position;
+        Touch secondTouch = touch;
+        Vector2 secondTouchPrePos = Vector2.zero;
+        bool isSecond = false;
+        Vector2 secondTouchPos = Vector2.zero;
+        if (Input.touchCount > 1)
+        {
+            secondTouch = Input.touches[1];
+            isSecond = true;
+        }
 
+        Vector3 pos = touch.position;
         if (touch.phase == TouchPhase.Began)
         {
             dishLayerMask = LayerMask.GetMask("Dish");
@@ -59,8 +68,40 @@ public class SpawnMenu : MonoBehaviour
                 isDrag = true;
             }
         }
-        if(isDrag && touch.phase == TouchPhase.Moved)
+        if(isSecond && secondTouch.phase == TouchPhase.Began)
         {
+            secondTouchPrePos = secondTouch.position;
+        }
+        if (isSecond && secondTouch.phase == TouchPhase.Moved)
+        {
+            secondTouchPos = secondTouch.deltaPosition;
+
+            if (touch.position.x < secondTouch.position.x)
+            {
+                if (secondTouchPos.y > 0)
+                {
+                    hitLayerDish.transform.Rotate(0f, -100f * Time.deltaTime, 0f);
+                }
+                else
+                {
+                    hitLayerDish.transform.Rotate(0f, 100f * Time.deltaTime, 0f);
+                }
+            }
+            else if(touch.position.x>secondTouch.position.x)
+            {
+                if (secondTouchPos.y > 0)
+                {
+                    hitLayerDish.transform.Rotate(0f, 100f * Time.deltaTime, 0f);
+                }
+                else
+                {
+                    hitLayerDish.transform.Rotate(0f, -100f * Time.deltaTime, 0f);
+                }
+            }
+        }
+        if (isDrag && touch.phase == TouchPhase.Moved)
+        {
+
             LayerMask layerMask = LayerMask.GetMask("Plane");
             RaycastHit hitLayerMask;
             Vector3 Pos;
@@ -70,9 +111,10 @@ public class SpawnMenu : MonoBehaviour
             {
                 Pos = hitLayerMask.point;
                 //Rot = hitLayerMask.transform.eulerAngles;
-                hitLayerDish.transform.position = Pos; 
+                hitLayerDish.transform.position = Pos;
                 //Debug.Log("¸ÞÅ¸¸ù µð¹ö±ë : " + SpawnedObject.transform.position);
             }
+
         }
         if(isDrag && (touch.phase == TouchPhase.Ended || touch.phase == TouchPhase.Canceled))
         {
@@ -174,5 +216,26 @@ public class SpawnMenu : MonoBehaviour
         {
             Debug.Log("¸ÞÅ¸¸ù µð¹ö±ë : QR´Ù½Ã Âï¾î¶ó");
         }
-    }   
+    }
+
+    private ARRaycastManager raycastMgr;
+    private List<ARRaycastHit> hits = new List<ARRaycastHit>();
+    public void SpawnItemWithARPlane()
+    {
+        Vector2 screenCenterPos = arSessionOrigin.camera.ViewportToScreenPoint(new Vector2(0.5f, 0.5f));
+
+        if (GetComponent<GetDataFromQR>().isGetInfo())
+        {
+            if (raycastMgr.Raycast(screenCenterPos, hits, UnityEngine.XR.ARSubsystems.TrackableType.PlaneWithinPolygon))
+            {
+                Instantiate(tempFood, hits[0].pose.position, hits[0].pose.rotation);
+            }
+        }
+    }
+
+    
+    public void ChangeReact()
+    {
+        charObject.GetComponent<MiniCharacterGame>().ChangeReact();
+    }
 }
