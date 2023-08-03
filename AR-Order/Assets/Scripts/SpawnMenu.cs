@@ -59,12 +59,14 @@ public class SpawnMenu : MonoBehaviour
         }
 
         Vector3 pos = touch.position;
+
         if (touch.phase == TouchPhase.Began)
         {
             dishLayerMask = LayerMask.GetMask("Dish");
             Ray ray = arSessionOrigin.camera.ScreenPointToRay(pos);
             if (Physics.Raycast(ray, out hitLayerDish, Mathf.Infinity, dishLayerMask))
             {
+                offset = hitLayerDish.point - hitLayerDish.transform.position;
                 isDrag = true;
             }
         }
@@ -80,22 +82,22 @@ public class SpawnMenu : MonoBehaviour
             {
                 if (secondTouchPos.y > 0)
                 {
-                    hitLayerDish.transform.Rotate(0f, -100f * Time.deltaTime, 0f);
+                    hitLayerDish.transform.Rotate(0f, -150f * Time.deltaTime, 0f);
                 }
                 else
                 {
-                    hitLayerDish.transform.Rotate(0f, 100f * Time.deltaTime, 0f);
+                    hitLayerDish.transform.Rotate(0f, 150f * Time.deltaTime, 0f);
                 }
             }
             else if(touch.position.x>secondTouch.position.x)
             {
                 if (secondTouchPos.y > 0)
                 {
-                    hitLayerDish.transform.Rotate(0f, 100f * Time.deltaTime, 0f);
+                    hitLayerDish.transform.Rotate(0f, 150f * Time.deltaTime, 0f);
                 }
                 else
                 {
-                    hitLayerDish.transform.Rotate(0f, -100f * Time.deltaTime, 0f);
+                    hitLayerDish.transform.Rotate(0f, -150f * Time.deltaTime, 0f);
                 }
             }
         }
@@ -105,13 +107,12 @@ public class SpawnMenu : MonoBehaviour
             LayerMask layerMask = LayerMask.GetMask("Plane");
             RaycastHit hitLayerMask;
             Vector3 Pos;
-            Vector3 Rot;
             Ray ray = arSessionOrigin.camera.ScreenPointToRay(pos);
             if (Physics.Raycast(ray, out hitLayerMask, Mathf.Infinity, layerMask))
             {
                 Pos = hitLayerMask.point;
                 //Rot = hitLayerMask.transform.eulerAngles;
-                hitLayerDish.transform.position = Pos;
+                hitLayerDish.transform.position = Pos - offset;
                 //Debug.Log("¸ÞÅ¸¸ù µð¹ö±ë : " + SpawnedObject.transform.position);
             }
 
