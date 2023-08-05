@@ -18,6 +18,8 @@ public class UIControlManager : MonoBehaviour
 
 
     public GameObject[] UIForEachScreen;   // element 0이 시작화면이고 element 0부터 각 ui레이어의 값    
+    public GameObject[] LayersARTutorial;
+    
     public GameObject[] MenuForRestaurant_A;
     public Button[] ButtonForRestaurant_A;
 
@@ -31,7 +33,8 @@ public class UIControlManager : MonoBehaviour
 
 
 
-    public int currentIndex = 0;
+    public int UIForEachScreen_currentIndex = 0;
+    public int LayersARTutorial_currentIndex = 0;
 
     // Start is called before the first frame update
 
@@ -39,39 +42,65 @@ public class UIControlManager : MonoBehaviour
     public void ClickedNextBtn()
     {
         // 현재 Layer 오브젝트를 비활성화
-        UIForEachScreen[currentIndex].SetActive(false);
+        UIForEachScreen[UIForEachScreen_currentIndex].SetActive(false);
 
         // 다음 Layer 오브젝트의 인덱스로 이동
-        currentIndex++;
+        UIForEachScreen_currentIndex++;
 
         // 배열 범위를 벗어나면 첫 번째 Layer로 이동
-        if (currentIndex >= UIForEachScreen.Length)
+        if (UIForEachScreen_currentIndex >= UIForEachScreen.Length)
         {
-            currentIndex = 0;
+            UIForEachScreen_currentIndex = 0;
         }
 
         // 다음 Layer 오브젝트를 활성화
-        UIForEachScreen[currentIndex].SetActive(true);
+        UIForEachScreen[UIForEachScreen_currentIndex].SetActive(true);
     }
     
     
     public void ClickedPrevBtn()
     {
         // 현재 Layer 오브젝트를 비활성화
-        UIForEachScreen[currentIndex].SetActive(false);
+        UIForEachScreen[UIForEachScreen_currentIndex].SetActive(false);
 
         // 이전 Layer 오브젝트의 인덱스로 이동
-        currentIndex--;
+        UIForEachScreen_currentIndex--;
 
         // 배열 범위를 벗어나면 마지막 Layer로 이동
-        if (currentIndex < 0)
+        if (UIForEachScreen_currentIndex < 0)
         {
-            currentIndex = UIForEachScreen.Length - 1;
+            UIForEachScreen_currentIndex = UIForEachScreen.Length - 1;
         }
 
         // 이전 Layer 오브젝트를 활성화
-        UIForEachScreen[currentIndex].SetActive(true);
+        UIForEachScreen[UIForEachScreen_currentIndex].SetActive(true);
     }
+
+
+
+
+
+        public void ClickedTutorialNextBtn()
+    {
+        // 현재 Layer 오브젝트를 비활성화
+        LayersARTutorial[LayersARTutorial_currentIndex].SetActive(false);
+
+        LayersARTutorial_currentIndex ++;
+
+        LayersARTutorial[LayersARTutorial_currentIndex].SetActive(true);
+        
+        if(LayersARTutorial_currentIndex>3)
+        {
+            LayersARTutorial[2].SetActive(false);
+            UIForEachScreen[UIForEachScreen_currentIndex].SetActive(true);
+        }
+
+
+
+    }
+
+
+
 
 
 
