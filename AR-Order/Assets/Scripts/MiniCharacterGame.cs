@@ -12,7 +12,7 @@ public class MiniCharacterGame : MonoBehaviour
     private bool isAnim = false;
     private bool isClick = false;
     private int isMoving = 0;
-    private IEnumerator MoveCoroutine;
+    private Coroutine MoveCoroutine = null;
     private ARSessionOrigin arSessionOrigin;
 
     private RaycastHit hitLayerChar;
@@ -81,36 +81,41 @@ public class MiniCharacterGame : MonoBehaviour
     }
     void StartMoveCoroutine()
     {
-        MoveCoroutine = MoveChar();
-        StartCoroutine(MoveCoroutine);
+        if (MoveCoroutine == null)
+        {
+            MoveCoroutine = StartCoroutine(MoveChar());
+        }
     }
     void StopMoveCoroutine()
     {
         if (MoveCoroutine != null)
         {
             StopCoroutine(MoveCoroutine);
+            MoveCoroutine = null;
         }
     }
     IEnumerator MoveChar(){
         isMoving = 1;
-        int Angle = Random.Range(-180, 180);
-        Vector3 fromVector = transform.forward.normalized;
-        Vector3 toVector = (Quaternion.Euler(0f, (float)Angle, 0f) * fromVector).normalized;
-        bool Right = onRight(toVector, fromVector);
-        while (GetAngle(toVector,fromVector) > 5f)
+        int Angle = Random.Range(0, 180);
+        int randomDir = Random.Range(0, 2);
+        Vector3 fromVector = transform.forward;
+        Vector3 toVector = transform.forward;
+        bool dir = (randomDir == 0) ? true : false;
+        while (GetAngle(fromVector,toVector) < Angle)
         {
-            fromVector = transform.forward.normalized;
-            transform.Rotate(0f, ((Right) ? 1f : -1f) * 100f * Time.deltaTime, 0f);
+            transform.Rotate(0f, (dir ? 1f : -1f) * 60f * Time.deltaTime, 0f);
+            fromVector = transform.forward;
             yield return null;
         }
         isMoving = 2;
         float countTime = 0;
         while (countTime <= 2f)
         {
-            transform.Translate(Vector3.forward * Time.deltaTime, Space.Self);
+            transform.Translate(Vector3.forward *0.5f* Time.deltaTime, Space.Self);
             countTime += Time.deltaTime;
             yield return null;
         }
+        MoveCoroutine = null;
         isMoving = 0;
     }
     void CheckFront()
@@ -152,7 +157,7 @@ public class MiniCharacterGame : MonoBehaviour
     }
     IEnumerator isEndAnim()
     {
-        while (anim.GetCurrentAnimatorStateInfo(0).normalizedTime < 1.0f)
+        while (anim.GetCurrentAnimatorStateInfo(0).IsName("attack")&&anim.GetCurrentAnimatorStateInfo(0).normalizedTime <= 1.0f)
         {
             yield return null;
         }

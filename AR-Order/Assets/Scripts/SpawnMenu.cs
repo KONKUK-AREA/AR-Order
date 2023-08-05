@@ -41,12 +41,12 @@ public class SpawnMenu : MonoBehaviour
 
     void Update()
     {
+
         if(Input.touchCount == 0)
         {
             isDrag = false;
             return;
         }
-        Vector3 vec;
         Touch touch = Input.touches[0];
         Touch secondTouch = touch;
         Vector2 secondTouchPrePos = Vector2.zero;
@@ -157,30 +157,7 @@ public class SpawnMenu : MonoBehaviour
         }
     }
 
-    public int HitFind(string name, RaycastHit[] array)
-    {
-        if (array.Length == 0) {
-            Debug.Log("ºñ¾îÀÖÀ½");
-            return -1;
-        }
 
-
-        foreach (var hit in array)
-        {
-            Debug.Log("¸ÞÅ¸¸ù µð¹ö±ë : " + hit.transform.gameObject.name + " vs " + name);
-        }
-        foreach (var item in array.Select((value, index) => (value, index)))
-        {
-            var value = item.value;
-            var index = item.index;
-            Debug.Log("¸ÞÅ¸¸ù µð¹ö±ë : " + value + " " + index);
-            if (value.transform.gameObject.name.Equals(name))
-            {
-                return index;
-            }
-        }
-        return -1;
-    }
     public void SetPlane()
     {
         if (IsReady())
