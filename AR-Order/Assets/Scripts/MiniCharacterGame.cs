@@ -19,7 +19,7 @@ public class MiniCharacterGame : MonoBehaviour
     private LayerMask charLayerMask;
     private bool isLookingCamera = false;
     private float rotationSpeed = 5f;
-
+    private float touchTime = 0f;
     private Animator anim;
 
     private bool isPunch = false;
@@ -31,11 +31,14 @@ public class MiniCharacterGame : MonoBehaviour
         transform.localScale = Vector3.one * 0.1f;
 
     }
-
+    Vector3 prePos = Vector3.zero;
+    Transform hitTransform;
+    float dist;
+    Vector3 offset = Vector3.zero;
+    Vector3 hitVec = Vector3.zero;
     // Update is called once per frame
     void Update()
     {
-        if (isAnim) return;
         if (Input.touchCount != 0)
         {
 
@@ -44,12 +47,19 @@ public class MiniCharacterGame : MonoBehaviour
 
             if (touch.phase == TouchPhase.Began)
             {
+                if (isAnim) return;
                 charLayerMask = LayerMask.GetMask("Character");
                 Ray ray = arSessionOrigin.camera.ScreenPointToRay(pos);
                 if (Physics.Raycast(ray, out hitLayerChar, Mathf.Infinity, charLayerMask))
                 {
+                    prePos = touch.position;
                     isClick = true;
-                    isMoving = 0;
+                    touchTime = 0;
+                    hitTransform = hitLayerChar.transform;
+                    dist = hitTransform.position.z - arSessionOrigin.camera.transform.position.z;
+                    hitVec = new Vector3(prePos.x, prePos.y, dist);
+                    hitVec = arSessionOrigin.camera.ScreenToWorldPoint(hitVec);
+                    offset = hitTransform.position - hitVec;
                     if (isPunch)
                     {
                         StopMoveCoroutine();
@@ -63,7 +73,40 @@ public class MiniCharacterGame : MonoBehaviour
                     }
                 }
             }
+            if(isClick && touch.phase == TouchPhase.Moved)
+            {
+                touchTime += Time.deltaTime;
+                if(touchTime > 0.2f)
+                {
+                    hitVec = new Vector3(Input.mousePosition.x,Input.mousePosition.y, dist);
+                    hitVec = arSessionOrigin.camera.ScreenToWorldPoint(hitVec);
+                    hitTransform.position = hitVec - offset;
+                }
+            }
+            if(isClick && touch.phase == TouchPhase.Ended)
+            {
+                Vector3 lastPos = touch.position;
+                Vector3 dragVector = lastPos - prePos;
+                Vector3 standardDir = new Vector3(0, 1, 0) - Vector3.zero;
+                float dragSpeed = Vector3.Magnitude(dragVector) / touchTime;
+                float dragAngle = Vector3.Angle(standardDir, dragVector);
+                Debug.Log("¸ÞÅ¸¸ù µð¹ö±ë : " + dragSpeed + " " + dragAngle);
+                if(dragSpeed  <3500f)
+                {
+
+                }
+                else
+                {
+                    if(dragAngle < 30f)
+                    {
+                        Punch();
+                    }
+                }
+                isClick= false;
+
+            }
         }
+        /*
         if (!isClick)
         {
             if (isMoving == 0)
@@ -77,6 +120,7 @@ public class MiniCharacterGame : MonoBehaviour
 
             return;
         }
+        */
 
     }
     void StartMoveCoroutine()
@@ -143,7 +187,6 @@ public class MiniCharacterGame : MonoBehaviour
             cameraVec = transform.position - arSessionOrigin.camera.transform.position;
             cameraVec.y = 0f; 
             float angleWithVector= GetAngle(-1*cameraVec, charVec);
-            //Debug.Log("¸ÞÅ¸¸ù µð¹ö±ë : " + angleWithVector);
             if (angleWithVector <= 5f)
             {
                 isLookingCamera= true;
@@ -161,7 +204,6 @@ public class MiniCharacterGame : MonoBehaviour
         {
             yield return null;
         }
-        isClick = false;
         isAnim = false;
         isLookingCamera = false;
     }
@@ -169,7 +211,7 @@ public class MiniCharacterGame : MonoBehaviour
     {
        
         float Angle =  Mathf.Acos( Vector3.Dot(vStart,vEnd) / (Vector3.Magnitude(vStart) * Vector3.Magnitude(vEnd)));
-        Debug.Log("¸ÞÅ¸¸ù µð¹ö±ë : " + Angle*Mathf.Rad2Deg);
+        //Debug.Log("¸ÞÅ¸¸ù µð¹ö±ë : " + Angle*Mathf.Rad2Deg);
         return Angle*Mathf.Rad2Deg;
         //return Mathf.Atan2(v.y, v.x) * Mathf.Rad2Deg;
     }
