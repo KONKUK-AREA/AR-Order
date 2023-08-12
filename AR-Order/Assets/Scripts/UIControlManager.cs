@@ -487,6 +487,7 @@ public class UIControlManager : MonoBehaviour
 
 
     public void ClickedTutorialNextBtn()
+
     {
      if (LayersARTutorial_currentIndex < 3)
      {
@@ -512,7 +513,11 @@ public class UIControlManager : MonoBehaviour
      }
     }
 
-
+    public void ClickedARGame()
+    {
+        UIForEachScreen[UIForEachScreen_currentIndex].SetActive(false);
+        UIForEachScreen[6].SetActive(true);   
+    }
 
 
 

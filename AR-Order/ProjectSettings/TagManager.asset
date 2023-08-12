@@ -9,15 +9,16 @@ TagManager:
   - MenuImageTag
   - MenuCountTag
   - MenuTotalCountTag
+  - Detector
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Plane
   - Water
   - UI
-  - 
-  - 
+  - Dish
+  - Character
   - 
   - 
   - 
