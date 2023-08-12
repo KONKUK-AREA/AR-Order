@@ -1,0 +1,8 @@
+Model Information:
+* title:	Slurpz
+* source:	https://sketchfab.com/3d-models/slurpz-89585e33a81f4390a09e2449409813d5
+* author:	LuDiChRiS (https://sketchfab.com/ludichris)
+
+Model License:
+* license type:	SKETCHFAB Standard (https://sketchfab.com/licenses)
+* requirements:	Under basic restrictions, use worldwide, on all types of media, commercially or not, and in all types of derivative works

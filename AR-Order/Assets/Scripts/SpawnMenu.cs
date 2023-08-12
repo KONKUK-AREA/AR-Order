@@ -7,15 +7,17 @@ using System.Linq;
 using UnityEngine.Rendering.RendererUtils;
 using UnityEngine.UIElements;
 using Unity.VisualScripting;
-
+using System.Runtime.InteropServices;
 
 public class SpawnMenu : MonoBehaviour
 {
-    public GameObject tempChar;
-    public GameObject tempFood;
+    public GameObject character;
+    public GameObject foodSet;
     public GameObject Spawn;
     public GameObject plane;
     public GameObject qrFrame;
+
+    public GameObject[] foodPrefabs;
     // Start is called before the first frame update
     GameObject DetectAR;
     GameObject SpawnedObject;
@@ -32,6 +34,9 @@ public class SpawnMenu : MonoBehaviour
     private Vector3 multipleAngle;
     private float dist;
 
+    //À½½Ä º¯°æ
+    private int menuIndex = 0;
+    private GameObject showFood;
 
     private void Start()
     {
@@ -41,12 +46,12 @@ public class SpawnMenu : MonoBehaviour
 
     void Update()
     {
+
         if(Input.touchCount == 0)
         {
             isDrag = false;
             return;
         }
-        Vector3 vec;
         Touch touch = Input.touches[0];
         Touch secondTouch = touch;
         Vector2 secondTouchPrePos = Vector2.zero;
@@ -59,12 +64,14 @@ public class SpawnMenu : MonoBehaviour
         }
 
         Vector3 pos = touch.position;
+
         if (touch.phase == TouchPhase.Began)
         {
             dishLayerMask = LayerMask.GetMask("Dish");
             Ray ray = arSessionOrigin.camera.ScreenPointToRay(pos);
             if (Physics.Raycast(ray, out hitLayerDish, Mathf.Infinity, dishLayerMask))
             {
+                offset = hitLayerDish.point - hitLayerDish.transform.position;
                 isDrag = true;
             }
         }
@@ -80,22 +87,22 @@ public class SpawnMenu : MonoBehaviour
             {
                 if (secondTouchPos.y > 0)
                 {
-                    hitLayerDish.transform.Rotate(0f, -100f * Time.deltaTime, 0f);
+                    hitLayerDish.transform.Rotate(0f, -150f * Time.deltaTime, 0f);
                 }
                 else
                 {
-                    hitLayerDish.transform.Rotate(0f, 100f * Time.deltaTime, 0f);
+                    hitLayerDish.transform.Rotate(0f, 150f * Time.deltaTime, 0f);
                 }
             }
             else if(touch.position.x>secondTouch.position.x)
             {
                 if (secondTouchPos.y > 0)
                 {
-                    hitLayerDish.transform.Rotate(0f, 100f * Time.deltaTime, 0f);
+                    hitLayerDish.transform.Rotate(0f, 150f * Time.deltaTime, 0f);
                 }
                 else
                 {
-                    hitLayerDish.transform.Rotate(0f, -100f * Time.deltaTime, 0f);
+                    hitLayerDish.transform.Rotate(0f, -150f * Time.deltaTime, 0f);
                 }
             }
         }
@@ -105,13 +112,12 @@ public class SpawnMenu : MonoBehaviour
             LayerMask layerMask = LayerMask.GetMask("Plane");
             RaycastHit hitLayerMask;
             Vector3 Pos;
-            Vector3 Rot;
             Ray ray = arSessionOrigin.camera.ScreenPointToRay(pos);
             if (Physics.Raycast(ray, out hitLayerMask, Mathf.Infinity, layerMask))
             {
                 Pos = hitLayerMask.point;
                 //Rot = hitLayerMask.transform.eulerAngles;
-                hitLayerDish.transform.position = Pos;
+                hitLayerDish.transform.position = Pos - offset;
                 //Debug.Log("¸ÞÅ¸¸ù µð¹ö±ë : " + SpawnedObject.transform.position);
             }
 
@@ -146,7 +152,9 @@ public class SpawnMenu : MonoBehaviour
             {
                 Pos = hitLayerMask.point;
                 Rot = hitLayerMask.transform.eulerAngles;
-                SpawnedObject = Instantiate(tempFood, Pos, Quaternion.Euler(Rot));
+                SpawnedObject = Instantiate(foodSet, Pos, Quaternion.Euler(Rot));
+                SpawnedObject.transform.localScale = new Vector3(0.4f, 0.4f, 0.4f);
+                InstantiateFood(menuIndex);
                 Debug.Log("¸ÞÅ¸¸ù µð¹ö±ë : " + SpawnedObject.transform.position);
             }
         }
@@ -156,30 +164,7 @@ public class SpawnMenu : MonoBehaviour
         }
     }
 
-    public int HitFind(string name, RaycastHit[] array)
-    {
-        if (array.Length == 0) {
-            Debug.Log("ºñ¾îÀÖÀ½");
-            return -1;
-        }
 
-
-        foreach (var hit in array)
-        {
-            Debug.Log("¸ÞÅ¸¸ù µð¹ö±ë : " + hit.transform.gameObject.name + " vs " + name);
-        }
-        foreach (var item in array.Select((value, index) => (value, index)))
-        {
-            var value = item.value;
-            var index = item.index;
-            Debug.Log("¸ÞÅ¸¸ù µð¹ö±ë : " + value + " " + index);
-            if (value.transform.gameObject.name.Equals(name))
-            {
-                return index;
-            }
-        }
-        return -1;
-    }
     public void SetPlane()
     {
         if (IsReady())
@@ -208,7 +193,7 @@ public class SpawnMenu : MonoBehaviour
             {
                 Pos = hitLayerMask.point;
                 Rot = hitLayerMask.transform.eulerAngles;
-                charObject = Instantiate(tempChar, Pos, Quaternion.Euler(Rot));
+                charObject = Instantiate(character, Pos, Quaternion.Euler(Rot));
                 Debug.Log("¸ÞÅ¸¸ù µð¹ö±ë : " + SpawnedObject.transform.position);
             }
         }
@@ -228,14 +213,46 @@ public class SpawnMenu : MonoBehaviour
         {
             if (raycastMgr.Raycast(screenCenterPos, hits, UnityEngine.XR.ARSubsystems.TrackableType.PlaneWithinPolygon))
             {
-                Instantiate(tempFood, hits[0].pose.position, hits[0].pose.rotation);
+                Instantiate(foodSet, hits[0].pose.position, hits[0].pose.rotation);
             }
         }
     }
+    public void ChangeFoodIndex(int idx)
+    {
+        menuIndex = idx;
+        InstantiateFood(idx);
+    }
+    public void NextFoodIndex()
+    {
+        ChangeFoodIndex(menuIndex + 1);
+    }
+    public void PrevFoodIndex()
+    {
+        ChangeFoodIndex(menuIndex - 1);
+    }
 
+    private void InstantiateFood(int index)
+    {
+        if (SpawnedObject != null)
+        {
+            if (showFood != null)
+            {
+                Destroy(showFood);
+            }
+            showFood = Instantiate(foodPrefabs[index]);
+            Debug.Log("¸ÞÅ¸¸ù µð¹ö±ë : " + showFood.transform.position);
+            Debug.Log("¸ÞÅ¸¸ù µð¹ö±ë : " + showFood);
+            showFood.transform.parent = SpawnedObject.transform;
+            showFood.transform.localScale = new Vector3(0.7f, 0.7f, 0.7f);
+            showFood.transform.localEulerAngles = Vector3.zero;
+            showFood.transform.localPosition = Vector3.zero;
+        }
+    }
+    
     
     public void ChangeReact()
     {
         charObject.GetComponent<MiniCharacterGame>().ChangeReact();
     }
+    
 }
