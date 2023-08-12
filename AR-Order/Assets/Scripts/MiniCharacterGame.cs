@@ -13,22 +13,25 @@ public class MiniCharacterGame : MonoBehaviour
     private bool isClick = false;
     private int isMoving = 0;
     private Coroutine MoveCoroutine = null;
+    private Coroutine RotateCoroutine = null;
     private ARSessionOrigin arSessionOrigin;
-
+    private bool isRotate = false;
     private RaycastHit hitLayerChar;
     private LayerMask charLayerMask;
     private bool isLookingCamera = false;
     private float rotationSpeed = 5f;
     private float touchTime = 0f;
     private Animator anim;
-
     private bool isPunch = false;
+    private bool isMoved = false;
+    private Rigidbody rigid;
     // Start is called before the first frame update
     void Start()
     {
         anim = GetComponentInChildren<Animator>();
         arSessionOrigin = GameObject.Find("AR Session Origin").GetComponent<ARSessionOrigin>();
-        transform.localScale = Vector3.one * 0.1f;
+        transform.localScale = Vector3.one;
+        rigid = GetComponent<Rigidbody>();
 
     }
     Vector3 prePos = Vector3.zero;
@@ -47,6 +50,12 @@ public class MiniCharacterGame : MonoBehaviour
 
             if (touch.phase == TouchPhase.Began)
             {
+                if (isRotate)
+                {
+                    anim.SetBool("isGrab", false);
+                    StopRotateCoroutine();
+                    isRotate = false;
+                }
                 if (isAnim) return;
                 charLayerMask = LayerMask.GetMask("Character");
                 Ray ray = arSessionOrigin.camera.ScreenPointToRay(pos);
@@ -78,20 +87,31 @@ public class MiniCharacterGame : MonoBehaviour
                 touchTime += Time.deltaTime;
                 if(touchTime > 0.2f)
                 {
+                    isMoved = true;
+                    if(!anim.GetBool("isGrab"))
+                        anim.SetBool("isGrab", true);
                     hitVec = new Vector3(Input.mousePosition.x,Input.mousePosition.y, dist);
                     hitVec = arSessionOrigin.camera.ScreenToWorldPoint(hitVec);
-                    hitTransform.position = hitVec - offset;
+                    hitTransform.position = hitVec + offset;
                 }
             }
             if(isClick && touch.phase == TouchPhase.Ended)
             {
+                if(anim.GetBool("isGrab"))
+                    anim.SetBool("isGrab", false);
+                if (isMoved)
+                {
+                    FindPlane(pos);
+                    isMoved = false;
+                }
+
                 Vector3 lastPos = touch.position;
                 Vector3 dragVector = lastPos - prePos;
                 Vector3 standardDir = new Vector3(0, 1, 0) - Vector3.zero;
                 float dragSpeed = Vector3.Magnitude(dragVector) / touchTime;
                 float dragAngle = Vector3.Angle(standardDir, dragVector);
                 Debug.Log("메타몽 디버깅 : " + dragSpeed + " " + dragAngle);
-                if(dragSpeed  <3500f)
+                if(dragSpeed  <3500f || Vector3.Magnitude(dragVector)<1)
                 {
 
                 }
@@ -100,6 +120,14 @@ public class MiniCharacterGame : MonoBehaviour
                     if(dragAngle < 30f)
                     {
                         Punch();
+                    }
+                    else if(dragAngle> 60f && dragAngle < 120f)
+                    {
+                        bool Right = onRight(new Vector3(0,0,1)-Vector3.zero,dragVector);
+                        StartRotateCoroutine(dragSpeed, Right ? 1 : -1);
+                    }else if(dragAngle>150f)
+                    {
+                        Event();
                     }
                 }
                 isClick= false;
@@ -136,6 +164,21 @@ public class MiniCharacterGame : MonoBehaviour
         {
             StopCoroutine(MoveCoroutine);
             MoveCoroutine = null;
+        }
+    }
+    private void StartRotateCoroutine(float Speed, int dir)
+    {
+        if(RotateCoroutine == null)
+        {
+            RotateCoroutine = StartCoroutine(RotationEffect(Speed, dir));
+        }
+    }
+    private void StopRotateCoroutine()
+    {
+        if (RotateCoroutine != null)
+        {
+            StopCoroutine(RotateCoroutine);
+            RotateCoroutine = null;
         }
     }
     IEnumerator MoveChar(){
@@ -180,13 +223,13 @@ public class MiniCharacterGame : MonoBehaviour
         Vector3 cameraVec = transform.position - arSessionOrigin.camera.transform.position;
         cameraVec.y = 0f;
 
-        bool Right = onRight(-1*cameraVec, charVec);
+        bool Right = onRight(cameraVec, charVec);
         while (!isLookingCamera)
         {
             charVec = new Vector3(transform.forward.x, 0, transform.forward.z);
             cameraVec = transform.position - arSessionOrigin.camera.transform.position;
             cameraVec.y = 0f; 
-            float angleWithVector= GetAngle(-1*cameraVec, charVec);
+            float angleWithVector= GetAngle(cameraVec, charVec);
             if (angleWithVector <= 5f)
             {
                 isLookingCamera= true;
@@ -195,18 +238,10 @@ public class MiniCharacterGame : MonoBehaviour
             transform.Rotate(0f, ((Right)? 1f : -1f) * 150f * Time.deltaTime, 0f);
             yield return null;
         }
-        anim.SetTrigger("Click");
-        StartCoroutine(isEndAnim());
-    }
-    IEnumerator isEndAnim()
-    {
-        while (anim.GetCurrentAnimatorStateInfo(0).IsName("attack")&&anim.GetCurrentAnimatorStateInfo(0).normalizedTime <= 1.0f)
-        {
-            yield return null;
-        }
         isAnim = false;
         isLookingCamera = false;
     }
+
     public float GetAngle(Vector3 vStart, Vector3 vEnd)
     {
        
@@ -226,7 +261,6 @@ public class MiniCharacterGame : MonoBehaviour
     }
     public void Punch()
     {
-        Rigidbody rigid = GetComponent<Rigidbody>();
         rigid.isKinematic = false;
         rigid.useGravity = true;
 
@@ -242,13 +276,51 @@ public class MiniCharacterGame : MonoBehaviour
         // 펀치할 힘을 조절할 수 있는 변수를 추가하고, 힘을 적용합니다.
         float punchForce = 10f;
         rigid.AddForce(forceDir * punchForce, ForceMode.Impulse);
-
+        anim.SetTrigger("Punch");
         StartCoroutine("DestroyAfterPunch");
 
+    }
+    private void Event()
+    {
+        anim.SetTrigger("Event");
     }
     IEnumerator DestroyAfterPunch()
     {
         yield return new WaitForSeconds(1f);
         Destroy(this.gameObject);
     }
+
+
+    private void FindPlane(Vector3 touchPos)
+    {
+        Ray ray1 = new Ray(transform.position, transform.up);
+        Ray ray2 = new Ray(transform.position, -1*transform.up);
+        Ray ray3 = arSessionOrigin.camera.ScreenPointToRay(touchPos);
+        RaycastHit plane;
+        if (Physics.Raycast(ray1,out plane, 3000f, LayerMask.GetMask("Plane")) || Physics.Raycast(ray2,out plane,3000f,LayerMask.GetMask("Plane")))
+        {
+            this.transform.position = plane.point;
+        }
+        else if(Physics.Raycast(ray3,out plane, Mathf.Infinity, LayerMask.GetMask("Plane")))
+        {
+            this.transform.position = plane.point;
+        }
+    }
+    IEnumerator RotationEffect(float Speed, int dir)
+    {
+        anim.SetBool("isGrab", true);
+        isRotate= true;
+        float Power = Speed;
+        float amount;
+        while (Power > 0)
+        {
+            amount = Power * Time.deltaTime;
+            transform.Rotate(0f, dir * amount, 0f);
+            Power -= amount;
+            yield return null;
+        }
+        isRotate = false;
+        anim.SetBool("isGrab", false);
+    }
+
 }

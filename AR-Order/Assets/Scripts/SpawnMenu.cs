@@ -7,15 +7,17 @@ using System.Linq;
 using UnityEngine.Rendering.RendererUtils;
 using UnityEngine.UIElements;
 using Unity.VisualScripting;
-
+using System.Runtime.InteropServices;
 
 public class SpawnMenu : MonoBehaviour
 {
-    public GameObject tempChar;
-    public GameObject tempFood;
+    public GameObject character;
+    public GameObject foodSet;
     public GameObject Spawn;
     public GameObject plane;
     public GameObject qrFrame;
+
+    public GameObject[] foodPrefabs;
     // Start is called before the first frame update
     GameObject DetectAR;
     GameObject SpawnedObject;
@@ -32,6 +34,9 @@ public class SpawnMenu : MonoBehaviour
     private Vector3 multipleAngle;
     private float dist;
 
+    //À½½Ä º¯°æ
+    private int menuIndex = 0;
+    private GameObject showFood;
 
     private void Start()
     {
@@ -147,7 +152,9 @@ public class SpawnMenu : MonoBehaviour
             {
                 Pos = hitLayerMask.point;
                 Rot = hitLayerMask.transform.eulerAngles;
-                SpawnedObject = Instantiate(tempFood, Pos, Quaternion.Euler(Rot));
+                SpawnedObject = Instantiate(foodSet, Pos, Quaternion.Euler(Rot));
+                SpawnedObject.transform.localScale = new Vector3(0.4f, 0.4f, 0.4f);
+                InstantiateFood(menuIndex);
                 Debug.Log("¸ÞÅ¸¸ù µð¹ö±ë : " + SpawnedObject.transform.position);
             }
         }
@@ -186,7 +193,7 @@ public class SpawnMenu : MonoBehaviour
             {
                 Pos = hitLayerMask.point;
                 Rot = hitLayerMask.transform.eulerAngles;
-                charObject = Instantiate(tempChar, Pos, Quaternion.Euler(Rot));
+                charObject = Instantiate(character, Pos, Quaternion.Euler(Rot));
                 Debug.Log("¸ÞÅ¸¸ù µð¹ö±ë : " + SpawnedObject.transform.position);
             }
         }
@@ -206,14 +213,46 @@ public class SpawnMenu : MonoBehaviour
         {
             if (raycastMgr.Raycast(screenCenterPos, hits, UnityEngine.XR.ARSubsystems.TrackableType.PlaneWithinPolygon))
             {
-                Instantiate(tempFood, hits[0].pose.position, hits[0].pose.rotation);
+                Instantiate(foodSet, hits[0].pose.position, hits[0].pose.rotation);
             }
         }
     }
+    public void ChangeFoodIndex(int idx)
+    {
+        menuIndex = idx;
+        InstantiateFood(idx);
+    }
+    public void NextFoodIndex()
+    {
+        ChangeFoodIndex(menuIndex + 1);
+    }
+    public void PrevFoodIndex()
+    {
+        ChangeFoodIndex(menuIndex - 1);
+    }
 
+    private void InstantiateFood(int index)
+    {
+        if (SpawnedObject != null)
+        {
+            if (showFood != null)
+            {
+                Destroy(showFood);
+            }
+            showFood = Instantiate(foodPrefabs[index]);
+            Debug.Log("¸ÞÅ¸¸ù µð¹ö±ë : " + showFood.transform.position);
+            Debug.Log("¸ÞÅ¸¸ù µð¹ö±ë : " + showFood);
+            showFood.transform.parent = SpawnedObject.transform;
+            showFood.transform.localScale = new Vector3(0.7f, 0.7f, 0.7f);
+            showFood.transform.localEulerAngles = Vector3.zero;
+            showFood.transform.localPosition = Vector3.zero;
+        }
+    }
+    
     
     public void ChangeReact()
     {
         charObject.GetComponent<MiniCharacterGame>().ChangeReact();
     }
+    
 }
