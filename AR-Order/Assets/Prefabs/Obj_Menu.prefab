@@ -1408,10 +1408,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fbbe2b473062555428ab8d4da18d2411, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  menuName: 
   TotalPriceForEachMenu: {fileID: 7316127947322759941}
-  TextTotalPriceCart:
-  - {fileID: 0}
-  - {fileID: 0}
+  TextMenuPrice: {fileID: 7316127949056051736}
+  TextMenuCount: {fileID: 7316127947625385646}
+  menuImg: {fileID: 7316127949036334367}
 --- !u!1 &7316127949036334361
 GameObject:
   m_ObjectHideFlags: 0
