@@ -20,7 +20,7 @@ public class SpawnMenu : MonoBehaviour
     public Menu[][] foodPrefabs;
     // Start is called before the first frame update
     GameObject DetectAR;
-    GameObject SpawnedObject;
+    GameObject SpawnedObject = null;
     GameObject charObject;
     GameObject _plane;
     public ARSessionOrigin arSessionOrigin;
@@ -234,7 +234,7 @@ public class SpawnMenu : MonoBehaviour
         {
             idx = foodPrefabs[listIndex].Length - 1;
         }
-        else if(idx > foodPrefabs.Length - 1)
+        else if(idx > foodPrefabs[listIndex].Length - 1)
         {
             idx = 0;
         }

@@ -17,10 +17,10 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/DongHyuk/HandTrackTemp.unity
     guid: 2f71ec3434a81c647927c183cf010e09
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/MainScene.unity
     guid: 16d15e2f726e06e42a912ef9542b45e3
-  - enabled: 1
+  - enabled: 0
     path: Assets/DongHyuk/Scene5_FaceCollision/Scene5_FaceCollision.unity
     guid: c88d6f754d04b0d48840ce07fe7d0ad5
   m_configObjects:

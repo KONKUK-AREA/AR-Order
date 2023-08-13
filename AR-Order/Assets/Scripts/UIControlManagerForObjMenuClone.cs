@@ -22,6 +22,8 @@ public class UIControlManagerForObjMenuClone : MonoBehaviour
     public static int TotalCount=0;
     private int menuPrice;
     [SerializeField]
+    private TextMeshProUGUI TextMenuName;
+    [SerializeField]
     private TextMeshProUGUI TextMenuPrice;
     [SerializeField]
     private TextMeshProUGUI TextMenuCount;
@@ -40,6 +42,7 @@ public class UIControlManagerForObjMenuClone : MonoBehaviour
         menuName = name;
         menuPrice = price;
         menuImg.sprite = img;
+        TextMenuName.text = menuName;
         TextMenuPrice.text = menuPrice.ToString();
         TotalPriceForEachMenu.text = menuPrice.ToString();
         manager = GameObject.Find("Canvas").GetComponent<UIControlManager>();

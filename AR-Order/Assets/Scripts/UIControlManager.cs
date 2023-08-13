@@ -29,7 +29,7 @@ public class UIControlManager : MonoBehaviour
     [SerializeField]
     private StoreData _StoreData;
 
-    private Restaurant MainRestaurant;
+    private Restaurant MainRestaurant=null;
 
     public GameObject[] UIForEachScreen;   // element 0이 시작화면이고 element 0부터 각 ui레이어의 값    
     public GameObject[] LayersARTutorial;
@@ -81,8 +81,8 @@ public class UIControlManager : MonoBehaviour
     [SerializeField]
     private TextMeshProUGUI[] showCartCountText;
 
-
-
+    public Sprite[] ARGameTutorial;
+    public Image ARGameTutorialImg;
 
 
 
@@ -91,7 +91,7 @@ public class UIControlManager : MonoBehaviour
     // public TextMeshProUGUI TotalPriceForEachMenu;
     private int currentValue = 1;
     private int ARMenuIndex;
-
+    private int ListIndex;
     private GameObject spawnedMenuObject = null;
     private GameObject spawnedObject = null;
     private int Layer_AROrderTutorial_Activated = 0;
@@ -142,10 +142,13 @@ public class UIControlManager : MonoBehaviour
                     obj.SetActive(false);
                     continue;
                 }
-                obj.GetComponent<Button>().onClick.AddListener(() => ClickMenuBtn(i, j));
-                obj.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = MainRestaurant.totalMenu[i][j].name;
-                obj.transform.GetChild(1).GetComponent<TextMeshProUGUI>().text = MainRestaurant.totalMenu[i][j].price.ToString();
-                obj.transform.GetChild(2).GetComponent<Image>().sprite = MainRestaurant.totalMenu[i][j].Img;
+                int temp1 = i;
+                int temp2 = j;
+                obj.GetComponent<Button>().onClick.AddListener(() => ClickMenuBtn(
+                    temp1, temp2));
+                obj.transform.GetChild(1).GetComponent<TextMeshProUGUI>().text = MainRestaurant.totalMenu[i][j].name;
+                obj.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = MainRestaurant.totalMenu[i][j].price.ToString()+"원";
+                obj.GetComponent<Image>().sprite = MainRestaurant.totalMenu[i][j].Img;
                 Debug.Log("메타몽 디버깅 :"+MainRestaurant.totalMenu[i][j].name);
             }
         }
@@ -155,13 +158,18 @@ public class UIControlManager : MonoBehaviour
     {
         maxMenuCount = MainRestaurant.totalMenu[listIndex].Length;
         ARMenuIndex = index;
-        ChangeMenuInfo(ARMenuIndex);
+        ListIndex = listIndex;
+        GetMenuInfo();
         _SpawnMenu.ChangeFoodIndex(listIndex,index);
         _SpawnMenu.SpawnItem();
-        ClickedNextBtn();
+        ChangeLayer(2);
         ShowTutorial();
     }
-
+    public void GetMenuInfo()
+    {
+        TXT_ChoosedMenuName.text = MainRestaurant.totalMenu[ListIndex][ARMenuIndex].name;
+        TXT_ChoosedMenuPrice.text = MainRestaurant.totalMenu[ListIndex][ARMenuIndex].price.ToString() + "원";
+    }
     public void ChangeMenuInfo(int ARMenuIndex)
     {
         if (ARMenuIndex < MenuButtonForRestaurant_A.Length)
@@ -196,6 +204,7 @@ public class UIControlManager : MonoBehaviour
     private int count = 0;
     public void AddToCart()
     {
+        /*
         TextMeshProUGUI[] TXTs_clickedButton = clickedButton.GetComponentsInChildren<TextMeshProUGUI>();     //클릭한 메뉴의 정보
         Image[] IMGs_clickedButton = clickedButton.GetComponentsInChildren<Image>();
 
@@ -214,7 +223,11 @@ public class UIControlManager : MonoBehaviour
                 menuPrice = int.Parse(TXT_MenuInfo.text);
             }
         }
-        foreach(GameObject cart in cartList)
+        */
+        String menuName = MainRestaurant.totalMenu[ListIndex][ARMenuIndex].name;
+        int menuPrice = MainRestaurant.totalMenu[ListIndex][ARMenuIndex].price;
+        Sprite menuImg = MainRestaurant.totalMenu[ListIndex][ARMenuIndex].Img;
+        foreach (GameObject cart in cartList)
         {
             UIControlManagerForObjMenuClone manager = cart.GetComponent<UIControlManagerForObjMenuClone>();
             if (manager.menuName.Equals(menuName))
@@ -246,15 +259,7 @@ public class UIControlManager : MonoBehaviour
         
 
 
-        foreach (Image IMG_MenuIMG in IMGs_clickedButton)
-        {
-
-
-             if (IMG_MenuIMG.CompareTag("MenuImageTag"))
-            {
-                menuImg = IMG_MenuIMG.sprite;
-            }
-        }
+        
         cartList.Add(spawnedObject);
         spawnedObject.GetComponent<UIControlManagerForObjMenuClone>().SetInit(menuName,menuPrice,menuImg);
         if (!showCartCount[0].activeSelf)
@@ -341,7 +346,7 @@ public class UIControlManager : MonoBehaviour
     {
 
         _SpawnMenu.NextFoodIndex();
-        if(ARMenuIndex == maxMenuCount)
+        if(ARMenuIndex == maxMenuCount-1)
         {
             ARMenuIndex = 0;
         }
@@ -350,31 +355,7 @@ public class UIControlManager : MonoBehaviour
 
             ARMenuIndex++;
         }
-        ClickedNextMenuButton = MenuButtonForRestaurant_A[ARMenuIndex+1];
-
-        TextMeshProUGUI[] TXTs_clickedButtonNextMenu = ClickedNextMenuButton.GetComponentsInChildren<TextMeshProUGUI>();
-            foreach (TextMeshProUGUI TXT_MenuInfo in TXTs_clickedButtonNextMenu)
-            {
-                if (TXT_MenuInfo.CompareTag("MenuNameTag"))
-                {
-                    TXT_ChoosedMenuName.text = TXT_MenuInfo.text ;
-                }
-
-                if (TXT_MenuInfo.CompareTag("MenuPriceTag"))
-                {
-                    TXT_ChoosedMenuPrice.text = TXT_MenuInfo.text +"원";
-                }
-            }
-        clickedButton = MenuButtonForRestaurant_A[ARMenuIndex];
-
-
-
-        Quaternion rotation = Quaternion.identity;
-        GameObject objectToSpawn = ARMenuForRestaurant_A[ARMenuIndex];
-
-        
-
-        spawnedMenuObject = Instantiate(objectToSpawn, canvasTransform.position , rotation , canvasTransform);
+        GetMenuInfo();
     }
 
 
@@ -384,38 +365,13 @@ public class UIControlManager : MonoBehaviour
         _SpawnMenu.PrevFoodIndex();
         if (ARMenuIndex == 0)
         {
-            ARMenuIndex = maxMenuCount;
+            ARMenuIndex = maxMenuCount-1;
         }
         else
         {
             ARMenuIndex--;
         }
-        ClickedNextMenuButton = MenuButtonForRestaurant_A[ARMenuIndex];
-
-        TextMeshProUGUI[] TXTs_clickedButtonNextMenu = ClickedNextMenuButton.GetComponentsInChildren<TextMeshProUGUI>();
-            foreach (TextMeshProUGUI TXT_MenuInfo in TXTs_clickedButtonNextMenu)
-            {
-                if (TXT_MenuInfo.CompareTag("MenuNameTag"))
-                {
-                    TXT_ChoosedMenuName.text = TXT_MenuInfo.text ;
-                }
-
-                if (TXT_MenuInfo.CompareTag("MenuPriceTag"))
-                {
-                    TXT_ChoosedMenuPrice.text = TXT_MenuInfo.text +"원";
-                }
-            }
-
-        clickedButton = MenuButtonForRestaurant_A[ARMenuIndex];
-
-        Quaternion rotation = Quaternion.identity;
-        GameObject objectToSpawn = ARMenuForRestaurant_A[ARMenuIndex];
-
-        
-
-        spawnedMenuObject = Instantiate(objectToSpawn, canvasTransform.position , rotation , canvasTransform);
-
-
+        GetMenuInfo();
 
     }
 
@@ -428,26 +384,19 @@ public class UIControlManager : MonoBehaviour
 
     public void ClickedCartButton()
     {
-        UIForEachScreen[2].SetActive(false);
-        UIForEachScreen[3].SetActive(true);    
-        UIForEachScreen_currentIndex = 3;
-
+        ChangeLayer(3);
     }
+
+    int previousLayer = 0;
 
     public void ClickedPrevBtnAtCart()
     {
-        UIForEachScreen[UIForEachScreen_currentIndex].SetActive(false);
-        UIForEachScreen[2].SetActive(true);
-
-
+        ChangeLayer(previousLayer);
     }
 
     public void ClickedHomeButton()
     {
-        UIForEachScreen[UIForEachScreen_currentIndex].SetActive(false);
-        UIForEachScreen[1].SetActive(true);  
-        UIForEachScreen_currentIndex = 1;
-
+        ChangeLayer(1);
         if (spawnedMenuObject !=null)
         {
              Destroy(spawnedMenuObject);
@@ -456,6 +405,16 @@ public class UIControlManager : MonoBehaviour
 
     }
 
+    public void QRSuccessful()
+    {
+        if (_SpawnMenu.IsReady())
+        {
+            MainRestaurant = _StoreData.GetMenu(_GetDataFromQR.marketInfo().name);
+            InitMenu();
+            ChangeLayer(1);
+        }
+    }
+    
 
 
 
@@ -463,8 +422,11 @@ public class UIControlManager : MonoBehaviour
     {
         if (_SpawnMenu.IsReady())
         {
-            MainRestaurant = _StoreData.GetMenu(_GetDataFromQR.marketInfo().name);
-            InitMenu();
+            if (MainRestaurant == null)
+            {
+                MainRestaurant = _StoreData.GetMenu(_GetDataFromQR.marketInfo().name);
+                InitMenu();
+            }
             // 현재 Layer 오브젝트를 비활성화
             UIForEachScreen[UIForEachScreen_currentIndex].SetActive(false);
 
@@ -485,28 +447,21 @@ public class UIControlManager : MonoBehaviour
     public void ClickedPrevBtn()
     {
         // 현재 Layer 오브젝트를 비활성화
-        UIForEachScreen[UIForEachScreen_currentIndex].SetActive(false);
-
-        // 이전 Layer 오브젝트의 인덱스로 이동
-        UIForEachScreen_currentIndex--;
-
-        // 배열 범위를 벗어나면 마지막 Layer로 이동
-        if (UIForEachScreen_currentIndex < 0)
-        {
-            UIForEachScreen_currentIndex = UIForEachScreen.Length - 1;
-        }
-
-        // 이전 Layer 오브젝트를 활성화
-        UIForEachScreen[UIForEachScreen_currentIndex].SetActive(true);
-
-
+        ChangeLayer(previousLayer);
     
     }
 
     
 
 
-
+    public void ClickedOrderBtn()
+    {
+        ChangeLayer(4);
+    }
+    public void ClickedOrderSuccessBtn()
+    {
+        ChangeLayer(5);
+    }
 
 
 
@@ -586,9 +541,24 @@ public class UIControlManager : MonoBehaviour
         TotalCount.text = count.ToString();
     }
 
+    int CurrentLayer = 0;
+    public void ChangeLayer(int layer)
+    {
+        previousLayer = CurrentLayer;
+        UIForEachScreen[CurrentLayer].SetActive(false);
+        UIForEachScreen[layer].SetActive(true);
+        CurrentLayer = layer;
+    }
 
-
-
+    int index = 0;
+    public void _ARGameTutorial()
+    {
+        if(index == ARGameTutorial.Length)
+        {
+            ARGameTutorialImg.gameObject.SetActive(false);
+        }
+        ARGameTutorialImg.sprite = ARGameTutorial[++index];
+    }
 
 
 }
