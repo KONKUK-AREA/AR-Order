@@ -5,11 +5,11 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
-    path: Assets/DongHyuk/Scene3_Food3D.unity
+  - enabled: 0
+    path: Assets/DongHyuk/Scene3_assets/Scene3_Food3D.unity
     guid: 14130d248244ac74f9c7352bc97540c2
   - enabled: 0
-    path: Assets/DongHyuk/Scene4_Payment.unity
+    path: Assets/DongHyuk/Scene4_assets/Scene4_Payment.unity
     guid: 6ca8736e9e8777d4bb4a55499ad5a767
   - enabled: 0
     path: Assets/Scenes/AR.unity
@@ -17,9 +17,13 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/DongHyuk/HandTrackTemp.unity
     guid: 2f71ec3434a81c647927c183cf010e09
+  - enabled: 1
+    path: Assets/DongHyuk/Scene5_FaceCollision/Scene5_FaceCollision.unity
+    guid: c88d6f754d04b0d48840ce07fe7d0ad5
   m_configObjects:
     UnityEditor.XR.ARCore.ARCoreSettings: {fileID: 11400000, guid: 8d1299e2732809c4184950b92a745112, type: 2}
     UnityEditor.XR.ARKit.ARKitSettings: {fileID: 11400000, guid: 32a4857178967934b818600c35762099, type: 2}
     com.unity.xr.magicleap.magic_leap_settings: {fileID: 11400000, guid: 6d7270a3a7a326649945328e5f13ab7a, type: 2}
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: e2916879e0cd6e1498dc8b3a2c827fc7, type: 2}
     com.unity.xr.openxr.settings4: {fileID: 11400000, guid: ba1527d0240afef47b9bf0999769b86f, type: 2}
+    xr.sdk.mock-hmd.settings: {fileID: 11400000, guid: 375c0a28e3670054eac33ee7ff83b49d, type: 2}
