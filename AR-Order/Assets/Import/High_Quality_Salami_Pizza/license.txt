@@ -1,0 +1,11 @@
+Model Information:
+* title:	High Quality Salami Pizza
+* source:	https://sketchfab.com/3d-models/high-quality-salami-pizza-a31d3912b215465e8089d7b854af647b
+* author:	mrfunnysheep (https://sketchfab.com/mrfunnysheep)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "High Quality Salami Pizza" (https://sketchfab.com/3d-models/high-quality-salami-pizza-a31d3912b215465e8089d7b854af647b) by mrfunnysheep (https://sketchfab.com/mrfunnysheep) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

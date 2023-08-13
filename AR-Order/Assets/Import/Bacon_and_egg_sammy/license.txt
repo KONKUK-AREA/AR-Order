@@ -1,0 +1,11 @@
+Model Information:
+* title:	Bacon and egg sammy
+* source:	https://sketchfab.com/3d-models/bacon-and-egg-sammy-516971a498e54dbfab246b466042b867
+* author:	Jam Resident (jammehh) (https://sketchfab.com/jammehhresident)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Bacon and egg sammy" (https://sketchfab.com/3d-models/bacon-and-egg-sammy-516971a498e54dbfab246b466042b867) by Jam Resident (jammehh) (https://sketchfab.com/jammehhresident) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

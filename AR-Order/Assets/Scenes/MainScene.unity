@@ -15445,7 +15445,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\uC544\uBA54\uB9AC\uCE74\uB1781"
+  m_text: "\uBCA0\uC774\uCEE8 \uC0CC\uB4DC\uC704\uCE58"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 2f21220bf57516b4a9db8b90a80ef781, type: 2}
   m_sharedMaterial: {fileID: -5953393255626460615, guid: 2f21220bf57516b4a9db8b90a80ef781, type: 2}
@@ -17658,16 +17658,16 @@ MonoBehaviour:
   plane: {fileID: 1942233407999755423, guid: 1baabb277dc5c8a49b32f39e872df4dc, type: 3}
   qrFrame: {fileID: 1512944307}
   foodPrefabs:
-  - {fileID: 3571786719479930894, guid: 079a81651d0c30949aff3c97f9deb343, type: 3}
-  - {fileID: 4565343315644441156, guid: 38d4824588fa37d4fa189bb73e0e84cf, type: 3}
-  - {fileID: 6406087534875511619, guid: aa0aa1a42e1cec146b473706f9dd06f5, type: 3}
-  - {fileID: 6406087534875511619, guid: aa0aa1a42e1cec146b473706f9dd06f5, type: 3}
-  - {fileID: 6406087534875511619, guid: aa0aa1a42e1cec146b473706f9dd06f5, type: 3}
-  - {fileID: 6406087534875511619, guid: aa0aa1a42e1cec146b473706f9dd06f5, type: 3}
-  - {fileID: 6406087534875511619, guid: aa0aa1a42e1cec146b473706f9dd06f5, type: 3}
-  - {fileID: 6406087534875511619, guid: aa0aa1a42e1cec146b473706f9dd06f5, type: 3}
-  - {fileID: 6406087534875511619, guid: aa0aa1a42e1cec146b473706f9dd06f5, type: 3}
-  - {fileID: 6406087534875511619, guid: aa0aa1a42e1cec146b473706f9dd06f5, type: 3}
+  - {fileID: 4059473235913210248, guid: 3575df3951b250c4eaf7afceba3ea716, type: 3}
+  - {fileID: 4059473235913210248, guid: 1311d6a1f83159c4fa4101609dbfb5d1, type: 3}
+  - {fileID: 3846113750440933430, guid: 1759a9421acd4cb43b703c7a85446a1c, type: 3}
+  - {fileID: 5458248841054054927, guid: edbc444ad084ae846833fe03424c8837, type: 3}
+  - {fileID: 6251962268565252910, guid: 349eb05bc7b3c474fa1a7127a804850a, type: 3}
+  - {fileID: 7725683691875908753, guid: a64018f3938a07f478fedc579439fe73, type: 3}
+  - {fileID: 900758375007892023, guid: bf72061dfb4279741b2cbd37d3ae8c2c, type: 3}
+  - {fileID: 4415824686354320276, guid: f62e5caec2e526f49a84ff963eb22fdc, type: 3}
+  - {fileID: 8310623310602722835, guid: a7f342cc6fd6d954089ea029d30979b0, type: 3}
+  - {fileID: 8509621785383169193, guid: fc108319a1c09cd40889f7365d83c80a, type: 3}
   arSessionOrigin: {fileID: 992068476}
 --- !u!114 &1872922160
 MonoBehaviour:
@@ -17759,7 +17759,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 5000
+  m_text: 9000
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 2f21220bf57516b4a9db8b90a80ef781, type: 2}
   m_sharedMaterial: {fileID: -5953393255626460615, guid: 2f21220bf57516b4a9db8b90a80ef781, type: 2}
@@ -20010,7 +20010,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &2097909498
 RectTransform:
   m_ObjectHideFlags: 0

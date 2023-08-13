@@ -1,0 +1,8 @@
+Model Information:
+* title:	Cup of coffee
+* source:	https://sketchfab.com/3d-models/cup-of-coffee-2eac9b8650304385bb99849d5d7707d3
+* author:	Verticle (https://sketchfab.com/verticle)
+
+Model License:
+* license type:	CC0-1.0 (http://creativecommons.org/publicdomain/zero/1.0/)
+* requirements:	Credit is not mandatory. Commercial use is allowed.
