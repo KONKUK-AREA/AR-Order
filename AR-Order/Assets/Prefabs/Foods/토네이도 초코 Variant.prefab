@@ -9,7 +9,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 100000, guid: 38bfdb44ebb42ac49836f2726df1e81c, type: 3}
       propertyPath: m_Name
-      value: "\uD1A0\uB124\uC774\uB3C4 \uCD08\uCF54"
+      value: "\uD1A0\uB124\uC774\uB3C4 \uCD08\uCF54 Variant"
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 38bfdb44ebb42ac49836f2726df1e81c, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 38bfdb44ebb42ac49836f2726df1e81c, type: 3}
       propertyPath: m_RootOrder

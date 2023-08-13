@@ -84,7 +84,8 @@ public class UIControlManager : MonoBehaviour
     public Sprite[] ARGameTutorial;
     public Image ARGameTutorialImg;
 
-
+    [SerializeField]
+    private TextMeshProUGUI[] MenuExplanation;
 
     // public Image MenuImage;
     // public TextMeshProUGUI CountForEachMenu;
@@ -169,6 +170,9 @@ public class UIControlManager : MonoBehaviour
     {
         TXT_ChoosedMenuName.text = MainRestaurant.totalMenu[ListIndex][ARMenuIndex].name;
         TXT_ChoosedMenuPrice.text = MainRestaurant.totalMenu[ListIndex][ARMenuIndex].price.ToString() + "원";
+        string[] splitDesc = MainRestaurant.totalMenu[ListIndex][ARMenuIndex].Description.Split(new char[] {':'});
+        MenuExplanation[0].text = splitDesc[0];
+        MenuExplanation[1].text = splitDesc[1];
     }
     public void ChangeMenuInfo(int ARMenuIndex)
     {
@@ -544,7 +548,10 @@ public class UIControlManager : MonoBehaviour
     int CurrentLayer = 0;
     public void ChangeLayer(int layer)
     {
-        _SpawnMenu.DestroyObjects();
+        if(layer == 6)
+        {
+            _SpawnMenu.DestroyObjects();
+        }
         previousLayer = CurrentLayer;
         UIForEachScreen[CurrentLayer].SetActive(false);
         UIForEachScreen[layer].SetActive(true);

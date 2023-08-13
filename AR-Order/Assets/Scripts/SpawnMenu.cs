@@ -21,7 +21,7 @@ public class SpawnMenu : MonoBehaviour
     // Start is called before the first frame update
     GameObject DetectAR;
     GameObject SpawnedObject = null;
-    GameObject charObject;
+    GameObject charObject=null;
     GameObject _plane;
     public ARSessionOrigin arSessionOrigin;
 
@@ -40,7 +40,7 @@ public class SpawnMenu : MonoBehaviour
     //À½½Ä º¯°æ
     private int ListIndex = 0;
     private int menuIndex = 0;
-    private GameObject showFood;
+    private GameObject showFood = null;
 
     private void Start()
     {
@@ -270,6 +270,7 @@ public class SpawnMenu : MonoBehaviour
             showFood.transform.localScale = new Vector3(0.7f, 0.7f, 0.7f);
             showFood.transform.localEulerAngles = Vector3.zero;
             showFood.transform.localPosition = Vector3.zero;
+            Debug.Log("¸ÞÅ¸¸ù µð¹ö±ë :" + showFood.transform.parent.name);
         }
     }
     

@@ -53,7 +53,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6790694740060008609, guid: cf87fed4bce85764687c167639a685c2, type: 3}
       propertyPath: m_Name
-      value: "\uC544\uBA54\uB9AC\uCE74\uB178"
+      value: "\uC544\uBA54\uB9AC\uCE74\uB178 Variant"
+      objectReference: {fileID: 0}
+    - target: {fileID: 6790694740060008609, guid: cf87fed4bce85764687c167639a685c2, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cf87fed4bce85764687c167639a685c2, type: 3}
