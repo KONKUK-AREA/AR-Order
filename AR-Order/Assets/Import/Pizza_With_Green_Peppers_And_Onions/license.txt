@@ -1,0 +1,11 @@
+Model Information:
+* title:	Pizza With Green Peppers And Onions
+* source:	https://sketchfab.com/3d-models/pizza-with-green-peppers-and-onions-3bad94302ca3400fb35e0d2eaf9957b7
+* author:	Somebody (https://sketchfab.com/sashafffaa)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Pizza With Green Peppers And Onions" (https://sketchfab.com/3d-models/pizza-with-green-peppers-and-onions-3bad94302ca3400fb35e0d2eaf9957b7) by Somebody (https://sketchfab.com/sashafffaa) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
