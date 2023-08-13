@@ -42,7 +42,7 @@ public class StoreData : MonoBehaviour
                     menus[i].Img = MenuSprite_brunchCafeKKU[i];
                     menus[i].menuPrefab = MenuGameObject_brunchCafeKKU[i];
                 }
-                int[] info = { 4, 2, 1,1,1 };
+                int[] info = { 5, 2, 1,1,1,0 };
                 //int[] info = { 4, 4, 2, 1 };
                 restaurant = new Restaurant("브런치카페 건대입구점", info, menus);
                 break;
@@ -86,6 +86,7 @@ public class Menu
     {
         this.name = name;
         this.price = price;
+    
     }
 
 }

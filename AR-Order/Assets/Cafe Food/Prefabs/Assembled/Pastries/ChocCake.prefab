@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 270023251488388955}
   - component: {fileID: 2619872320161792913}
   - component: {fileID: 4489316569277177652}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: ChocCake
   m_TagString: Untagged
   m_Icon: {fileID: 0}

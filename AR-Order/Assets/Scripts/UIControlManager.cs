@@ -544,6 +544,7 @@ public class UIControlManager : MonoBehaviour
     int CurrentLayer = 0;
     public void ChangeLayer(int layer)
     {
+        _SpawnMenu.DestroyObjects();
         previousLayer = CurrentLayer;
         UIForEachScreen[CurrentLayer].SetActive(false);
         UIForEachScreen[layer].SetActive(true);

@@ -123,7 +123,7 @@ public class SpawnMenu : MonoBehaviour
             {
                 Pos = hitLayerMask.point;
                 //Rot = hitLayerMask.transform.eulerAngles;
-                hitLayerDish.transform.position = Pos - offset;
+                SpawnedObject.transform.position = Pos - offset;
                 //Debug.Log("¸ÞÅ¸¸ù µð¹ö±ë : " + SpawnedObject.transform.position);
             }
 
@@ -192,6 +192,7 @@ public class SpawnMenu : MonoBehaviour
     {
         if (IsReady())
         {
+
             if (charObject != null) Destroy(charObject);
             Ray ray = arSessionOrigin.camera.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0f));
             LayerMask layerMask = LayerMask.GetMask("Plane");
@@ -277,5 +278,19 @@ public class SpawnMenu : MonoBehaviour
     {
         charObject.GetComponent<MiniCharacterGame>().ChangeReact();
     }
-    
+    public void DestroyObjects()
+    {
+        if(SpawnedObject != null)
+        {
+            Destroy(SpawnedObject);
+        }
+        if(showFood != null)
+        {
+            Destroy(showFood);
+        }
+        if(charObject != null)
+        {
+            Destroy(charObject);
+        }
+    }
 }
