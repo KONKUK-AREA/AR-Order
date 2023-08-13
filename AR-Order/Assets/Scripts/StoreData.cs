@@ -13,6 +13,8 @@ public class StoreData : MonoBehaviour
     private Sprite[] MenuSprite_brunchCafeKKU;
     [SerializeField]
     private GameObject[] MenuGameObject_brunchCafeKKU;
+    [SerializeField]
+    private string[] MenuDescription_brunchCafeKKU;
 
     private Sprite[][] StoreSprites = new Sprite[10][];
     private GameObject[][] StoreGameObjects = new GameObject[10][];
@@ -45,6 +47,7 @@ public class StoreData : MonoBehaviour
                 {
                     menus[i].Img = MenuSprite_brunchCafeKKU[i];
                     menus[i].menuPrefab = MenuGameObject_brunchCafeKKU[i];
+                    menus[i].Description = MenuDescription_brunchCafeKKU[i];
                 }
                 int[] info = { 5, 6, 3,3,3,3 };
                 //int[] info = { 4, 4, 2, 1 };
@@ -85,11 +88,13 @@ public class Menu
     public int price;
     public Sprite Img=null;
     public GameObject menuPrefab=null;
+    public string Description;
 
     public Menu(string name, int price)
     {
         this.name = name;
         this.price = price;
+
     }
 
 }
