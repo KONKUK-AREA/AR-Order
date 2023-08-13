@@ -47,12 +47,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a8105802ab78f4c4594068e07b303d1a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  food: {fileID: 2796537577183766323, guid: 0e9788c6b607fe64f9c4ed0911b5b912, type: 3}
-  devour: {fileID: 8675032312799600967, guid: 035a5c350b1cf004cb384b173e4419a7, type: 3}
   targetLayer:
     serializedVersion: 2
     m_Bits: 128
-  arCam: {fileID: 0}
 --- !u!33 &2954522633461101550
 MeshFilter:
   m_ObjectHideFlags: 0

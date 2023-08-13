@@ -15,9 +15,9 @@ public class SpawnMenu : MonoBehaviour
     public GameObject foodSet;
     public GameObject Spawn;
     public GameObject plane;
-    public GameObject qrFrame;
+    //public GameObject qrFrame;
 
-    public GameObject[] foodPrefabs;
+    public Menu[][] foodPrefabs;
     // Start is called before the first frame update
     GameObject DetectAR;
     GameObject SpawnedObject;
@@ -25,6 +25,9 @@ public class SpawnMenu : MonoBehaviour
     GameObject _plane;
     public ARSessionOrigin arSessionOrigin;
 
+    private Restaurant MainRestaurant;
+    private GetDataFromQR _GetDataFromQR;
+    private StoreData _StoreData;
     // À½½Ä ÀÌµ¿
     private RaycastHit hitLayerDish;
     private LayerMask dishLayerMask;
@@ -35,12 +38,15 @@ public class SpawnMenu : MonoBehaviour
     private float dist;
 
     //À½½Ä º¯°æ
+    private int ListIndex = 0;
     private int menuIndex = 0;
     private GameObject showFood;
 
     private void Start()
     {
         //GameObject gm = Instantiate(Spawn, new Vector3(0, 0, 180), Quaternion.Euler(-90, 0, 0));
+        _GetDataFromQR = GetComponent<GetDataFromQR>();
+        _StoreData= GetComponent<StoreData>();
     }
     // Update is called once per frame
 
@@ -134,7 +140,12 @@ public class SpawnMenu : MonoBehaviour
     {
         DetectAR = GameObject.FindWithTag("Detector");
         Debug.Log("¸ÞÅ¸¸ù µð¹ö±ë : "+DetectAR);
-        return GetComponent<GetDataFromQR>().isGetInfo() && (DetectAR != null);
+        if (_GetDataFromQR.isGetInfo())
+        {
+            MainRestaurant = _StoreData.GetMenu(_GetDataFromQR.marketInfo().name);
+            foodPrefabs = MainRestaurant.totalMenu;
+        }
+        return _GetDataFromQR.isGetInfo() && (DetectAR != null);
     }
     public void SpawnItem()
     {
@@ -170,7 +181,7 @@ public class SpawnMenu : MonoBehaviour
         if (IsReady())
         {
             _plane = Instantiate(plane, DetectAR.transform.position, DetectAR.transform.rotation);
-            qrFrame.SetActive(false);
+            //qrFrame.SetActive(false);
         }
         else
         {
@@ -217,18 +228,30 @@ public class SpawnMenu : MonoBehaviour
             }
         }
     }
-    public void ChangeFoodIndex(int idx)
+    public void ChangeFoodIndex(int listIndex, int idx)
     {
+        if (idx < 0)
+        {
+            idx = foodPrefabs[listIndex].Length - 1;
+        }
+        else if(idx > foodPrefabs.Length - 1)
+        {
+            idx = 0;
+        }
+        ListIndex = listIndex;
         menuIndex = idx;
-        InstantiateFood(idx);
+        if (SpawnedObject != null)
+        {
+            InstantiateFood(idx);
+        }
     }
     public void NextFoodIndex()
     {
-        ChangeFoodIndex(menuIndex + 1);
+        ChangeFoodIndex(ListIndex,menuIndex + 1);
     }
     public void PrevFoodIndex()
     {
-        ChangeFoodIndex(menuIndex - 1);
+        ChangeFoodIndex(ListIndex,menuIndex - 1);
     }
 
     private void InstantiateFood(int index)
@@ -239,7 +262,7 @@ public class SpawnMenu : MonoBehaviour
             {
                 Destroy(showFood);
             }
-            showFood = Instantiate(foodPrefabs[index]);
+            showFood = Instantiate(foodPrefabs[ListIndex][index].menuPrefab);
             Debug.Log("¸ÞÅ¸¸ù µð¹ö±ë : " + showFood.transform.position);
             Debug.Log("¸ÞÅ¸¸ù µð¹ö±ë : " + showFood);
             showFood.transform.parent = SpawnedObject.transform;

@@ -11,12 +11,18 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/DongHyuk/Scene4_Payment.unity
     guid: 6ca8736e9e8777d4bb4a55499ad5a767
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/AR.unity
     guid: 42486d2e5b2a02f4684ff3bba046b62f
   - enabled: 0
     path: Assets/DongHyuk/HandTrackTemp.unity
     guid: 2f71ec3434a81c647927c183cf010e09
+  - enabled: 0
+    path: Assets/Scenes/MainScene.unity
+    guid: 16d15e2f726e06e42a912ef9542b45e3
+  - enabled: 1
+    path: Assets/DongHyuk/Scene5_FaceCollision/Scene5_FaceCollision.unity
+    guid: c88d6f754d04b0d48840ce07fe7d0ad5
   m_configObjects:
     UnityEditor.XR.ARCore.ARCoreSettings: {fileID: 11400000, guid: 8d1299e2732809c4184950b92a745112, type: 2}
     UnityEditor.XR.ARKit.ARKitSettings: {fileID: 11400000, guid: 32a4857178967934b818600c35762099, type: 2}

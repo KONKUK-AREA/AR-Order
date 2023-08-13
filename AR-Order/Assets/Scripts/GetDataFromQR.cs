@@ -18,7 +18,7 @@ public class GetDataFromQR : MonoBehaviour
     Texture2D qrTexture;
     [Header("Feedbacks")]
     public UnityEvent feedBack;
-   
+
 
     private bool isGetQR = false;
     private JsonInfo data;
@@ -75,3 +75,4 @@ public class GetDataFromQR : MonoBehaviour
         return data;
     }
 }
+
