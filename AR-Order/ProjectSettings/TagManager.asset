@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Plane
   - Detector
+  - Character
   layers:
   - Default
   - TransparentFX
