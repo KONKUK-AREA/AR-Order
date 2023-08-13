@@ -1,0 +1,11 @@
+Model Information:
+* title:	Pasta Bowl - Polycam
+* source:	https://sketchfab.com/3d-models/pasta-bowl-polycam-732042b6cff4493eb6281d90e1b46dc1
+* author:	Moshe Caine (https://sketchfab.com/moshecaine)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Pasta Bowl - Polycam" (https://sketchfab.com/3d-models/pasta-bowl-polycam-732042b6cff4493eb6281d90e1b46dc1) by Moshe Caine (https://sketchfab.com/moshecaine) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

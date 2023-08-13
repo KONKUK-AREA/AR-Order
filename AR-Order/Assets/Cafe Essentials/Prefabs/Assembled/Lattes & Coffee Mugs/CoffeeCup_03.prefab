@@ -154,10 +154,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: CoffeeCup_Latte_01
       objectReference: {fileID: 0}
-    - target: {fileID: 9035479655752479780, guid: d0109b7b827eeb843a17560cf7580184, type: 3}
-      propertyPath: m_Layer
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d0109b7b827eeb843a17560cf7580184, type: 3}
 --- !u!4 &2526683396177978000 stripped

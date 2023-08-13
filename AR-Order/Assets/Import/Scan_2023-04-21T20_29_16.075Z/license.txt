@@ -1,0 +1,11 @@
+Model Information:
+* title:	Scan 2023-04-21T20:29:16.075Z
+* source:	https://sketchfab.com/3d-models/scan-2023-04-21t202916075z-d6a37390d8684a95954430dbb50f9046
+* author:	EGFoodScans (https://sketchfab.com/Exuberance1323)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Scan 2023-04-21T20:29:16.075Z" (https://sketchfab.com/3d-models/scan-2023-04-21t202916075z-d6a37390d8684a95954430dbb50f9046) by EGFoodScans (https://sketchfab.com/Exuberance1323) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
