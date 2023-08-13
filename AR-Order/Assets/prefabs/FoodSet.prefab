@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4569039821275836540}
   - component: {fileID: 6986620269308668267}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: FoodSet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -42,7 +42,7 @@ MeshCollider:
   m_GameObject: {fileID: 935163098395865770}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
   m_Convex: 0
   m_CookingOptions: 30
@@ -60,7 +60,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: 6f0a4d48fa5ef4b43a409c7ba4089943, type: 3}
       propertyPath: m_Layer
-      value: 6
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 6f0a4d48fa5ef4b43a409c7ba4089943, type: 3}
       propertyPath: m_RootOrder
@@ -104,6 +104,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 6f0a4d48fa5ef4b43a409c7ba4089943, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2300000, guid: 6f0a4d48fa5ef4b43a409c7ba4089943, type: 3}
+      propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
