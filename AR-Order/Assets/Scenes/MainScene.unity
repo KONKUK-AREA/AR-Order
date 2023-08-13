@@ -3603,7 +3603,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: -0.00018311, y: -0.000061035156}
-  m_SizeDelta: {x: 322.007, y: 0}
+  m_SizeDelta: {x: 0.00073242, y: 0}
   m_Pivot: {x: 0, y: 1}
 --- !u!1 &361333910
 GameObject:
@@ -7146,7 +7146,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_SizeDelta: {x: -133.843, y: 0}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &653194035
 MonoBehaviour:
@@ -9738,9 +9738,9 @@ MonoBehaviour:
   m_Content: {fileID: 128762645}
   m_Horizontal: 1
   m_Vertical: 0
-  m_MovementType: 1
+  m_MovementType: 0
   m_Elasticity: 0.1
-  m_Inertia: 1
+  m_Inertia: 0
   m_DecelerationRate: 0.135
   m_ScrollSensitivity: 1
   m_Viewport: {fileID: 105043730}
@@ -11883,8 +11883,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 800, y: -789.9995}
-  m_SizeDelta: {x: 2500, y: 200}
+  m_AnchoredPosition: {x: 615.9188, y: -789.9995}
+  m_SizeDelta: {x: 2151.838, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1126825648
 MonoBehaviour:
@@ -11901,9 +11901,9 @@ MonoBehaviour:
   m_Content: {fileID: 359484601}
   m_Horizontal: 1
   m_Vertical: 0
-  m_MovementType: 1
-  m_Elasticity: 0.1
-  m_Inertia: 1
+  m_MovementType: 0
+  m_Elasticity: 2
+  m_Inertia: 0
   m_DecelerationRate: 0.135
   m_ScrollSensitivity: 1
   m_Viewport: {fileID: 653194034}
@@ -15803,7 +15803,7 @@ RectTransform:
   m_GameObject: {fileID: 1497598762}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.66666675, y: 0.66666675, z: 0.66666675}
+  m_LocalScale: {x: 0.8, y: 0.8, z: 0.66666675}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 909961326}
@@ -15811,7 +15811,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0.000061035156}
+  m_AnchoredPosition: {x: 0, y: -10}
   m_SizeDelta: {x: 75, y: 48}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1497598764
@@ -15834,7 +15834,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Default Name
+  m_text: "\uC2A4\uD30C\uC774\uC2DC \uCE74\uD3EC\uD0C0\uB098 \uB77C\uAD6C \uD30C\uC2A4\uD0C0"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 2f21220bf57516b4a9db8b90a80ef781, type: 2}
   m_sharedMaterial: {fileID: -5953393255626460615, guid: 2f21220bf57516b4a9db8b90a80ef781, type: 2}
@@ -15861,15 +15861,15 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 58
-  m_fontSizeBase: 58
+  m_fontSize: 40
+  m_fontSizeBase: 40
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
   m_HorizontalAlignment: 2
-  m_VerticalAlignment: 1024
+  m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
@@ -18669,10 +18669,10 @@ MonoBehaviour:
   - "\uC624\uC2A4\uD2F4 \uC548\uC2EC \uC2A4\uD14C\uC774\uD06C:\uB300\uD45C \uBA54\uB274!
     \uC721\uC999\uC774 \uAC00\uB4DD\uD55C \uC2A4\uD14C\uC774\uD06C\uC640 \uC218\uD504,
     \uBC14\uAC8C\uD2B8\uAE4C\uC9C0"
-  - "\uB77C\uAD6C \uD30C\uC2A4\uD0C0:\uBB49\uADFC\uD558\uAC8C \uB053\uC5EC\uB0B8
-    \uACE0\uAE30 \uC18C\uC2A4 \uC704\uC5D0 \uD30C\uB974\uBA54\uC0B0 \uCE58\uC988\uB97C
-    \uC5B9\uC740 \uC774\uD0C8\uB9AC\uC544 \uD30C\uC2A4\uD0C0"
-  - "\uC2A4\uD30C\uC774\uC2DC \uCE74\uD3EC\uD0C0\uB098 \uD32C\uB124 \uD30C\uC2A4\uD0C0:\uD1A0\uB9C8\uD1A0,
+  - "\uD1A0\uB9C8\uD1A0 \uBBF8\uD2B8\uBCFC \uD30C\uC2A4\uD0C0:\uBB49\uADFC\uD558\uAC8C
+    \uB053\uC5EC\uB0B8 \uACE0\uAE30 \uC18C\uC2A4 \uC704\uC5D0 \uD30C\uB974\uBA54\uC0B0
+    \uCE58\uC988\uB97C \uC5B9\uC740 \uC774\uD0C8\uB9AC\uC544 \uD30C\uC2A4\uD0C0"
+  - "\uC2A4\uD30C\uC774\uC2DC \uCE74\uD3EC\uD0C0\uB098 \uB77C\uAD6C \uD30C\uC2A4\uD0C0:\uD1A0\uB9C8\uD1A0,
     \uAC00\uC9C0, \uC591\uD30C\uC640 \uAC19\uC740 \uCC44\uC18C\uB85C \uBCF6\uC544
     \uB9CC\uB4E0 \uB2F4\uBC31\uD55C \uCE74\uD3EC\uD0C0\uB098 \uD30C\uC2A4\uD0C0"
   - "\uC544\uBA54\uB9AC\uCE78 \uBE0C\uB808\uB4DC \uD50C\uB808\uC774\uD2B8:\uC544\uBA54\uB9AC\uCE78
