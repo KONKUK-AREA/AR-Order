@@ -42,7 +42,7 @@ BoxCollider:
   m_GameObject: {fileID: 2567184574466891026}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 1, y: 0.5754554, z: 1}
   m_Center: {x: 0, y: 0.21227229, z: 0}
@@ -56,6 +56,10 @@ PrefabInstance:
     - target: {fileID: 2155537941850456165, guid: a24e2e887a03d3e4aa0b02225da7fed8, type: 3}
       propertyPath: m_Name
       value: Bagel_Everything
+      objectReference: {fileID: 0}
+    - target: {fileID: 2155537941850456165, guid: a24e2e887a03d3e4aa0b02225da7fed8, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 2389558418470597816, guid: a24e2e887a03d3e4aa0b02225da7fed8, type: 3}
       propertyPath: m_RootOrder
@@ -158,6 +162,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Dinner_Roll (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 8165533846724966684, guid: e22407af8b6e3cd47b6c6be5414a757b, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e22407af8b6e3cd47b6c6be5414a757b, type: 3}
 --- !u!1001 &2567184573388043802
@@ -214,6 +222,10 @@ PrefabInstance:
     - target: {fileID: 9095534275514442598, guid: 8e08267d337cf7d40b90b81ddbe95bde, type: 3}
       propertyPath: m_Name
       value: Donut_03
+      objectReference: {fileID: 0}
+    - target: {fileID: 9095534275514442598, guid: 8e08267d337cf7d40b90b81ddbe95bde, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8e08267d337cf7d40b90b81ddbe95bde, type: 3}
@@ -272,6 +284,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Shortcake
       objectReference: {fileID: 0}
+    - target: {fileID: 4299308208771630791, guid: f2657cfd98bd0534b9d3ffdba3dddbbe, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f2657cfd98bd0534b9d3ffdba3dddbbe, type: 3}
 --- !u!1001 &2567184573898880610
@@ -329,6 +345,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: MelonPan_Matcha
       objectReference: {fileID: 0}
+    - target: {fileID: 6740529676205229018, guid: cfa5193cb07ca4d4086839f51fbee435, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cfa5193cb07ca4d4086839f51fbee435, type: 3}
 --- !u!1001 &2567184574266624673
@@ -385,6 +405,10 @@ PrefabInstance:
     - target: {fileID: 8214831546097746479, guid: 8cefe4ae15fe34d4893b9c56721ad427, type: 3}
       propertyPath: m_Name
       value: Basket_Tray_02
+      objectReference: {fileID: 0}
+    - target: {fileID: 8214831546097746479, guid: 8cefe4ae15fe34d4893b9c56721ad427, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8cefe4ae15fe34d4893b9c56721ad427, type: 3}
@@ -448,6 +472,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Basket_Cloth_03
       objectReference: {fileID: 0}
+    - target: {fileID: 6714208599097975835, guid: 8b98a0541e29bba4d944eacc49a18ef2, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8b98a0541e29bba4d944eacc49a18ef2, type: 3}
 --- !u!1001 &2567184574681763229
@@ -504,6 +532,10 @@ PrefabInstance:
     - target: {fileID: 8165533846724966684, guid: e22407af8b6e3cd47b6c6be5414a757b, type: 3}
       propertyPath: m_Name
       value: Dinner_Roll
+      objectReference: {fileID: 0}
+    - target: {fileID: 8165533846724966684, guid: e22407af8b6e3cd47b6c6be5414a757b, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e22407af8b6e3cd47b6c6be5414a757b, type: 3}

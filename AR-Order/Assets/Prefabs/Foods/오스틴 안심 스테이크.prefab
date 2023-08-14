@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 5505478335632425556}
   - component: {fileID: 5505478335632425557}
   - component: {fileID: 5505478335632425554}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: fish steak
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -95,7 +95,7 @@ MeshCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 4
-  m_Convex: 1
+  m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300000, guid: 0b546980b912ed2448452cc4d057f5a3, type: 3}
 --- !u!1 &5505478335647900211
@@ -156,7 +156,7 @@ BoxCollider:
   m_GameObject: {fileID: 5505478335647900211}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 0.55537176, y: 0.18289167, z: 0.55280274}
   m_Center: {x: 0, y: 0, z: 0}
@@ -172,7 +172,7 @@ GameObject:
   - component: {fileID: 5505478335696229386}
   - component: {fileID: 5505478335696229387}
   - component: {fileID: 5505478335696229384}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: pea
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -255,7 +255,7 @@ MeshCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 4
-  m_Convex: 1
+  m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300000, guid: 27403228ce829c94087a82318a8b4ded, type: 3}
 --- !u!1 &5505478335739384274
@@ -270,7 +270,7 @@ GameObject:
   - component: {fileID: 5505478335739384278}
   - component: {fileID: 5505478335739384279}
   - component: {fileID: 5505478335739384276}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: parsley 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -353,7 +353,7 @@ MeshCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 4
-  m_Convex: 1
+  m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300000, guid: f061e5c2b13945a409e26db8da2d0ad5, type: 3}
 --- !u!1 &5505478336083078936
@@ -368,7 +368,7 @@ GameObject:
   - component: {fileID: 5505478336083078940}
   - component: {fileID: 5505478336083078941}
   - component: {fileID: 5505478336083078938}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: soup 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -451,7 +451,7 @@ MeshCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 4
-  m_Convex: 1
+  m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300000, guid: 9abf72147635bd44ca2438eea7de1b4b, type: 3}
 --- !u!1 &5505478336092733712
@@ -466,7 +466,7 @@ GameObject:
   - component: {fileID: 5505478336092733716}
   - component: {fileID: 5505478336092733717}
   - component: {fileID: 5505478336092733714}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: green salad 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -549,7 +549,7 @@ MeshCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 4
-  m_Convex: 1
+  m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300000, guid: b62bccc0343eacc449ca389cd564b54e, type: 3}
 --- !u!1 &5505478336248813577
@@ -564,7 +564,7 @@ GameObject:
   - component: {fileID: 5505478336248813581}
   - component: {fileID: 5505478336248813578}
   - component: {fileID: 5505478336248813579}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Saint Jacques
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -647,7 +647,7 @@ MeshCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 4
-  m_Convex: 1
+  m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300000, guid: 4c08d720456fc8e4cacc79f2215b0352, type: 3}
 --- !u!1 &5505478336322023700
@@ -662,7 +662,7 @@ GameObject:
   - component: {fileID: 5505478336322023704}
   - component: {fileID: 5505478336322023705}
   - component: {fileID: 5505478336322023702}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: bread  1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -745,7 +745,7 @@ MeshCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 4
-  m_Convex: 1
+  m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300000, guid: 23c7ba6339b88db4da05559258f617d3, type: 3}
 --- !u!1 &5505478336402360236
@@ -760,7 +760,7 @@ GameObject:
   - component: {fileID: 5505478336402359888}
   - component: {fileID: 5505478336402359889}
   - component: {fileID: 5505478336402360238}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Saint Jacques (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -843,7 +843,7 @@ MeshCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 4
-  m_Convex: 1
+  m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300000, guid: 4c08d720456fc8e4cacc79f2215b0352, type: 3}
 --- !u!1 &5505478336553151172
@@ -858,7 +858,7 @@ GameObject:
   - component: {fileID: 5505478336553151176}
   - component: {fileID: 5505478336553151177}
   - component: {fileID: 5505478336553151174}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: bread 2 slice
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -941,7 +941,7 @@ MeshCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 4
-  m_Convex: 1
+  m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300000, guid: 8fbd132500b1a5b468371d66e44cc127, type: 3}
 --- !u!1 &5505478336586723608
@@ -956,7 +956,7 @@ GameObject:
   - component: {fileID: 5505478336586723612}
   - component: {fileID: 5505478336586723613}
   - component: {fileID: 5505478336586723610}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: sauce 5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1039,7 +1039,7 @@ MeshCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 4
-  m_Convex: 1
+  m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300000, guid: 674fe39a3fba6de43b53ee25d67f48ed, type: 3}
 --- !u!1 &5505478336676726240
@@ -1054,7 +1054,7 @@ GameObject:
   - component: {fileID: 5505478336676726244}
   - component: {fileID: 5505478336676726245}
   - component: {fileID: 5505478336676726242}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: sauceboat 1 4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1138,7 +1138,7 @@ MeshCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 4
-  m_Convex: 1
+  m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300000, guid: 18cbcc94218866b40b7814161a731956, type: 3}
 --- !u!1 &5505478336774220916
@@ -1153,7 +1153,7 @@ GameObject:
   - component: {fileID: 5505478336774220920}
   - component: {fileID: 5505478336774220921}
   - component: {fileID: 5505478336774220918}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: bowl 1 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1237,7 +1237,7 @@ MeshCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 4
-  m_Convex: 1
+  m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300000, guid: 91b3c6c0830fbd24ba48e21462029376, type: 3}
 --- !u!1 &5505478336855242999
@@ -1252,7 +1252,7 @@ GameObject:
   - component: {fileID: 5505478336855243003}
   - component: {fileID: 5505478336855243000}
   - component: {fileID: 5505478336855243001}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: cherry tomato (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1335,7 +1335,7 @@ MeshCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 4
-  m_Convex: 1
+  m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300000, guid: 28adbd48ecb85694780d7521e32457c3, type: 3}
 --- !u!1 &5505478336975533942
@@ -1350,7 +1350,7 @@ GameObject:
   - component: {fileID: 5505478336975533946}
   - component: {fileID: 5505478336975533947}
   - component: {fileID: 5505478336975533944}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Saint Jacques (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1433,7 +1433,7 @@ MeshCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 4
-  m_Convex: 1
+  m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300000, guid: 4c08d720456fc8e4cacc79f2215b0352, type: 3}
 --- !u!1 &5505478337096081524
@@ -1448,7 +1448,7 @@ GameObject:
   - component: {fileID: 5505478337096081528}
   - component: {fileID: 5505478337096081529}
   - component: {fileID: 5505478337096081526}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: potatoes half (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1531,7 +1531,7 @@ MeshCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 4
-  m_Convex: 1
+  m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300000, guid: e8797c3fc60b0374298e1ee7c4388eff, type: 3}
 --- !u!1 &5505478337173175467
@@ -1546,7 +1546,7 @@ GameObject:
   - component: {fileID: 5505478337173175471}
   - component: {fileID: 5505478337173175468}
   - component: {fileID: 5505478337173175469}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: potatoes half
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1629,7 +1629,7 @@ MeshCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 4
-  m_Convex: 1
+  m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300000, guid: e8797c3fc60b0374298e1ee7c4388eff, type: 3}
 --- !u!1 &5505478337252136650
@@ -1644,7 +1644,7 @@ GameObject:
   - component: {fileID: 5505478337252136654}
   - component: {fileID: 5505478337252136655}
   - component: {fileID: 5505478337252136652}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: cheese 4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1727,7 +1727,7 @@ MeshCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 4
-  m_Convex: 1
+  m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300000, guid: 8daac38f09daad34fa419a29a49e749e, type: 3}
 --- !u!1 &5505478337260587440
@@ -1742,7 +1742,7 @@ GameObject:
   - component: {fileID: 5505478337260587444}
   - component: {fileID: 5505478337260587445}
   - component: {fileID: 5505478337260587442}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: cherry tomato
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1825,7 +1825,7 @@ MeshCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 4
-  m_Convex: 1
+  m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300000, guid: 28adbd48ecb85694780d7521e32457c3, type: 3}
 --- !u!1001 &5505478335722686386
@@ -1838,6 +1838,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: 20293085696677d40a2cc969adbb2e12, type: 3}
       propertyPath: m_Name
       value: plate02 (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 20293085696677d40a2cc969adbb2e12, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 20293085696677d40a2cc969adbb2e12, type: 3}
       propertyPath: m_RootOrder
@@ -1902,3 +1906,22 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: 20293085696677d40a2cc969adbb2e12, type: 3}
   m_PrefabInstance: {fileID: 5505478335722686386}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &5505478335722782994 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 100000, guid: 20293085696677d40a2cc969adbb2e12, type: 3}
+  m_PrefabInstance: {fileID: 5505478335722686386}
+  m_PrefabAsset: {fileID: 0}
+--- !u!64 &296008022642355310
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5505478335722782994}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -4850532726680341992, guid: 20293085696677d40a2cc969adbb2e12, type: 3}

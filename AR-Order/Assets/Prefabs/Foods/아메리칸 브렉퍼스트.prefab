@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 5722989910629199964}
   - component: {fileID: 5722989910629199967}
   - component: {fileID: 5722989910629199966}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: tomato slice (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -27,8 +27,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5722989910629199960}
   m_LocalRotation: {x: -0.000000021713035, y: 0.11407018, z: -0.0000000024930829, w: 0.9934727}
-  m_LocalPosition: {x: -0.15300006, y: 0.033832997, z: 0.7429999}
-  m_LocalScale: {x: 3.808795, y: 3.8087947, z: 3.808795}
+  m_LocalPosition: {x: -0.15300006, y: 0.033832997, z: 0.61}
+  m_LocalScale: {x: 3, y: 3, z: 3}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 5722989910919775697}
@@ -110,7 +110,7 @@ GameObject:
   - component: {fileID: 5722989910744317194}
   - component: {fileID: 5722989910744317189}
   - component: {fileID: 5722989910744317188}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: piece of fish
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -208,7 +208,7 @@ GameObject:
   - component: {fileID: 5722989910763755494}
   - component: {fileID: 5722989910763755489}
   - component: {fileID: 5722989910763755488}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: bread  1 slice 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -224,7 +224,7 @@ Transform:
   m_GameObject: {fileID: 5722989910763755490}
   m_LocalRotation: {x: -0.000000019033848, y: 0.4914826, z: -0.000000010741693, w: 0.8708874}
   m_LocalPosition: {x: 0.36388993, y: 0.045260504, z: -0.21112287}
-  m_LocalScale: {x: 2.7798, y: 2.7798, z: 2.7798}
+  m_LocalScale: {x: 2.3, y: 2.3, z: 2.3}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 5722989910919775697}
@@ -351,7 +351,7 @@ BoxCollider:
   m_GameObject: {fileID: 5722989910919775696}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 1.6, y: 0.3, z: 1.8}
   m_Center: {x: 0, y: 0, z: 0}
@@ -367,7 +367,7 @@ GameObject:
   - component: {fileID: 5722989911137612986}
   - component: {fileID: 5722989911137612981}
   - component: {fileID: 5722989911137612980}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: piece of fish
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -465,7 +465,7 @@ GameObject:
   - component: {fileID: 5722989911210350803}
   - component: {fileID: 5722989911210350802}
   - component: {fileID: 5722989911210350829}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: egg half (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -480,8 +480,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5722989911210350831}
   m_LocalRotation: {x: -0.05820925, y: -0.96702075, z: -0.0063425284, w: 0.24787563}
-  m_LocalPosition: {x: -0.5940001, y: 0.0037660003, z: 0.53199995}
-  m_LocalScale: {x: 2.585185, y: 2.5851853, z: 2.5851855}
+  m_LocalPosition: {x: -0.493, y: 0.0037660003, z: 0.455}
+  m_LocalScale: {x: 2, y: 2, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 5722989910919775697}
@@ -563,7 +563,7 @@ GameObject:
   - component: {fileID: 5722989911293693915}
   - component: {fileID: 5722989911293693914}
   - component: {fileID: 5722989911293693909}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: bread  1 slice 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -579,7 +579,7 @@ Transform:
   m_GameObject: {fileID: 5722989911293693911}
   m_LocalRotation: {x: -0.000000021392639, y: -0.20475617, z: 0.0000000044750883, w: 0.97881305}
   m_LocalPosition: {x: 0.36199993, y: -0.032099485, z: -0.18742311}
-  m_LocalScale: {x: 2.7798, y: 2.7798, z: 2.7798}
+  m_LocalScale: {x: 2.4, y: 2.4, z: 2.4}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 5722989910919775697}
@@ -661,7 +661,7 @@ GameObject:
   - component: {fileID: 5722989911310577694}
   - component: {fileID: 5722989911310577689}
   - component: {fileID: 5722989911310577688}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: fried egg
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -759,7 +759,7 @@ GameObject:
   - component: {fileID: 5722989911486567644}
   - component: {fileID: 5722989911486567647}
   - component: {fileID: 5722989911486567646}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: piece of fish (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -857,7 +857,7 @@ GameObject:
   - component: {fileID: 5722989911590855956}
   - component: {fileID: 5722989911590855959}
   - component: {fileID: 5722989911590855958}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: piece of fish (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -955,7 +955,7 @@ GameObject:
   - component: {fileID: 5722989911649902417}
   - component: {fileID: 5722989911649902416}
   - component: {fileID: 5722989911649902419}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: piece of fish (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1053,7 +1053,7 @@ GameObject:
   - component: {fileID: 5722989911925180266}
   - component: {fileID: 5722989911925180261}
   - component: {fileID: 5722989911925180260}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: piece of fish (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1151,7 +1151,7 @@ GameObject:
   - component: {fileID: 5722989912042416405}
   - component: {fileID: 5722989912042416404}
   - component: {fileID: 5722989912042416407}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: skewer 2 fish (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1166,8 +1166,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5722989912042416401}
   m_LocalRotation: {x: 8.881784e-16, y: 0.9835134, z: -1.7763568e-15, w: 0.18083529}
-  m_LocalPosition: {x: 0.31999993, y: -0.011739492, z: 0.88757694}
-  m_LocalScale: {x: 1.9458599, y: 1.9458599, z: 1.9458599}
+  m_LocalPosition: {x: 0.174, y: -0.011739492, z: 0.59}
+  m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 5722989910744317191}
@@ -1253,7 +1253,7 @@ GameObject:
   - component: {fileID: 5722989912073851703}
   - component: {fileID: 5722989912073851702}
   - component: {fileID: 5722989912073851697}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: piece of fish (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1351,7 +1351,7 @@ GameObject:
   - component: {fileID: 5722989912079761287}
   - component: {fileID: 5722989912079761286}
   - component: {fileID: 5722989912079761281}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: egg half (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1366,8 +1366,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5722989912079761283}
   m_LocalRotation: {x: -0.05820925, y: -0.96702075, z: -0.0063425284, w: 0.24787563}
-  m_LocalPosition: {x: -0.379, y: 0.0037660003, z: 0.49999988}
-  m_LocalScale: {x: 2.585185, y: 2.5851853, z: 2.5851855}
+  m_LocalPosition: {x: -0.2779999, y: 0.0037660003, z: 0.42299995}
+  m_LocalScale: {x: 2, y: 2, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 5722989910919775697}
@@ -1449,7 +1449,7 @@ GameObject:
   - component: {fileID: 5722989912311784548}
   - component: {fileID: 5722989912311784551}
   - component: {fileID: 5722989912311784550}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: mushroom slice
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1547,7 +1547,7 @@ GameObject:
   - component: {fileID: 5722989912429879319}
   - component: {fileID: 5722989912429879318}
   - component: {fileID: 5722989912429879313}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: piece of fish (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1645,7 +1645,7 @@ GameObject:
   - component: {fileID: 5722989912512753016}
   - component: {fileID: 5722989912512753019}
   - component: {fileID: 5722989912512753018}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: tomato slice
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1660,8 +1660,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5722989912512753012}
   m_LocalRotation: {x: -0.000000021713035, y: 0.11407018, z: -0.0000000024930829, w: 0.9934727}
-  m_LocalPosition: {x: -0.34400004, y: 0.033832997, z: 0.7130002}
-  m_LocalScale: {x: 3.808795, y: 3.8087947, z: 3.808795}
+  m_LocalPosition: {x: -0.34400004, y: 0.033832997, z: 0.5800003}
+  m_LocalScale: {x: 3, y: 3, z: 3}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 5722989910919775697}
@@ -1743,7 +1743,7 @@ GameObject:
   - component: {fileID: 5722989912603256064}
   - component: {fileID: 5722989912603256067}
   - component: {fileID: 5722989912603256066}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: mushroom slice (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1841,7 +1841,7 @@ GameObject:
   - component: {fileID: 5722989912663091972}
   - component: {fileID: 5722989912663091975}
   - component: {fileID: 5722989912663091974}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: skewer 2 fish
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1857,7 +1857,7 @@ Transform:
   m_GameObject: {fileID: 5722989912663091968}
   m_LocalRotation: {x: 8.881784e-16, y: 0.9835134, z: -1.7763568e-15, w: 0.18083529}
   m_LocalPosition: {x: 0.23299992, y: -0.011739492, z: 0.8125769}
-  m_LocalScale: {x: 1.9458599, y: 1.9458599, z: 1.9458599}
+  m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 5722989911137612983}
@@ -1943,6 +1943,18 @@ PrefabInstance:
       value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 6961594250114657629, guid: 992019f1d21899243ba5c9eb9b54a42a, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 6961594250114657629, guid: 992019f1d21899243ba5c9eb9b54a42a, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 6961594250114657629, guid: 992019f1d21899243ba5c9eb9b54a42a, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 6961594250114657629, guid: 992019f1d21899243ba5c9eb9b54a42a, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.06399995
       objectReference: {fileID: 0}
@@ -1986,6 +1998,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Apple_Green_Slice
       objectReference: {fileID: 0}
+    - target: {fileID: 7770782737757911015, guid: 992019f1d21899243ba5c9eb9b54a42a, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 992019f1d21899243ba5c9eb9b54a42a, type: 3}
 --- !u!4 &3454445729079839919 stripped
@@ -2000,9 +2016,25 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 5722989910919775697}
     m_Modifications:
+    - target: {fileID: 3314183087704063654, guid: 9fde6a7f4bb5c6e4ebf4f171980f0452, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 5107557569247978065, guid: 9fde6a7f4bb5c6e4ebf4f171980f0452, type: 3}
       propertyPath: m_RootOrder
       value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 5107557569247978065, guid: 9fde6a7f4bb5c6e4ebf4f171980f0452, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 5107557569247978065, guid: 9fde6a7f4bb5c6e4ebf4f171980f0452, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 5107557569247978065, guid: 9fde6a7f4bb5c6e4ebf4f171980f0452, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.8
       objectReference: {fileID: 0}
     - target: {fileID: 5107557569247978065, guid: 9fde6a7f4bb5c6e4ebf4f171980f0452, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2048,6 +2080,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Sandwich_Deli_Whole
       objectReference: {fileID: 0}
+    - target: {fileID: 5596391180776667371, guid: 9fde6a7f4bb5c6e4ebf4f171980f0452, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9fde6a7f4bb5c6e4ebf4f171980f0452, type: 3}
 --- !u!4 &688370749902114367 stripped
@@ -2065,6 +2101,18 @@ PrefabInstance:
     - target: {fileID: 6961594250114657629, guid: 992019f1d21899243ba5c9eb9b54a42a, type: 3}
       propertyPath: m_RootOrder
       value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 6961594250114657629, guid: 992019f1d21899243ba5c9eb9b54a42a, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 6961594250114657629, guid: 992019f1d21899243ba5c9eb9b54a42a, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 6961594250114657629, guid: 992019f1d21899243ba5c9eb9b54a42a, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.7
       objectReference: {fileID: 0}
     - target: {fileID: 6961594250114657629, guid: 992019f1d21899243ba5c9eb9b54a42a, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2110,6 +2158,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Apple_Green_Slice (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 7770782737757911015, guid: 992019f1d21899243ba5c9eb9b54a42a, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 992019f1d21899243ba5c9eb9b54a42a, type: 3}
 --- !u!4 &3454445730091941270 stripped
@@ -2128,21 +2180,25 @@ PrefabInstance:
       propertyPath: m_Name
       value: plate01
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 6f0a4d48fa5ef4b43a409c7ba4089943, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 6f0a4d48fa5ef4b43a409c7ba4089943, type: 3}
       propertyPath: m_RootOrder
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 6f0a4d48fa5ef4b43a409c7ba4089943, type: 3}
       propertyPath: m_LocalScale.x
-      value: 3.2441
+      value: 2.5
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 6f0a4d48fa5ef4b43a409c7ba4089943, type: 3}
       propertyPath: m_LocalScale.y
-      value: 3.2441
+      value: 2.5
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 6f0a4d48fa5ef4b43a409c7ba4089943, type: 3}
       propertyPath: m_LocalScale.z
-      value: 3.2441
+      value: 2.5
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 6f0a4d48fa5ef4b43a409c7ba4089943, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2186,6 +2242,25 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6f0a4d48fa5ef4b43a409c7ba4089943, type: 3}
+--- !u!1 &5722989912319409620 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 100000, guid: 6f0a4d48fa5ef4b43a409c7ba4089943, type: 3}
+  m_PrefabInstance: {fileID: 5722989912319376244}
+  m_PrefabAsset: {fileID: 0}
+--- !u!64 &681811277662179610
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5722989912319409620}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 4300000, guid: 6f0a4d48fa5ef4b43a409c7ba4089943, type: 3}
 --- !u!4 &5722989912319762932 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: 6f0a4d48fa5ef4b43a409c7ba4089943, type: 3}
@@ -2198,9 +2273,25 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 5722989910919775697}
     m_Modifications:
+    - target: {fileID: 3314183087704063654, guid: 9fde6a7f4bb5c6e4ebf4f171980f0452, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 5107557569247978065, guid: 9fde6a7f4bb5c6e4ebf4f171980f0452, type: 3}
       propertyPath: m_RootOrder
       value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5107557569247978065, guid: 9fde6a7f4bb5c6e4ebf4f171980f0452, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 5107557569247978065, guid: 9fde6a7f4bb5c6e4ebf4f171980f0452, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 5107557569247978065, guid: 9fde6a7f4bb5c6e4ebf4f171980f0452, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.8
       objectReference: {fileID: 0}
     - target: {fileID: 5107557569247978065, guid: 9fde6a7f4bb5c6e4ebf4f171980f0452, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2245,6 +2336,10 @@ PrefabInstance:
     - target: {fileID: 5596391180776667371, guid: 9fde6a7f4bb5c6e4ebf4f171980f0452, type: 3}
       propertyPath: m_Name
       value: Sandwich_Deli_Whole (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5596391180776667371, guid: 9fde6a7f4bb5c6e4ebf4f171980f0452, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9fde6a7f4bb5c6e4ebf4f171980f0452, type: 3}

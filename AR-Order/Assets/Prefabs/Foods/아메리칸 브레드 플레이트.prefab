@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5854894870301684912}
   - component: {fileID: 7241313166406195375}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: "\uC544\uBA54\uB9AC\uCE78 \uBE0C\uB808\uB4DC \uD50C\uB808\uC774\uD2B8"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -47,7 +47,7 @@ BoxCollider:
   m_GameObject: {fileID: 5854894870301684913}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 1.4009486, y: 0.36145192, z: 1.301949}
   m_Center: {x: -0.93307227, y: 0.081674725, z: -0.15097454}
@@ -61,6 +61,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: f291259abf1bd3a4481cc3f1baf9b528, type: 3}
       propertyPath: m_Name
       value: plate03
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: f291259abf1bd3a4481cc3f1baf9b528, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: f291259abf1bd3a4481cc3f1baf9b528, type: 3}
       propertyPath: m_RootOrder
@@ -120,6 +124,25 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f291259abf1bd3a4481cc3f1baf9b528, type: 3}
+--- !u!1 &5854894869766690202 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 100000, guid: f291259abf1bd3a4481cc3f1baf9b528, type: 3}
+  m_PrefabInstance: {fileID: 5854894869766656826}
+  m_PrefabAsset: {fileID: 0}
+--- !u!64 &2006842824252767347
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5854894869766690202}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 4300000, guid: f291259abf1bd3a4481cc3f1baf9b528, type: 3}
 --- !u!4 &5854894869766785466 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: f291259abf1bd3a4481cc3f1baf9b528, type: 3}
@@ -179,6 +202,10 @@ PrefabInstance:
     - target: {fileID: 8740829918098540896, guid: 39f806844cdc9ba45b5b7ed9ee2a5d73, type: 3}
       propertyPath: m_Name
       value: Pretzel_03
+      objectReference: {fileID: 0}
+    - target: {fileID: 8740829918098540896, guid: 39f806844cdc9ba45b5b7ed9ee2a5d73, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 39f806844cdc9ba45b5b7ed9ee2a5d73, type: 3}
@@ -242,6 +269,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Pretzel_03 (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 8740829918098540896, guid: 39f806844cdc9ba45b5b7ed9ee2a5d73, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 39f806844cdc9ba45b5b7ed9ee2a5d73, type: 3}
 --- !u!4 &3601293931565438031 stripped
@@ -260,13 +291,17 @@ PrefabInstance:
       propertyPath: m_Name
       value: Croissant_04
       objectReference: {fileID: 0}
+    - target: {fileID: 4925556770163883032, guid: 8f5cbf60f1baa584c865104169cdef01, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 5673825902830291734, guid: 8f5cbf60f1baa584c865104169cdef01, type: 3}
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5673825902830291734, guid: 8f5cbf60f1baa584c865104169cdef01, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.455
+      value: 0.46
       objectReference: {fileID: 0}
     - target: {fileID: 5673825902830291734, guid: 8f5cbf60f1baa584c865104169cdef01, type: 3}
       propertyPath: m_LocalPosition.y
@@ -274,7 +309,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5673825902830291734, guid: 8f5cbf60f1baa584c865104169cdef01, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.087
+      value: -0.17
       objectReference: {fileID: 0}
     - target: {fileID: 5673825902830291734, guid: 8f5cbf60f1baa584c865104169cdef01, type: 3}
       propertyPath: m_LocalRotation.w
@@ -317,6 +352,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Croissant_Dough_01
       objectReference: {fileID: 0}
+    - target: {fileID: 449088767719263440, guid: 8148607151586344085fc9cadfe0cc35, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 8330033989293340219, guid: 8148607151586344085fc9cadfe0cc35, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -335,7 +374,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8330033989293340219, guid: 8148607151586344085fc9cadfe0cc35, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.747
+      value: 0.44
       objectReference: {fileID: 0}
     - target: {fileID: 8330033989293340219, guid: 8148607151586344085fc9cadfe0cc35, type: 3}
       propertyPath: m_LocalPosition.y
@@ -343,7 +382,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8330033989293340219, guid: 8148607151586344085fc9cadfe0cc35, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.039
+      value: -0.75
       objectReference: {fileID: 0}
     - target: {fileID: 8330033989293340219, guid: 8148607151586344085fc9cadfe0cc35, type: 3}
       propertyPath: m_LocalRotation.w
@@ -385,6 +424,10 @@ PrefabInstance:
     - target: {fileID: 7869923257802508542, guid: f2d2b09c390fb4e449121ba6ac0881d9, type: 3}
       propertyPath: m_Name
       value: Baguette_03 (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7869923257802508542, guid: f2d2b09c390fb4e449121ba6ac0881d9, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 8419567399705961705, guid: f2d2b09c390fb4e449121ba6ac0881d9, type: 3}
       propertyPath: m_RootOrder
@@ -516,6 +559,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Baguette_03_End
       objectReference: {fileID: 0}
+    - target: {fileID: 5763466573781985916, guid: f328014ae29717b4fbdac559fa3f62ab, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f328014ae29717b4fbdac559fa3f62ab, type: 3}
 --- !u!4 &5413888372258397060 stripped
@@ -533,6 +580,10 @@ PrefabInstance:
     - target: {fileID: 419674119915099836, guid: faf7870e945a917438b51f449ba5a424, type: 3}
       propertyPath: m_Name
       value: Rye_Marble_Slice
+      objectReference: {fileID: 0}
+    - target: {fileID: 419674119915099836, guid: faf7870e945a917438b51f449ba5a424, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 1286387061622746474, guid: faf7870e945a917438b51f449ba5a424, type: 3}
       propertyPath: m_RootOrder

@@ -44,6 +44,7 @@ public class SpawnMenu : MonoBehaviour
 
     private void Start()
     {
+        ARCameraManager aR= new ARCameraManager();
         //GameObject gm = Instantiate(Spawn, new Vector3(0, 0, 180), Quaternion.Euler(-90, 0, 0));
         _GetDataFromQR = GetComponent<GetDataFromQR>();
         _StoreData= GetComponent<StoreData>();
@@ -77,7 +78,7 @@ public class SpawnMenu : MonoBehaviour
             Ray ray = arSessionOrigin.camera.ScreenPointToRay(pos);
             if (Physics.Raycast(ray, out hitLayerDish, Mathf.Infinity, dishLayerMask))
             {
-                offset = hitLayerDish.point - hitLayerDish.transform.position;
+                offset = hitLayerDish.point - SpawnedObject.transform.position;
                 isDrag = true;
             }
         }
@@ -93,22 +94,22 @@ public class SpawnMenu : MonoBehaviour
             {
                 if (secondTouchPos.y > 0)
                 {
-                    hitLayerDish.transform.Rotate(0f, -150f * Time.deltaTime, 0f);
+                    SpawnedObject.transform.Rotate(0f, -150f * Time.deltaTime, 0f);
                 }
                 else
                 {
-                    hitLayerDish.transform.Rotate(0f, 150f * Time.deltaTime, 0f);
+                    SpawnedObject.transform.Rotate(0f, 150f * Time.deltaTime, 0f);
                 }
             }
             else if(touch.position.x>secondTouch.position.x)
             {
                 if (secondTouchPos.y > 0)
                 {
-                    hitLayerDish.transform.Rotate(0f, 150f * Time.deltaTime, 0f);
+                    SpawnedObject.transform.Rotate(0f, 150f * Time.deltaTime, 0f);
                 }
                 else
                 {
-                    hitLayerDish.transform.Rotate(0f, -150f * Time.deltaTime, 0f);
+                    SpawnedObject.transform.Rotate(0f, -150f * Time.deltaTime, 0f);
                 }
             }
         }

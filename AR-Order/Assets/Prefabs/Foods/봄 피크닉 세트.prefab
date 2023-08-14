@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3706041479845213965}
   - component: {fileID: 1734868030801971390}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: "\uBD04 \uD53C\uD06C\uB2C9 \uC138\uD2B8"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -42,7 +42,7 @@ BoxCollider:
   m_GameObject: {fileID: 3706041479845213966}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 1, y: 0.79041654, z: 1}
   m_Center: {x: 0, y: 0.44437835, z: 0}
@@ -56,6 +56,14 @@ PrefabInstance:
     - target: {fileID: 4467432685600786029, guid: cf29af02fc935054e87be1343887dc5a, type: 3}
       propertyPath: m_Name
       value: Basket_02
+      objectReference: {fileID: 0}
+    - target: {fileID: 4467432685600786029, guid: cf29af02fc935054e87be1343887dc5a, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4889117864264883801, guid: cf29af02fc935054e87be1343887dc5a, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 6909373851708026481, guid: cf29af02fc935054e87be1343887dc5a, type: 3}
       propertyPath: m_RootOrder
@@ -118,6 +126,10 @@ PrefabInstance:
     - target: {fileID: 3252765755670819163, guid: f40b9f91552905640933ccc839d99175, type: 3}
       propertyPath: m_Name
       value: Concha_04
+      objectReference: {fileID: 0}
+    - target: {fileID: 3252765755670819163, guid: f40b9f91552905640933ccc839d99175, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 6206154810554623773, guid: f40b9f91552905640933ccc839d99175, type: 3}
       propertyPath: m_RootOrder
@@ -220,6 +232,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Wreath_Poppyseed
       objectReference: {fileID: 0}
+    - target: {fileID: 3963373379499497021, guid: bc34aea40bf3f3c44a4d0183188fbbfd, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bc34aea40bf3f3c44a4d0183188fbbfd, type: 3}
 --- !u!4 &1875043641240689036 stripped
@@ -282,6 +298,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Rye_Dark
       objectReference: {fileID: 0}
+    - target: {fileID: 8872253859321803320, guid: f56ca7c6c2bb85144b81d1f7cae57a69, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f56ca7c6c2bb85144b81d1f7cae57a69, type: 3}
 --- !u!1001 &3706041480791813472
@@ -339,6 +359,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Challah_02
       objectReference: {fileID: 0}
+    - target: {fileID: 2873023363286860260, guid: 3e1842f6511e8304f856bd0fa18d6af5, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3e1842f6511e8304f856bd0fa18d6af5, type: 3}
 --- !u!1001 &3706041480868533031
@@ -395,6 +419,10 @@ PrefabInstance:
     - target: {fileID: 6443329150125516835, guid: 9e19261e23d2e7d43a70921a32b1a54a, type: 3}
       propertyPath: m_Name
       value: Basket_Cloth_01 (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6443329150125516835, guid: 9e19261e23d2e7d43a70921a32b1a54a, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9e19261e23d2e7d43a70921a32b1a54a, type: 3}

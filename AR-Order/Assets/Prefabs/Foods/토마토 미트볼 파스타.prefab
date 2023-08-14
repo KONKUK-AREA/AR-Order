@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3375371268965036751}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: GLTF_SceneRootNode
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -41,7 +41,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2570078730292926482}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Sketchfab_model
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -75,7 +75,8 @@ GameObject:
   - component: {fileID: 6931810322905784478}
   - component: {fileID: 5095476344178828332}
   - component: {fileID: 400268750595924465}
-  m_Layer: 0
+  - component: {fileID: 6031330194954714891}
+  m_Layer: 6
   m_Name: Object_5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -147,6 +148,20 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &6031330194954714891
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3411553213689995089}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 4300000, guid: 3417995870f37684bae7890e743e59b6, type: 2}
 --- !u!1 &5391280747871084367
 GameObject:
   m_ObjectHideFlags: 0
@@ -156,7 +171,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7940556384215793229}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: pasta.1_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -221,7 +236,7 @@ BoxCollider:
   m_GameObject: {fileID: 6479930446329174826}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 0.36373818, y: 0.1485993, z: 0.31807846}
   m_Center: {x: 0.0068661273, y: 0.05950649, z: 0.010920577}
@@ -234,7 +249,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9175677039811016328}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: RootNode.0_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -266,7 +281,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4111436147593640799}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: root
   m_TagString: Untagged
   m_Icon: {fileID: 0}
