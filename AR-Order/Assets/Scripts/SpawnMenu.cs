@@ -165,7 +165,7 @@ public class SpawnMenu : MonoBehaviour
                 Pos = hitLayerMask.point;
                 Rot = hitLayerMask.transform.eulerAngles;
                 SpawnedObject = Instantiate(foodSet, Pos, Quaternion.Euler(Rot));
-                SpawnedObject.transform.localScale = new Vector3(0.4f, 0.4f, 0.4f);
+                SpawnedObject.transform.localScale = new Vector3(0.7f, 0.7f, 0.7f);
                 InstantiateFood(menuIndex);
                 Debug.Log("¸ÞÅ¸¸ù µð¹ö±ë : " + SpawnedObject.transform.position);
             }
@@ -268,7 +268,7 @@ public class SpawnMenu : MonoBehaviour
             Debug.Log("¸ÞÅ¸¸ù µð¹ö±ë : " + showFood.transform.position);
             Debug.Log("¸ÞÅ¸¸ù µð¹ö±ë : " + showFood);
             showFood.transform.parent = SpawnedObject.transform;
-            showFood.transform.localScale = new Vector3(0.7f, 0.7f, 0.7f);
+            showFood.transform.localScale = Vector3.one * 0.7f;
             showFood.transform.localEulerAngles = Vector3.zero;
             showFood.transform.localPosition = Vector3.zero;
             Debug.Log("¸ÞÅ¸¸ù µð¹ö±ë :" + showFood.transform.parent.name);

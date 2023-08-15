@@ -460,6 +460,12 @@ public class UIControlManager : MonoBehaviour
 
     public void ClickedOrderBtn()
     {
+        while (cartList.Count > 0)
+        {
+            String str = cartList[0].GetComponent<UIControlManagerForObjMenuClone>().menuName;
+            RemoveCart(str);
+        }
+        UpdateTotal(0, 0);
         ChangeLayer(4);
     }
     public void ClickedOrderSuccessBtn()

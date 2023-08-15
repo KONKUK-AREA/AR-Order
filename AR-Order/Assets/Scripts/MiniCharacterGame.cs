@@ -281,9 +281,8 @@ public class MiniCharacterGame : MonoBehaviour
     private void Event()
     {
         isAnim = true;   
-        eat = Instantiate(eatPrefab, transform.position + transform.right * 0.16f, transform.rotation);
+        eat = Instantiate(eatPrefab, transform.position + transform.forward * 0.16f, transform.rotation);
         eat.transform.localScale = Vector3.one * 0.3f;
-        transform.Rotate(0f,-90f,0f);
         anim.SetBool("isEat",true);
         particle.Play();
         audioSource.Play();
