@@ -633,8 +633,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 24
-  m_fontSizeBase: 24
+  m_fontSize: 40
+  m_fontSizeBase: 40
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -713,7 +713,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 800, y: -200}
-  m_SizeDelta: {x: 50, y: 50}
+  m_SizeDelta: {x: 80, y: 80}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7316127947740466367
 CanvasRenderer:
@@ -979,7 +979,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 3}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7316127948765433721
@@ -1010,7 +1010,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Menu1
+  m_text: "\uC2A4\uD30C\uC774\uC2DC \uCE74\uD3EC\uD0C0\uB098 \uB77C\uAD6C \uD30C\uC2A4\uD0C0"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: ad47f77ecf60d444ebd3f987e38cc3ff, type: 2}
   m_sharedMaterial: {fileID: -6330723350756374847, guid: ad47f77ecf60d444ebd3f987e38cc3ff, type: 2}
@@ -1073,7 +1073,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_margin: {x: 0, y: 0, z: -308.92505, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -1252,7 +1252,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 600, y: -200}
-  m_SizeDelta: {x: 50, y: 50}
+  m_SizeDelta: {x: 80, y: 80}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7316127948932980562
 CanvasRenderer:
@@ -1408,10 +1408,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fbbe2b473062555428ab8d4da18d2411, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  menuName: 
   TotalPriceForEachMenu: {fileID: 7316127947322759941}
-  TextTotalPriceCart:
-  - {fileID: 0}
-  - {fileID: 0}
+  TextMenuName: {fileID: 7316127948765433722}
+  TextMenuPrice: {fileID: 7316127949056051736}
+  TextMenuCount: {fileID: 7316127947625385646}
+  menuImg: {fileID: 7316127949036334367}
 --- !u!1 &7316127949036334361
 GameObject:
   m_ObjectHideFlags: 0

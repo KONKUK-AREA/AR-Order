@@ -514,7 +514,6 @@ GameObject:
   - component: {fileID: 323450354}
   - component: {fileID: 323450353}
   - component: {fileID: 323450352}
-  - component: {fileID: 323450357}
   m_Layer: 0
   m_Name: AR Camera
   m_TagString: MainCamera
@@ -631,18 +630,6 @@ Transform:
   m_Father: {fileID: 613770170}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &323450357
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 323450350}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a79441f348de89743a2939f4d699eac1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &343315700
 GameObject:
   m_ObjectHideFlags: 0
@@ -976,6 +963,8 @@ GameObject:
   - component: {fileID: 613770170}
   - component: {fileID: 613770169}
   - component: {fileID: 613770168}
+  - component: {fileID: 613770172}
+  - component: {fileID: 613770171}
   m_Layer: 0
   m_Name: AR Session Origin
   m_TagString: Untagged
@@ -1027,6 +1016,33 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &613770171
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 613770167}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b89b1a53889d6f74e89962ea6bd6c5e0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nosePrefab: {fileID: 7890913961718221715, guid: 6478765a06c09af44806666390953cbf, type: 3}
+--- !u!114 &613770172
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 613770167}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: caeceacb624484daf8e379c2252fd246, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_FacePrefab: {fileID: 6512211187461126529, guid: dbc0e0e966ba9834896259ef936fead3, type: 3}
+  m_MaximumFaceCount: 3
 --- !u!1 &671509333
 GameObject:
   m_ObjectHideFlags: 0

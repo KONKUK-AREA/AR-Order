@@ -4,12 +4,9 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - MenuNameTag
-  - MenuPriceTag
-  - MenuImageTag
-  - MenuCountTag
-  - MenuTotalCountTag
+  - Plane
   - Detector
+  - Character
   layers:
   - Default
   - TransparentFX

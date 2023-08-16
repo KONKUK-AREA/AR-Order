@@ -9,6 +9,9 @@ using UnityEngine.XR.ARFoundation;
 
 public class MiniCharacterGame : MonoBehaviour
 {
+    public GameObject eatPrefab;
+    public ParticleSystem particle;
+    public AudioSource audioSource;
     private bool isAnim = false;
     private bool isClick = false;
     private int isMoving = 0;
@@ -28,6 +31,7 @@ public class MiniCharacterGame : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        if (eat != null) Destroy(eat);
         anim = GetComponentInChildren<Animator>();
         arSessionOrigin = GameObject.Find("AR Session Origin").GetComponent<ARSessionOrigin>();
         transform.localScale = Vector3.one;
@@ -69,17 +73,7 @@ public class MiniCharacterGame : MonoBehaviour
                     hitVec = new Vector3(prePos.x, prePos.y, dist);
                     hitVec = arSessionOrigin.camera.ScreenToWorldPoint(hitVec);
                     offset = hitTransform.position - hitVec;
-                    if (isPunch)
-                    {
-                        StopMoveCoroutine();
-                        Punch();
-                    }
-                    else
-                    {
-                        isAnim = true;
-                        StopMoveCoroutine();
-                        StartCoroutine("StartAnim");
-                    }
+
                 }
             }
             if(isClick && touch.phase == TouchPhase.Moved)
@@ -113,7 +107,9 @@ public class MiniCharacterGame : MonoBehaviour
                 Debug.Log("¸ÞÅ¸¸ù µð¹ö±ë : " + dragSpeed + " " + dragAngle);
                 if(dragSpeed  <3500f || Vector3.Magnitude(dragVector)<1)
                 {
-
+                    isAnim = true;
+                    StopMoveCoroutine();
+                    StartCoroutine("StartAnim");
                 }
                 else
                 {
@@ -127,7 +123,8 @@ public class MiniCharacterGame : MonoBehaviour
                         StartRotateCoroutine(dragSpeed, Right ? 1 : -1);
                     }else if(dragAngle>150f)
                     {
-                        Event();
+                        if(!anim.GetBool("isEat"))
+                            Event();
                     }
                 }
                 isClick= false;
@@ -280,9 +277,26 @@ public class MiniCharacterGame : MonoBehaviour
         StartCoroutine("DestroyAfterPunch");
 
     }
+    GameObject eat;
     private void Event()
     {
-        anim.SetTrigger("Event");
+        isAnim = true;   
+        eat = Instantiate(eatPrefab, transform.position + transform.forward * 0.16f, transform.rotation);
+        eat.transform.localScale = Vector3.one * 0.3f;
+        anim.SetBool("isEat",true);
+        particle.Play();
+        audioSource.Play();
+        StartCoroutine(EatAnim());
+    }
+    IEnumerator EatAnim()
+    {
+        yield return new WaitForSeconds(3f);
+        particle.Stop();
+        isAnim= false;
+        audioSource.Stop();
+        anim.SetBool("isEat", false);
+        Destroy(eat);
+
     }
     IEnumerator DestroyAfterPunch()
     {

@@ -1,0 +1,52 @@
+	
+--------------Balloon Ghost----------------------------
+
+This pack contains 3d Model and Animations of a Balloon shaped Ghost.Perfectly fit for any kind of your games.
+You can use this model in a Horror Game, Open world survival game.etc
+
+Technical Details:-
+		
+		- Models : Balloon Ghost(with breakable body parts)
+		- Animations : 2(Idle/Run/Walk, Attack)
+		- Texture variations : 4				
+		- Vertex count : 1667(Breakable Ghost), 1545(Ghost)
+		- Tris count : 3114(Breakable Ghost), 3006(Ghost)
+		- Unwrapped : Yes
+		- Used Material(s) : Universal Render Pipeline(URP/Lit)
+		- Texture maps : Albedo/Base Color,Metalic Smoothness, Normal
+		- Texture Size : 2048
+		- PBR textures
+		
+		
+
+Features:-
+	
+	- Ghost will break into 3 parts, when he is hitted by any weapon
+	- "Break" Script(c#) included
+	- Mesh colliders included
+	- Demo scene,Guides, post processing included
+	- Mobile/AR Ready asset
+		
+Folder details:-
+
+	Materials : Where the materials for the model located.
+	
+	Meshes : Contain FBX format of the 3d model.
+	
+	Textures : Contains Textures, that are in (.PNG) file format
+	
+	(Other folders - Prefabs, Scenes)
+
+How to use:-
+	
+	Simply drag and drop the prefab to your scene and use it.
+	(Prefab(s) located under 
+	Asset > Balloon_Ghost > Prefabs).
+
+..................................................................................
+
+About Us : "SR Studios Kerala", A Small startup based in Alappuzha, Kerala, India
+
+Contact : srstudioskerala@gmail.com
+
+................Thanks for downloading this package................................
