@@ -15,6 +15,7 @@ public class StoreData : MonoBehaviour
     private GameObject[] MenuGameObject_brunchCafeKKU;
     [SerializeField]
     private string[] MenuDescription_brunchCafeKKU;
+    [SerializeField]
 
     private Sprite[][] StoreSprites = new Sprite[10][];
     private GameObject[][] StoreGameObjects = new GameObject[10][];
@@ -50,8 +51,9 @@ public class StoreData : MonoBehaviour
                     menus[i].Description = MenuDescription_brunchCafeKKU[i];
                 }
                 int[] info = { 5, 6, 3,3,3,3 };
+                AceMenu[] Ace = { };
                 //int[] info = { 4, 4, 2, 1 };
-                restaurant = new Restaurant("브런치카페 건대입구점", info, menus);
+                restaurant = new Restaurant("브런치카페 건대입구점", info, menus,Ace);
                 break;
         
         }
@@ -61,10 +63,11 @@ public class StoreData : MonoBehaviour
 public class Restaurant
 {
     public Menu[][] totalMenu;
+    public AceMenu[] aceMenus;
     public string Name;
     public int ListLength = 0;
     public int Length=0;
-    public Restaurant(string Name, int[] split, Menu[] menus) // split[0] = 메뉴 줄, split[1],split[2].... = 각 줄당 메뉴개수
+    public Restaurant(string Name, int[] split, Menu[] menus, AceMenu[] Ace) // split[0] = 메뉴 줄, split[1],split[2].... = 각 줄당 메뉴개수
     {
         ListLength = split[0];
         this.Name = Name;
@@ -77,6 +80,7 @@ public class Restaurant
                 totalMenu[i][j] = menus[Length++];
             }
         }
+        aceMenus = Ace;
         Debug.Log("메타몽 디버깅 : " + Name + " " + ListLength + " " + Length);
     }
     
@@ -97,4 +101,16 @@ public class Menu
 
     }
 
+}
+public class AceMenu
+{
+    public Menu baseMenu;
+    public Sprite filter;
+    public GameObject[] childs;
+    private int type;
+    public AceMenu(Menu menu, int type)
+    {
+        baseMenu = menu;
+        this.type = type;
+    }
 }
