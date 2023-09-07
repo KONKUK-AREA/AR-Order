@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44402185, g: 0.49316472, b: 0.57223153, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -18894,6 +18894,7 @@ MonoBehaviour:
   foodSet: {fileID: 935163098395865770, guid: c79311c7ae0bf7348954b3fa009709d3, type: 3}
   Spawn: {fileID: 7186693225711545110, guid: a2265d59be133d145bd4bea4512b0cc3, type: 3}
   plane: {fileID: 1942233407999755423, guid: 1baabb277dc5c8a49b32f39e872df4dc, type: 3}
+  FoodFilter: {fileID: 0}
   arSessionOrigin: {fileID: 1944995659}
 --- !u!114 &1805789685
 MonoBehaviour:
@@ -19022,6 +19023,11 @@ MonoBehaviour:
   - "\uBA54\uC774\uD50C\uD0D1 \uD32C\uCF00\uC774\uD06C:\uBA54\uC774\uD50C\uC2DC\uB7FD\uACFC
     \uD718\uD551\uD06C\uB9BC\uC744 \uC5B9\uC740 \uB2EC\uCF64\uD55C \uD32C\uCF00\uC774\uD06C"
   - "\uB808\uC639:\uC544\uC774\uC720\uB3C4 \uBA39\uACE0 \uB180\uB780 \uC74C\uC2DD"
+  MenuSprite_CockTail: []
+  MenuGameObject_CockTail: []
+  MenuDescription_CockTail: []
+  AceMenuSprite_CockTail: {fileID: 0}
+  AceMenuChilds_CockTail: []
 --- !u!1 &1811430347
 GameObject:
   m_ObjectHideFlags: 0

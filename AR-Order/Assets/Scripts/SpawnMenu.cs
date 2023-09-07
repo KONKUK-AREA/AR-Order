@@ -15,9 +15,11 @@ public class SpawnMenu : MonoBehaviour
     public GameObject foodSet;
     public GameObject Spawn;
     public GameObject plane;
+    public GameObject FoodFilter;
     //public GameObject qrFrame;
 
     public Menu[][] foodPrefabs;
+    public AceMenu[] AceMenus;
     // Start is called before the first frame update
     GameObject DetectAR;
     GameObject SpawnedObject = null;
@@ -42,6 +44,8 @@ public class SpawnMenu : MonoBehaviour
     private int menuIndex = 0;
     private GameObject showFood = null;
 
+    private int FoodType=0;
+
     private void Start()
     {
         ARCameraManager aR= new ARCameraManager();
@@ -51,6 +55,7 @@ public class SpawnMenu : MonoBehaviour
     }
     // Update is called once per frame
 
+    
     void Update()
     {
 
@@ -80,6 +85,13 @@ public class SpawnMenu : MonoBehaviour
             {
                 offset = hitLayerDish.point - SpawnedObject.transform.position;
                 isDrag = true;
+            }
+            else
+            {
+                if(FoodType == 2)
+                {
+
+                }
             }
         }
         if(isSecond && secondTouch.phase == TouchPhase.Began)
@@ -145,6 +157,7 @@ public class SpawnMenu : MonoBehaviour
         {
             MainRestaurant = _StoreData.GetMenu(_GetDataFromQR.marketInfo().name);
             foodPrefabs = MainRestaurant.totalMenu;
+            AceMenus = MainRestaurant.aceMenus;
         }
         return _GetDataFromQR.isGetInfo() && (DetectAR != null);
     }
@@ -152,6 +165,7 @@ public class SpawnMenu : MonoBehaviour
     {
         if (IsReady())
         {
+            FoodType = 0;
             if (SpawnedObject != null) Destroy(SpawnedObject);
             Ray ray = arSessionOrigin.camera.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0f));
             LayerMask layerMask = LayerMask.GetMask("Plane");
@@ -175,7 +189,57 @@ public class SpawnMenu : MonoBehaviour
             Debug.Log("¸ÞÅ¸¸ù µð¹ö±ë : QR´Ù½Ã Âï¾î¶ó");
         }
     }
+    public void SpawnAceItem(int idx)
+    {
+        if (IsReady())
+        {
+            if (SpawnedObject != null) Destroy(SpawnedObject);
+            Ray ray = arSessionOrigin.camera.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0f));
+            LayerMask layerMask = LayerMask.GetMask("Plane");
 
+            //RaycastHit[] hits = Physics.RaycastAll(ray);
+            RaycastHit hitLayerMask;
+            Vector3 Pos;
+            Vector3 Rot;
+            if (Physics.Raycast(ray, out hitLayerMask, Mathf.Infinity, layerMask))
+            {
+                Pos = hitLayerMask.point;
+                Rot = hitLayerMask.transform.eulerAngles;
+                SpawnedObject = Instantiate(foodSet, Pos, Quaternion.Euler(Rot));
+                SpawnedObject.transform.localScale = new Vector3(0.7f, 0.7f, 0.7f);
+                InstantiateAceFood(idx);
+                FoodType = AceMenus[idx].type;
+                if(FoodType == 1)
+                {
+                    FoodFilter.GetComponent<Image>().sprite = AceMenus[idx].filter;
+                    FoodFilter.SetActive(true);
+                }
+                Debug.Log("¸ÞÅ¸¸ù µð¹ö±ë : " + SpawnedObject.transform.position);
+            }
+        }
+        else
+        {
+            Debug.Log("¸ÞÅ¸¸ù µð¹ö±ë : QR´Ù½Ã Âï¾î¶ó");
+        }
+    }
+    private void InstantiateAceFood(int index)
+    {
+        if (SpawnedObject != null)
+        {
+            if (showFood != null)
+            {
+                Destroy(showFood);
+            }
+            showFood = Instantiate(AceMenus[index].baseMenu.menuPrefab);
+            Debug.Log("¸ÞÅ¸¸ù µð¹ö±ë : " + showFood.transform.position);
+            Debug.Log("¸ÞÅ¸¸ù µð¹ö±ë : " + showFood);
+            showFood.transform.parent = SpawnedObject.transform;
+            showFood.transform.localScale = Vector3.one * 0.7f;
+            showFood.transform.localEulerAngles = Vector3.zero;
+            showFood.transform.localPosition = Vector3.zero;
+            Debug.Log("¸ÞÅ¸¸ù µð¹ö±ë :" + showFood.transform.parent.name);
+        }
+    }
 
     public void SetPlane()
     {
@@ -274,8 +338,6 @@ public class SpawnMenu : MonoBehaviour
             Debug.Log("¸ÞÅ¸¸ù µð¹ö±ë :" + showFood.transform.parent.name);
         }
     }
-    
-    
     public void ChangeReact()
     {
         charObject.GetComponent<MiniCharacterGame>().ChangeReact();
@@ -293,6 +355,10 @@ public class SpawnMenu : MonoBehaviour
         if(charObject != null)
         {
             Destroy(charObject);
+        }
+        if (FoodFilter.activeSelf)
+        {
+            FoodFilter.SetActive(false);
         }
     }
 }

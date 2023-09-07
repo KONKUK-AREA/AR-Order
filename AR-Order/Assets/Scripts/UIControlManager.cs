@@ -559,6 +559,10 @@ public class UIControlManager : MonoBehaviour
             _SpawnMenu.DestroyObjects();
         }
         previousLayer = CurrentLayer;
+        if(CurrentLayer == 2)
+        {
+            _SpawnMenu.DestroyObjects();
+        }
         UIForEachScreen[CurrentLayer].SetActive(false);
         UIForEachScreen[layer].SetActive(true);
         CurrentLayer = layer;

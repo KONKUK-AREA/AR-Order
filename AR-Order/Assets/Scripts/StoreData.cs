@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.InteropServices.WindowsRuntime;
 using Unity.VisualScripting;
+using UnityEditor.Timeline.Actions;
 using UnityEngine;
 
 public class StoreData : MonoBehaviour
@@ -16,6 +17,15 @@ public class StoreData : MonoBehaviour
     [SerializeField]
     private string[] MenuDescription_brunchCafeKKU;
     [SerializeField]
+    private Sprite[] MenuSprite_CockTail;
+    [SerializeField]
+    private GameObject[] MenuGameObject_CockTail;
+    [SerializeField]
+    private string[] MenuDescription_CockTail;
+    [SerializeField]
+    private Sprite AceMenuSprite_CockTail;
+    [SerializeField]
+    private GameObject[] AceMenuChilds_CockTail;
 
     private Sprite[][] StoreSprites = new Sprite[10][];
     private GameObject[][] StoreGameObjects = new GameObject[10][];
@@ -51,9 +61,19 @@ public class StoreData : MonoBehaviour
                     menus[i].Description = MenuDescription_brunchCafeKKU[i];
                 }
                 int[] info = { 5, 6, 3,3,3,3 };
-                AceMenu[] Ace = { };
+                AceMenu[] AceMetamong = { };
                 //int[] info = { 4, 4, 2, 1 };
-                restaurant = new Restaurant("브런치카페 건대입구점", info, menus,Ace);
+                restaurant = new Restaurant("브런치카페 건대입구점", info, menus,AceMetamong);
+                break;
+            case "Cocktail":
+                Menu[] Cocktails = { };
+
+                for(int i = 0; i< Cocktails.Length; i++)
+                {
+
+                }
+                int[] InfoCocktails = { };
+                AceMenu[] AceCocktails = { };
                 break;
         
         }
@@ -107,7 +127,7 @@ public class AceMenu
     public Menu baseMenu;
     public Sprite filter;
     public GameObject[] childs;
-    private int type;
+    public int type;
     public AceMenu(Menu menu, int type)
     {
         baseMenu = menu;
