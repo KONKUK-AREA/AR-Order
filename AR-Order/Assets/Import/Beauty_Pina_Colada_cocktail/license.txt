@@ -1,0 +1,8 @@
+Model Information:
+* title:	Beauty Pina Colada cocktail
+* source:	https://sketchfab.com/3d-models/beauty-pina-colada-cocktail-3a9960fc173f4e57ad0da03384944378
+* author:	Verticle (https://sketchfab.com/verticle)
+
+Model License:
+* license type:	CC0-1.0 (http://creativecommons.org/publicdomain/zero/1.0/)
+* requirements:	Credit is not mandatory. Commercial use is allowed.
