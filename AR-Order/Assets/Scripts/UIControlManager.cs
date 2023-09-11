@@ -150,7 +150,7 @@ public class UIControlManager : MonoBehaviour
                 aceMenu.SetActive(false);
                 continue;
             }
-            //aceMenu.GetComponent<Button>().onClick.AddListener()
+            aceMenu.GetComponent<Button>().onClick.AddListener(() => ClickAceMenu(i));
             aceMenu.transform.GetChild(1).GetComponent<TextMeshProUGUI>().text = MainRestaurant.aceMenus[i].baseMenu.name;
             aceMenu.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = MainRestaurant.aceMenus[i].baseMenu.price.ToString()+"원";
             aceMenu.GetComponent<Image>().sprite = MainRestaurant.aceMenus[i].aceImage;
@@ -188,6 +188,12 @@ public class UIControlManager : MonoBehaviour
         _SpawnMenu.SpawnItem();
         ChangeLayer(2);
         ShowTutorial();
+    }
+    public void ClickAceMenu(int index)
+    {
+        _SpawnMenu.SpawnAceItem(index);
+        ChangeLayer(2); // 대표메뉴 UI로 바꾸기
+        
     }
     public void GetMenuInfo()
     {

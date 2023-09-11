@@ -23,10 +23,10 @@ public class StoreData : MonoBehaviour
     [SerializeField]
     private string[] MenuDescription_CockTail;
     [SerializeField]
-    private Sprite AceMenuSprite_CockTail;
+    private Sprite[] AceMenuSprite_CockTail;
     [SerializeField]
     private GameObject[] AceMenuChilds_CockTail;
-
+    
     private Sprite[][] StoreSprites = new Sprite[10][];
     private GameObject[][] StoreGameObjects = new GameObject[10][];
     private int menuIndex = 0;
