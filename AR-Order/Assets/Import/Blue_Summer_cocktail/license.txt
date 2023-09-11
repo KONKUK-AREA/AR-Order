@@ -1,0 +1,11 @@
+Model Information:
+* title:	Blue Summer cocktail
+* source:	https://sketchfab.com/3d-models/blue-summer-cocktail-2869006955264823889cfe368f8375a1
+* author:	mdiaz16 (https://sketchfab.com/mdiaz16)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Blue Summer cocktail" (https://sketchfab.com/3d-models/blue-summer-cocktail-2869006955264823889cfe368f8375a1) by mdiaz16 (https://sketchfab.com/mdiaz16) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
