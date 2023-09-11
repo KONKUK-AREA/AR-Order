@@ -87,6 +87,11 @@ public class UIControlManager : MonoBehaviour
     [SerializeField]
     private TextMeshProUGUI[] MenuExplanation;
 
+    [SerializeField]
+    private TextMeshProUGUI[] MenuTypeText;
+    [SerializeField]
+    private TextMeshProUGUI RestaurantNameText;
+
     // public Image MenuImage;
     // public TextMeshProUGUI CountForEachMenu;
     // public TextMeshProUGUI TotalPriceForEachMenu;
@@ -128,10 +133,28 @@ public class UIControlManager : MonoBehaviour
         ShowTutorial();
 
     }
-
+    public GameObject AceMenuContent;
     public GameObject[] MenuListContent;
     public void InitMenu()
     {
+        RestaurantNameText.text = MainRestaurant.Name;
+        for(int i = 0; i<MainRestaurant.MenuType.Length; i++)
+        {
+            MenuTypeText[i].text = MainRestaurant.MenuType[i];
+        }
+        for(int i = 0; i< AceMenuContent.transform.childCount; i++)
+        {
+            GameObject aceMenu = AceMenuContent.transform.GetChild(i).gameObject;
+            if(i >= MainRestaurant.aceMenus.Length)
+            {
+                aceMenu.SetActive(false);
+                continue;
+            }
+            //aceMenu.GetComponent<Button>().onClick.AddListener()
+            aceMenu.transform.GetChild(1).GetComponent<TextMeshProUGUI>().text = MainRestaurant.aceMenus[i].baseMenu.name;
+            aceMenu.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = MainRestaurant.aceMenus[i].baseMenu.price.ToString()+"원";
+            aceMenu.GetComponent<Image>().sprite = MainRestaurant.aceMenus[i].aceImage;
+        }
         for(int i = 0; i< MenuListContent.Length; i++)
         {
             

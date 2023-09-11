@@ -54,26 +54,33 @@ public class StoreData : MonoBehaviour
                                 new Menu("그린스프 & 샐러드 세트",12000),new Menu("메이플탑 팬케이크",12000),new Menu("레옹",10000), };
                 //Menu[] menus = {new Menu("커피1", 5000), new Menu("커피2",6500), new Menu("커피3",7500), new Menu("커피4",5000),
                 //new Menu("케잌1",7500), new Menu("케잌2",6500), new Menu("피자1",8500)};
-                for(int i =0; i < menus.Length; i++)
+                for (int i = 0; i < menus.Length; i++)
                 {
                     menus[i].Img = MenuSprite_brunchCafeKKU[i];
                     menus[i].menuPrefab = MenuGameObject_brunchCafeKKU[i];
                     menus[i].Description = MenuDescription_brunchCafeKKU[i];
                 }
-                int[] info = { 5, 6, 3,3,3,3 };
+                int[] info = { 5, 6, 3, 3, 3, 3 };
                 AceMenu[] AceMetamong = { };
+                string[] BrunchCafeType = { "Coffee & Drinks", "Brunch", "Dinner", "Bread", "Side" };
                 //int[] info = { 4, 4, 2, 1 };
-                restaurant = new Restaurant("브런치카페 건대입구점", info, menus,AceMetamong);
+                restaurant = new Restaurant("브런치카페 건대입구점", info, menus,AceMetamong,BrunchCafeType);
                 break;
             case "Cocktail":
-                Menu[] Cocktails = { };
+                Menu[] Cocktails = {new Menu("모히또 (Mojito)",15000), new Menu("데킬라 선라이즈 (Tequila Sunrise",13000), new Menu("엘 디아블로 (El Diablo)", 12000),new Menu("핑크레이디 (Pink Lady)", 15000), new Menu("피냐콜라다 (Pina Colada)",15000) ,
+                new Menu("도쿄 아이스티 (Tokyo Iced Tea)", 12000), new Menu("하와이안 사파이어 (Hawaiian Sapphire)", 17000), new Menu("마티니 (Martini)", 15000), new Menu("마가리타 (Margarita)", 14000), new Menu("멘하탄 (Manhattan)", 16000),
+                new Menu("베일리스 밀크 (Baileys Milk)", 9000), new Menu("올드 패션드 (Old Fashioned)",16000), new Menu("파우스트 (Fause)", 10000)};
 
                 for(int i = 0; i< Cocktails.Length; i++)
                 {
-
+                    Cocktails[i].Img = MenuSprite_CockTail[i];
+                    Cocktails[i].menuPrefab = MenuGameObject_CockTail[i];
+                    Cocktails[i].Description = MenuDescription_CockTail[i];
                 }
-                int[] InfoCocktails = { };
-                AceMenu[] AceCocktails = { };
+                int[] InfoCocktails = { 4,3,4,3,3};
+                AceMenu[] AceCocktails = {new AceMenu(Cocktails[6],0), new AceMenu(Cocktails[1],1)};
+                string[] CocktailType = { "청량함을 느낄 수 있는", "여성들을 위한 메뉴", "깔끔하고 독한 맛을 즐기고 싶은", "깊은 맛을 느끼고 싶은" };
+                restaurant = new Restaurant("세타몽 칵테일바", InfoCocktails, Cocktails, AceCocktails, CocktailType);
                 break;
         
         }
@@ -84,10 +91,11 @@ public class Restaurant
 {
     public Menu[][] totalMenu;
     public AceMenu[] aceMenus;
+    public string[] MenuType;
     public string Name;
     public int ListLength = 0;
     public int Length=0;
-    public Restaurant(string Name, int[] split, Menu[] menus, AceMenu[] Ace) // split[0] = 메뉴 줄, split[1],split[2].... = 각 줄당 메뉴개수
+    public Restaurant(string Name, int[] split, Menu[] menus, AceMenu[] Ace, string[] type) // split[0] = 메뉴 줄, split[1],split[2].... = 각 줄당 메뉴개수
     {
         ListLength = split[0];
         this.Name = Name;
@@ -100,7 +108,9 @@ public class Restaurant
                 totalMenu[i][j] = menus[Length++];
             }
         }
+        
         aceMenus = Ace;
+        MenuType = type;
         Debug.Log("메타몽 디버깅 : " + Name + " " + ListLength + " " + Length);
     }
     
@@ -125,6 +135,7 @@ public class Menu
 public class AceMenu
 {
     public Menu baseMenu;
+    public Sprite aceImage;
     public Sprite filter;
     public GameObject[] childs;
     public int type;
