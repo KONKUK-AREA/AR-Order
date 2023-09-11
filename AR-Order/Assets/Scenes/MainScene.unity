@@ -9434,6 +9434,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2715153994706510805, guid: c4a74823f3ade7e49a083ab934fa19f1, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3379382525998053743, guid: c4a74823f3ade7e49a083ab934fa19f1, type: 3}
       propertyPath: m_Name
       value: Cocktails
