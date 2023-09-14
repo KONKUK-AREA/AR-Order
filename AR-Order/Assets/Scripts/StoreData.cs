@@ -4,6 +4,7 @@ using System.Runtime.InteropServices.WindowsRuntime;
 using Unity.VisualScripting;
 using UnityEditor.Timeline.Actions;
 using UnityEngine;
+using UnityEngine.Video;
 
 public class StoreData : MonoBehaviour
 {
@@ -26,7 +27,8 @@ public class StoreData : MonoBehaviour
     private Sprite[] AceMenuSprite_CockTail;
     [SerializeField]
     private GameObject[] AceMenuChilds_CockTail;
-    
+    [SerializeField]
+    private VideoClip AceMenuFilter_CockTail;
     private Sprite[][] StoreSprites = new Sprite[10][];
     private GameObject[][] StoreGameObjects = new GameObject[10][];
     private int menuIndex = 0;
@@ -78,7 +80,13 @@ public class StoreData : MonoBehaviour
                     Cocktails[i].Description = MenuDescription_CockTail[i];
                 }
                 int[] InfoCocktails = { 4,3,4,3,3};
-                AceMenu[] AceCocktails = {new AceMenu(Cocktails[6],0), new AceMenu(Cocktails[1],1)};
+                AceMenu[] AceCocktails = {new AceMenu(Cocktails[6],1), new AceMenu(Cocktails[1],2)};
+                for(int i = 0; i< AceCocktails.Length; i++)
+                {
+                    AceCocktails[i].aceImage = AceMenuSprite_CockTail[i];
+                }
+                AceCocktails[0].filter = AceMenuFilter_CockTail;
+                AceCocktails[1].childs = AceMenuChilds_CockTail;
                 string[] CocktailType = { "Ã»·®ÇÔÀ» ´À³¥ ¼ö ÀÖ´Â", "¿©¼ºµéÀ» À§ÇÑ ¸Þ´º", "±ò²ûÇÏ°í µ¶ÇÑ ¸ÀÀ» Áñ±â°í ½ÍÀº", "±íÀº ¸ÀÀ» ´À³¢°í ½ÍÀº" };
                 restaurant = new Restaurant("¼¼Å¸¸ù Ä¬Å×ÀÏ¹Ù", InfoCocktails, Cocktails, AceCocktails, CocktailType);
                 break;
@@ -136,10 +144,10 @@ public class AceMenu
 {
     public Menu baseMenu;
     public Sprite aceImage;
-    public Sprite filter;
+    public VideoClip filter;
     public GameObject[] childs;
     public int type;
-    public AceMenu(Menu menu, int type)
+    public AceMenu(Menu menu, int type) // 1 ÇÊÅÍ 2 ÆÄÆ¼Å¬
     {
         baseMenu = menu;
         this.type = type;

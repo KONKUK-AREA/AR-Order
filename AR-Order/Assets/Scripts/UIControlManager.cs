@@ -192,7 +192,7 @@ public class UIControlManager : MonoBehaviour
     public void ClickAceMenu(int index)
     {
         _SpawnMenu.SpawnAceItem(index);
-        ChangeLayer(2); // 대표메뉴 UI로 바꾸기
+        ChangeLayer(7); // 대표메뉴 UI로 바꾸기
         
     }
     public void GetMenuInfo()

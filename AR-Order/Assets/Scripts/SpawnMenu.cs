@@ -8,6 +8,7 @@ using UnityEngine.Rendering.RendererUtils;
 using UnityEngine.UIElements;
 using Unity.VisualScripting;
 using System.Runtime.InteropServices;
+using UnityEngine.Video;
 
 public class SpawnMenu : MonoBehaviour
 {
@@ -211,7 +212,7 @@ public class SpawnMenu : MonoBehaviour
                 FoodType = AceMenus[idx].type;
                 if(FoodType == 1)
                 {
-                    FoodFilter.GetComponent<Image>().sprite = AceMenus[idx].filter;
+                    GameObject.Find("Video Player").GetComponent<VideoPlayer>().clip = AceMenus[idx].filter;
                     FoodFilter.SetActive(true);
                 }
                 Debug.Log("¸ÞÅ¸¸ù µð¹ö±ë : " + SpawnedObject.transform.position);
