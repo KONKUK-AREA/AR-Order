@@ -224,7 +224,7 @@ VideoPlayer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 12542844}
   m_Enabled: 1
-  m_VideoClip: {fileID: 0}
+  m_VideoClip: {fileID: 32900000, guid: 208fea7e81b3ea542831d094b80616ae, type: 3}
   m_TargetCameraAlpha: 1
   m_TargetCamera3DLayout: 0
   m_TargetCamera: {fileID: 0}
@@ -237,17 +237,15 @@ VideoPlayer:
   m_DataSource: 0
   m_PlaybackSpeed: 1
   m_AudioOutputMode: 2
-  m_TargetAudioSources:
-  - {fileID: 0}
-  m_DirectAudioVolumes:
-  - 1
+  m_TargetAudioSources: []
+  m_DirectAudioVolumes: []
   m_Url: 
-  m_EnabledAudioTracks: 01
-  m_DirectAudioMutes: 00
-  m_ControlledAudioTrackCount: 1
+  m_EnabledAudioTracks: 
+  m_DirectAudioMutes: 
+  m_ControlledAudioTrackCount: 0
   m_PlayOnAwake: 1
   m_SkipOnDrop: 1
-  m_Looping: 0
+  m_Looping: 1
   m_WaitForFirstFrame: 1
   m_FrameReadyEventEnabled: 0
   m_VideoShaders: []
@@ -1176,7 +1174,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &67302891
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -28599,7 +28597,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1519369612
 RectTransform:
   m_ObjectHideFlags: 0
@@ -34045,11 +34043,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b39bd67aadd323144942ac6216495d53, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  character: {fileID: 2796537577183766323, guid: 0e9788c6b607fe64f9c4ed0911b5b912, type: 3}
   foodSet: {fileID: 935163098395865770, guid: c79311c7ae0bf7348954b3fa009709d3, type: 3}
   Spawn: {fileID: 7186693225711545110, guid: a2265d59be133d145bd4bea4512b0cc3, type: 3}
   plane: {fileID: 1942233407999755423, guid: 1baabb277dc5c8a49b32f39e872df4dc, type: 3}
   FoodFilter: {fileID: 67302890}
+  MarketCharacters:
+  - {fileID: 2796537577183766323, guid: 0e9788c6b607fe64f9c4ed0911b5b912, type: 3}
+  - {fileID: 3038339207137114654, guid: fd8d09c3bcc156a40a14943e34e97aaf, type: 3}
   arSessionOrigin: {fileID: 1944995659}
 --- !u!114 &1805789685
 MonoBehaviour:

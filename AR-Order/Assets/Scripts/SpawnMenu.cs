@@ -12,13 +12,13 @@ using UnityEngine.Video;
 
 public class SpawnMenu : MonoBehaviour
 {
-    public GameObject character;
+    private GameObject character;
     public GameObject foodSet;
     public GameObject Spawn;
     public GameObject plane;
     public GameObject FoodFilter;
     //public GameObject qrFrame;
-
+    public GameObject[] MarketCharacters;
     public Menu[][] foodPrefabs;
     public AceMenu[] AceMenus;
     // Start is called before the first frame update
@@ -361,5 +361,9 @@ public class SpawnMenu : MonoBehaviour
         {
             FoodFilter.SetActive(false);
         }
+    }
+    public void SetCharacter(int idx)
+    {
+        character = MarketCharacters[idx];
     }
 }

@@ -2,7 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.InteropServices.WindowsRuntime;
 using Unity.VisualScripting;
-using UnityEditor.Timeline.Actions;
 using UnityEngine;
 using UnityEngine.Video;
 
@@ -66,7 +65,7 @@ public class StoreData : MonoBehaviour
                 AceMenu[] AceMetamong = { };
                 string[] BrunchCafeType = { "Coffee & Drinks", "Brunch", "Dinner", "Bread", "Side" };
                 //int[] info = { 4, 4, 2, 1 };
-                restaurant = new Restaurant("브런치카페 건대입구점", info, menus,AceMetamong,BrunchCafeType);
+                restaurant = new Restaurant("브런치카페 건대입구점", info, menus,AceMetamong,BrunchCafeType,0);
                 break;
             case "Cocktail":
                 Menu[] Cocktails = {new Menu("모히또 (Mojito)",15000), new Menu("데킬라 선라이즈 (Tequila Sunrise",13000), new Menu("엘 디아블로 (El Diablo)", 12000),new Menu("핑크레이디 (Pink Lady)", 15000), new Menu("피냐콜라다 (Pina Colada)",15000) ,
@@ -88,7 +87,7 @@ public class StoreData : MonoBehaviour
                 AceCocktails[0].filter = AceMenuFilter_CockTail;
                 AceCocktails[1].childs = AceMenuChilds_CockTail;
                 string[] CocktailType = { "청량함을 느낄 수 있는", "여성들을 위한 메뉴", "깔끔하고 독한 맛을 즐기고 싶은", "깊은 맛을 느끼고 싶은" };
-                restaurant = new Restaurant("세타몽 칵테일바", InfoCocktails, Cocktails, AceCocktails, CocktailType);
+                restaurant = new Restaurant("세타몽 칵테일바", InfoCocktails, Cocktails, AceCocktails, CocktailType,1);
                 break;
         
         }
@@ -101,9 +100,10 @@ public class Restaurant
     public AceMenu[] aceMenus;
     public string[] MenuType;
     public string Name;
+    public int CharacterIdx;
     public int ListLength = 0;
     public int Length=0;
-    public Restaurant(string Name, int[] split, Menu[] menus, AceMenu[] Ace, string[] type) // split[0] = 메뉴 줄, split[1],split[2].... = 각 줄당 메뉴개수
+    public Restaurant(string Name, int[] split, Menu[] menus, AceMenu[] Ace, string[] type, int CharacterIdx) // split[0] = 메뉴 줄, split[1],split[2].... = 각 줄당 메뉴개수
     {
         ListLength = split[0];
         this.Name = Name;
@@ -116,7 +116,7 @@ public class Restaurant
                 totalMenu[i][j] = menus[Length++];
             }
         }
-        
+        this.CharacterIdx = CharacterIdx;
         aceMenus = Ace;
         MenuType = type;
         Debug.Log("메타몽 디버깅 : " + Name + " " + ListLength + " " + Length);

@@ -137,6 +137,7 @@ public class UIControlManager : MonoBehaviour
     public GameObject[] MenuListContent;
     public void InitMenu()
     {
+        _SpawnMenu.SetCharacter(MainRestaurant.CharacterIdx);
         RestaurantNameText.text = MainRestaurant.Name;
         for(int i = 0; i<MainRestaurant.MenuType.Length; i++)
         {
