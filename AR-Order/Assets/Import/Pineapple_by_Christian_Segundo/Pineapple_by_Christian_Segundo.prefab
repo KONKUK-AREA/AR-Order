@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4001483366041797286}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Object_66
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -40,7 +40,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4330882566844216411}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Object_40
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -71,7 +71,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6249762884613941941}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: ik.r_016
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -103,7 +103,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2008956437718824596}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Object_34
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -134,7 +134,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 726367693931191952}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: pineapple.007
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -165,7 +165,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5881090479325226784}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: foot.l_end_018
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -197,7 +197,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6946775080505680466}
   - component: {fileID: 4562008190746383803}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Object_33
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -306,7 +306,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5601829411559648984}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: pineapple.004
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -337,7 +337,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7877471278635503931}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: foot.l_04
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -369,7 +369,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1820502698048420126}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: knee.l_015
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -401,7 +401,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4699914263072527984}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Object_69
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -432,7 +432,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4368126688438773905}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: hand.r_end_019
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -463,7 +463,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6226198533568293018}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Object_36
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -494,7 +494,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1518440522507295876}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: ik.l_014
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -526,7 +526,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8142173308918476434}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: leg.r_08
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -558,7 +558,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 646755374344323767}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: pineapple.006
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -589,7 +589,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4442100592889445762}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Empty
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -620,7 +620,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6244001291363495380}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: knee.l_end_022
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -656,9 +656,9 @@ GameObject:
   - component: {fileID: 5212573211005905837}
   - component: {fileID: 6155276926278483853}
   - component: {fileID: 2623493945283891467}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Pineapple_by_Christian_Segundo
-  m_TagString: Untagged
+  m_TagString: Character
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -850,7 +850,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3124653138761250965}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: arm.r_05
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -882,7 +882,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2150397866729802101}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Object_32
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -913,7 +913,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3736767353705895220}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Object_46
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -944,7 +944,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3648284751087874653}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Armature
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -976,7 +976,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3723666904813622647}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: pineapple.010
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1007,7 +1007,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6923270026355241096}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: arm.001.l_012
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1040,7 +1040,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3931402414803640141}
   - component: {fileID: 7220897703754483251}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Object_35
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1150,7 +1150,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8967869945157056225}
   - component: {fileID: 3088708809637883689}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Object_47
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1259,7 +1259,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5701639276141271550}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: leg.r.001_09
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1291,7 +1291,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7058685361860442889}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: hand.l_end_021
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1322,7 +1322,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4725616404705143402}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: pineapple.002
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1354,7 +1354,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3646525595665249382}
   - component: {fileID: 4671915861816695009}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Object_41
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1463,7 +1463,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8911383954920217233}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: pineapple.005
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1494,7 +1494,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6353162728579320325}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: foot.r_010
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1526,7 +1526,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7124024816709383819}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: spine_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1561,7 +1561,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4930528930103423288}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: arm.r.001_06
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1593,7 +1593,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7839977926581077794}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: leg.001.l_03
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1626,7 +1626,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8577023027665173517}
   - component: {fileID: 6226919272297551046}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Object_37
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1735,7 +1735,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1691737191394761166}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Object_38
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1766,7 +1766,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2509526266192710235}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Object_68
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1798,7 +1798,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4323904903330494029}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Object_44
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1829,7 +1829,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7359733216795612527}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: RootNode
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1875,7 +1875,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5814356624274042490}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: foot.r_end_020
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1906,7 +1906,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 153694409384053042}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: pineapple
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1937,7 +1937,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2071064408265439719}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: pineapple.008
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1968,7 +1968,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4047417171713240050}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: pineapple.011
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1999,7 +1999,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2925392808018464052}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: leg.ll_02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2032,7 +2032,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4708508583736306823}
   - component: {fileID: 5327506051885011254}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Object_43
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2142,7 +2142,7 @@ GameObject:
   m_Component:
   - component: {fileID: 746694784996944559}
   - component: {fileID: 6403682216981048079}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Object_45
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2252,7 +2252,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3404963035263456820}
   - component: {fileID: 7255235780028590859}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Object_53
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2361,7 +2361,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2605327284666862119}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Object_50
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2392,7 +2392,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5331871939265300175}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: knee.r_017
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2424,7 +2424,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8378247460937005860}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Object_48
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2455,7 +2455,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3824750435516086390}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Object_52
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2486,7 +2486,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7426212269980217808}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Object_6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2540,7 +2540,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7282309135134687462}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Sun
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2573,7 +2573,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4959969511506942697}
   - component: {fileID: 5090859824028989135}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Object_49
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2682,7 +2682,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6282247401221700776}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Object_42
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2714,7 +2714,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6658685643840744063}
   - component: {fileID: 4475460134919533154}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Object_39
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2823,7 +2823,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4568843037375269857}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: arm.l_011
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2855,7 +2855,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5941033704251073632}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: pineapple.009
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2886,7 +2886,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7240383270075676942}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: hand.l_013
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2918,7 +2918,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7900319895593496707}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: _rootJoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2950,7 +2950,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5368500899985278948}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: base.r_00
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2984,7 +2984,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7789728324002061801}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Camera
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3016,7 +3016,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7522049728983702618}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: hand.r_07
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3048,7 +3048,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8317607201131699570}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: knee.r_end_023
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3079,7 +3079,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1640294346465634708}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: 746f7fced9e04065a4636117e46df249.fbx
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3112,7 +3112,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5543633657517018732}
   - component: {fileID: 549305322724749124}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Object_51
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3221,7 +3221,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8805924658398503410}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: pineapple.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3252,7 +3252,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5568067835375999819}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Sketchfab_model
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3284,7 +3284,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2598316821899819198}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Object_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3317,6 +3317,10 @@ PrefabInstance:
     - target: {fileID: 8675032312781020685, guid: 035a5c350b1cf004cb384b173e4419a7, type: 3}
       propertyPath: m_Name
       value: FX_WaterSplatter
+      objectReference: {fileID: 0}
+    - target: {fileID: 8675032312781020685, guid: 035a5c350b1cf004cb384b173e4419a7, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 8675032312781020685, guid: 035a5c350b1cf004cb384b173e4419a7, type: 3}
       propertyPath: m_IsActive

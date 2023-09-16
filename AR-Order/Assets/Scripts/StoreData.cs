@@ -25,8 +25,6 @@ public class StoreData : MonoBehaviour
     [SerializeField]
     private Sprite[] AceMenuSprite_CockTail;
     [SerializeField]
-    private GameObject[] AceMenuChilds_CockTail;
-    [SerializeField]
     private VideoClip AceMenuFilter_CockTail;
     private Sprite[][] StoreSprites = new Sprite[10][];
     private GameObject[][] StoreGameObjects = new GameObject[10][];
@@ -70,7 +68,7 @@ public class StoreData : MonoBehaviour
             case "Cocktail":
                 Menu[] Cocktails = {new Menu("모히또 (Mojito)",15000), new Menu("데킬라 선라이즈 (Tequila Sunrise",13000), new Menu("엘 디아블로 (El Diablo)", 12000),new Menu("핑크레이디 (Pink Lady)", 15000), new Menu("피냐콜라다 (Pina Colada)",15000) ,
                 new Menu("블루 도쿄 아이스티 (Blue Tokyo Iced Tea)", 12000), new Menu("하와이안 사파이어 (Hawaiian Sapphire)", 17000), new Menu("마티니 (Martini)", 15000), new Menu("마가리타 (Margarita)", 14000), new Menu("맨하탄 (Manhattan)", 16000),
-                new Menu("스트로베리 보드카 (StarawBerry Vodka)", 9000), new Menu("올드 패션드 (Old Fashioned)",16000), new Menu("파우스트 (Fause)", 10000)};
+                new Menu("스트로베리 보드카 (StarawBerry Vodka)", 9000), new Menu("올드 패션드 (Old Fashioned)",16000), new Menu("파우스트 (Faust)", 10000)};
 
                 for(int i = 0; i< Cocktails.Length; i++)
                 {
@@ -85,8 +83,6 @@ public class StoreData : MonoBehaviour
                     AceCocktails[i].aceImage = AceMenuSprite_CockTail[i];
                 }
                 AceCocktails[0].filter = AceMenuFilter_CockTail;
-                GameObject[] SunriseChilds = { AceCocktails[1].baseMenu.menuPrefab.transform.GetChild(1).gameObject, AceCocktails[1].baseMenu.menuPrefab.transform.GetChild(2).gameObject, AceCocktails[1].baseMenu.menuPrefab.transform.GetChild(3).gameObject};
-                AceCocktails[1].childs = SunriseChilds;
                 string[] CocktailType = { "청량함을 느낄 수 있는", "여성들을 위한 메뉴", "깔끔하고 독한 맛을 즐기고 싶은", "깊은 맛을 느끼고 싶은" };
                 restaurant = new Restaurant("세타몽 칵테일바", InfoCocktails, Cocktails, AceCocktails, CocktailType,1);
                 break;
@@ -104,22 +100,31 @@ public class Restaurant
     public int CharacterIdx;
     public int ListLength = 0;
     public int Length=0;
-    public Restaurant(string Name, int[] split, Menu[] menus, AceMenu[] Ace, string[] type, int CharacterIdx) // split[0] = 메뉴 줄, split[1],split[2].... = 각 줄당 메뉴개수
+    public Restaurant(string Name, int[] split, Menu[] menus, AceMenu[] Ace, string[] type, int Character) // split[0] = 메뉴 줄, split[1],split[2].... = 각 줄당 메뉴개수
     {
         ListLength = split[0];
         this.Name = Name;
         totalMenu = new Menu[split[0]][];
         for(int i = 0; i < split[0]; i++)
-        {
+        {//43433
             totalMenu[i] = new Menu[split[i+1]];
             for(int j = 0; j < split[i+1]; j++)
             {
                 totalMenu[i][j] = menus[Length++];
+                Debug.Log("메타몽 디버깅 : " + totalMenu[i][j].name);
             }
         }
-        this.CharacterIdx = CharacterIdx;
-        aceMenus = Ace;
-        MenuType = type;
+        CharacterIdx = Character;
+        aceMenus = new AceMenu[Ace.Length];
+        for(int i = 0; i<aceMenus.Length; i++)
+        {
+            aceMenus[i] = Ace[i];
+        }
+        MenuType = new string[type.Length];
+        for(int i = 0; i<MenuType.Length; i++)
+        {
+            MenuType[i] = type[i];
+        }
         Debug.Log("메타몽 디버깅 : " + Name + " " + ListLength + " " + Length);
     }
     
@@ -146,7 +151,6 @@ public class AceMenu
     public Menu baseMenu;
     public Sprite aceImage;
     public VideoClip filter;
-    public GameObject[] childs;
     public int type;
     public AceMenu(Menu menu, int type) // 1 필터 2 파티클
     {

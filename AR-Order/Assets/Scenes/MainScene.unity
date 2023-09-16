@@ -1175,7 +1175,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &67302891
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -28610,7 +28610,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1519369612
 RectTransform:
   m_ObjectHideFlags: 0
@@ -33098,7 +33098,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1759600840
 RectTransform:
   m_ObjectHideFlags: 0
@@ -34063,6 +34063,7 @@ MonoBehaviour:
   MarketCharacters:
   - {fileID: 2796537577183766323, guid: 0e9788c6b607fe64f9c4ed0911b5b912, type: 3}
   - {fileID: 3038339207137114654, guid: fd8d09c3bcc156a40a14943e34e97aaf, type: 3}
+  VP: {fileID: 12542845}
   arSessionOrigin: {fileID: 1944995659}
 --- !u!114 &1805789685
 MonoBehaviour:
@@ -34363,9 +34364,8 @@ MonoBehaviour:
     \uAC00\uB8E8\uB294 \uCE75\uD14C\uC77C\uC758 \uD5A5\uC744 \uB3CB\uAD6C\uBA70,
     \uC2DC\uAC01\uC801\uC73C\uB85C\uB3C4 \uB9E4\uB825\uC801\uC785\uB2C8\uB2E4."
   AceMenuSprite_CockTail:
-  - {fileID: 21300000, guid: 70c38798032ce4d49bb8d973df7a82cd, type: 3}
   - {fileID: 21300000, guid: dd88daa40b44586488826b97c65f5332, type: 3}
-  AceMenuChilds_CockTail: []
+  - {fileID: 21300000, guid: 70c38798032ce4d49bb8d973df7a82cd, type: 3}
   AceMenuFilter_CockTail: {fileID: 32900000, guid: 8048dedd68ec39543ac522751d845c10, type: 3}
 --- !u!1 &1811430347
 GameObject:

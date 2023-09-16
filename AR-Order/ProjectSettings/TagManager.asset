@@ -7,6 +7,12 @@ TagManager:
   - Plane
   - Detector
   - Character
+  - MenuNameTag
+  - MenuPriceTag
+  - MenuTotalCountTag
+  - MenuCountTag
+  - MenuImageTag
+  - Particles
   layers:
   - Default
   - TransparentFX

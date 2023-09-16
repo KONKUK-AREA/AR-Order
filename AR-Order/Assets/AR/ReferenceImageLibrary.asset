@@ -27,3 +27,13 @@ MonoBehaviour:
     m_SpecifySize: 1
     m_Name: QRcode
     m_Texture: {fileID: 0}
+  - m_SerializedGuid:
+      m_GuidLow: 5445668556507710923
+      m_GuidHigh: 17692859923951154847
+    m_SerializedTextureGuid:
+      m_GuidLow: 17159859154214719399
+      m_GuidHigh: 344325291905884648
+    m_Size: {x: 0.05, y: 0.05}
+    m_SpecifySize: 1
+    m_Name: CocktailQR
+    m_Texture: {fileID: 0}

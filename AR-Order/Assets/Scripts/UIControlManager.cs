@@ -12,7 +12,7 @@ using UnityEngine.EventSystems;
 using UnityEngine.XR.ARFoundation;
 using System.Security.Cryptography;
 using TMPro;
-
+using UnityEngine.Video;
 
 public class UIControlManager : MonoBehaviour
 {
@@ -28,7 +28,6 @@ public class UIControlManager : MonoBehaviour
     private GetDataFromQR _GetDataFromQR;
     [SerializeField]
     private StoreData _StoreData;
-
     private Restaurant MainRestaurant=null;
 
     public GameObject[] UIForEachScreen;   // element 0이 시작화면이고 element 0부터 각 ui레이어의 값    
@@ -137,13 +136,14 @@ public class UIControlManager : MonoBehaviour
     public GameObject[] MenuListContent;
     public void InitMenu()
     {
-        
+           
         _SpawnMenu.SetCharacter(MainRestaurant.CharacterIdx);
         RestaurantNameText.text = MainRestaurant.Name;
         for(int i = 0; i<MainRestaurant.MenuType.Length; i++)
         {
             MenuTypeText[i].text = MainRestaurant.MenuType[i];
         }
+        Debug.Log("메타몽 디버깅 : 메뉴 타입 설명 설정");
         for(int i = 0; i< AceMenuContent.transform.childCount; i++)
         {
             GameObject aceMenu = AceMenuContent.transform.GetChild(i).gameObject;
@@ -157,9 +157,14 @@ public class UIControlManager : MonoBehaviour
             aceMenu.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = MainRestaurant.aceMenus[i].baseMenu.price.ToString()+"원";
             aceMenu.GetComponent<Image>().sprite = MainRestaurant.aceMenus[i].aceImage;
         }
+        Debug.Log("메타몽 디버깅 : 대표메뉴 설정 끝");
         for(int i = 0; i< MenuListContent.Length; i++)
         {
-            
+            if(i >= MainRestaurant.totalMenu.Length)
+            {
+                MenuListContent[i].SetActive(false);
+                continue;
+            }
             for(int j = 0; j < MenuListContent[i].transform.childCount; j++)
             {
                 GameObject obj = MenuListContent[i].transform.GetChild(j).gameObject;
@@ -175,10 +180,10 @@ public class UIControlManager : MonoBehaviour
                 obj.transform.GetChild(1).GetComponent<TextMeshProUGUI>().text = MainRestaurant.totalMenu[i][j].name;
                 obj.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = MainRestaurant.totalMenu[i][j].price.ToString()+"원";
                 obj.GetComponent<Image>().sprite = MainRestaurant.totalMenu[i][j].Img;
-                Debug.Log("메타몽 디버깅 :"+MainRestaurant.totalMenu[i][j].name);
+                Debug.Log("메타몽 디버깅 : 설정중"+MainRestaurant.totalMenu[i][j].name);
             }
         }
-        
+        Debug.Log("메타몽 디버깅 : InitMenu 끝");
     }
     public void ClickMenuBtn(int listIndex, int index)
     {
@@ -194,8 +199,12 @@ public class UIControlManager : MonoBehaviour
     public void ClickAceMenu(int index)
     {
         _SpawnMenu.SpawnAceItem(index);
+        TXT_ChoosedMenuName.text = MainRestaurant.aceMenus[index].baseMenu.name;
+        TXT_ChoosedMenuPrice.text = MainRestaurant.aceMenus[index].baseMenu.price.ToString() + "원";
+        string[] splitDesc = MainRestaurant.aceMenus[index].baseMenu.Description.Split(new char[] { ':' });
+        MenuExplanation[0].text = splitDesc[0];
+        MenuExplanation[1].text = splitDesc[1];
         ChangeLayer(7); // 대표메뉴 UI로 바꾸기
-        
     }
     public void GetMenuInfo()
     {

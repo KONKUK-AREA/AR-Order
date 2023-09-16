@@ -21,6 +21,9 @@ public class SpawnMenu : MonoBehaviour
     public GameObject[] MarketCharacters;
     public Menu[][] foodPrefabs;
     public AceMenu[] AceMenus;
+    [SerializeField]
+    private VideoPlayer VP;
+    private List<GameObject> Particles;
     // Start is called before the first frame update
     GameObject DetectAR;
     GameObject SpawnedObject = null;
@@ -91,7 +94,16 @@ public class SpawnMenu : MonoBehaviour
             {
                 if(FoodType == 2)
                 {
-
+                    if(!Physics.Raycast(ray,out hitLayerDish, Mathf.Infinity, dishLayerMask))
+                    {
+                        foreach(GameObject obj in Particles)
+                        {
+                            if (!obj.activeSelf)
+                            {
+                                obj.SetActive(true);
+                            }
+                        }
+                    }
                 }
             }
         }
@@ -212,8 +224,18 @@ public class SpawnMenu : MonoBehaviour
                 FoodType = AceMenus[idx].type;
                 if(FoodType == 1)
                 {
-                    GameObject.Find("Video Player").GetComponent<VideoPlayer>().clip = AceMenus[idx].filter;
+                    VP.clip = AceMenus[idx].filter;
                     FoodFilter.SetActive(true);
+                }
+                else if(FoodType == 2)
+                {
+                    for(int i = 0; i < AceMenus[idx].baseMenu.menuPrefab.transform.childCount; i++)
+                    {
+                        if (AceMenus[idx].baseMenu.menuPrefab.transform.GetChild(i).CompareTag("Particles"))
+                        {
+                            Particles.Add(AceMenus[idx].baseMenu.menuPrefab.transform.GetChild(i).gameObject);
+                        }
+                    }
                 }
                 Debug.Log("¸ÞÅ¸¸ù µð¹ö±ë : " + SpawnedObject.transform.position);
             }
@@ -329,7 +351,7 @@ public class SpawnMenu : MonoBehaviour
             {
                 Destroy(showFood);
             }
-            showFood = Instantiate(foodPrefabs[ListIndex][index].menuPrefab);
+            showFood = Instantiate(foodPrefabs[ListIndex][index].menuPrefab,SpawnedObject.transform.position,Quaternion.identity);
             Debug.Log("¸ÞÅ¸¸ù µð¹ö±ë : " + showFood.transform.position);
             Debug.Log("¸ÞÅ¸¸ù µð¹ö±ë : " + showFood);
             showFood.transform.parent = SpawnedObject.transform;

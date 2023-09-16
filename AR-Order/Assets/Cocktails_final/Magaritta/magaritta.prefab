@@ -109,7 +109,6 @@ GameObject:
   - component: {fileID: 5214077571509567600}
   - component: {fileID: 6554745898045219881}
   - component: {fileID: 4866527659805944167}
-  - component: {fileID: 3968673582461054212}
   m_Layer: 6
   m_Name: magaritta_liquid
   m_TagString: Untagged
@@ -182,20 +181,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &3968673582461054212
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4584186274545862442}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 4300000, guid: 97ddb0178bd69b14880f562dabef80e9, type: 2}
 --- !u!1 &4836518773659817329
 GameObject:
   m_ObjectHideFlags: 0
@@ -207,6 +192,7 @@ GameObject:
   - component: {fileID: 5212094819151646667}
   - component: {fileID: 9221910832093266030}
   - component: {fileID: 6349574385777505444}
+  - component: {fileID: 6447231854514564758}
   m_Layer: 6
   m_Name: magaritta
   m_TagString: Untagged
@@ -282,6 +268,20 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &6447231854514564758
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4836518773659817329}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 4300000, guid: 27246d30bb2e59c42bddc7d9dc745dd0, type: 2}
 --- !u!1 &9025761805593095102
 GameObject:
   m_ObjectHideFlags: 0
