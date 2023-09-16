@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44402185, g: 0.49316472, b: 0.57223153, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -5115,7 +5115,6 @@ RectTransform:
   - {fileID: 303398043}
   - {fileID: 1366254584}
   - {fileID: 1407637789}
-  - {fileID: 1424540575}
   - {fileID: 4986404879344910283}
   - {fileID: 1539047010}
   - {fileID: 1759600840}
@@ -19625,7 +19624,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1068418654
 RectTransform:
   m_ObjectHideFlags: 0
@@ -26457,6 +26456,7 @@ RectTransform:
   - {fileID: 66985763}
   - {fileID: 229397536}
   - {fileID: 370202628}
+  - {fileID: 1424540575}
   m_Father: {fileID: 234090846}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -26805,8 +26805,8 @@ RectTransform:
   - {fileID: 2002257343}
   - {fileID: 1432386661}
   - {fileID: 1537737192}
-  m_Father: {fileID: 234090846}
-  m_RootOrder: 6
+  m_Father: {fileID: 1407637789}
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -29072,7 +29072,7 @@ RectTransform:
   - {fileID: 1833643386}
   - {fileID: 512931930}
   m_Father: {fileID: 234090846}
-  m_RootOrder: 8
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -33104,7 +33104,7 @@ RectTransform:
   - {fileID: 1256026908}
   - {fileID: 1878595822}
   m_Father: {fileID: 234090846}
-  m_RootOrder: 9
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -34190,16 +34190,34 @@ MonoBehaviour:
   - "\uB808\uC639:\uC544\uC774\uC720\uB3C4 \uBA39\uACE0 \uB180\uB780 \uC74C\uC2DD"
   - "\uB808\uC639:\uC544\uC774\uC720\uB3C4 \uBA39\uACE0 \uB180\uB780 \uC74C\uC2DD"
   - "\uB808\uC639:\uC544\uC774\uC720\uB3C4 \uBA39\uACE0 \uB180\uB780 \uC74C\uC2DD"
-  MenuSprite_CockTail: []
+  MenuSprite_CockTail:
+  - {fileID: 21300000, guid: 0a6d81468e98b0a44b2e5cd0edcb9b57, type: 3}
+  - {fileID: 21300000, guid: 70c38798032ce4d49bb8d973df7a82cd, type: 3}
+  - {fileID: 21300000, guid: 47611e5bd8c022143904a1ab89d5bd05, type: 3}
+  - {fileID: 21300000, guid: 4d87f29f5b2ad804eac2207a8ae1f567, type: 3}
+  - {fileID: 21300000, guid: 78e9e7c5418e2b44ea29a97818a87cfe, type: 3}
+  - {fileID: 21300000, guid: 69d03b2290b07914a9f3545c8129f121, type: 3}
+  - {fileID: 21300000, guid: dd88daa40b44586488826b97c65f5332, type: 3}
+  - {fileID: 21300000, guid: d054aef53319c084b9b3bffbe9a6b35a, type: 3}
+  - {fileID: 21300000, guid: f0181328704ea4e41a637b8a1712d899, type: 3}
+  - {fileID: 21300000, guid: 292aa749b3bf8e64f9b96db660decd81, type: 3}
+  - {fileID: 21300000, guid: 97061b3a04f6b5844946f6940f1cbf22, type: 3}
+  - {fileID: 21300000, guid: ed2b9220121f03845884e8d16fff54b2, type: 3}
+  - {fileID: 21300000, guid: 05ce19629082a4745a93526e8847360b, type: 3}
   MenuGameObject_CockTail:
-  - {fileID: 82135371112688787, guid: 7a6580a9ddf48ea4f89b19536a4e1ace, type: 3}
-  - {fileID: 4324684279050923644, guid: 8b64f2c0097c349489000329e31b1860, type: 3}
-  - {fileID: 4662481764723708322, guid: b41ddb21680557b4d91169ed4f14b6d2, type: 3}
-  - {fileID: 8753151593518205581, guid: bb6df8491f7ea7046b2426a0058b9041, type: 3}
-  - {fileID: 9125031610475667637, guid: 84254fc1674035d41bab87a180f3d662, type: 3}
-  - {fileID: 6703535345317207175, guid: 85b0a1b12dc0e214bb9d6d8880970a12, type: 3}
-  - {fileID: 4591555512764148979, guid: 3e5185dd677343943b7256f031855916, type: 3}
-  - {fileID: 4591555512764148979, guid: 3e5185dd677343943b7256f031855916, type: 3}
+  - {fileID: 6129268563796809335, guid: 7ed88f989736acf439ea8897af330ec3, type: 3}
+  - {fileID: 4324684279050923644, guid: a5d6626ad6dc0044ebd940ae93210aae, type: 3}
+  - {fileID: 4743646564419062505, guid: f5c0877091fbfa7489cbcf99420e3b26, type: 3}
+  - {fileID: 2380044231616566257, guid: ed7d46bca3e34864b87c35911f04a924, type: 3}
+  - {fileID: 4440914350099591968, guid: 067994e964d36434db89bba4d020b0de, type: 3}
+  - {fileID: 6703535345317207175, guid: f999691619bbd68459de9fe3580791bc, type: 3}
+  - {fileID: 4591555512764148979, guid: 51631f05bb8cecf4a97729a1866a14b7, type: 3}
+  - {fileID: 2213622731164305154, guid: ed4346ce8dbbbc14aa8a3cc23259ce5c, type: 3}
+  - {fileID: 4836518773659817329, guid: 22bc0de5dc81d24499201df2e2db1464, type: 3}
+  - {fileID: 5361801035520932982, guid: 60a1925f76743b8448221e7612ab9822, type: 3}
+  - {fileID: 4418834316403783777, guid: 7105e96ee49252d43967c7a4b25d3597, type: 3}
+  - {fileID: 2733408527504927284, guid: ff8c84730fe24124e834444a53e75879, type: 3}
+  - {fileID: 8083192967676245310, guid: bb19e5582022e554489dd9bf7503bfea, type: 3}
   MenuDescription_CockTail:
   - "**\uC0C1\uCF8C\uD558\uACE0 \uC0C1\uD07C\uD55C \uB9DB\uC774 \uD2B9\uC9D5\uC778
     \uCE75\uD14C\uC77C**:\uC8FC\uB85C \uBBFC\uD2B8, \uB77C\uC784, \uC124\uD0D5, \uD654\uC774\uD2B8
@@ -34332,8 +34350,11 @@ MonoBehaviour:
     \uAC00\uB8E8\uB294 \uCE75\uD14C\uC77C\uC758 \uD5A5\uC744 \uB3CB\uAD6C\uBA70,
     \uC2DC\uAC01\uC801\uC73C\uB85C\uB3C4 \uB9E4\uB825\uC801\uC785\uB2C8\uB2E4."
   AceMenuSprite_CockTail:
-  - {fileID: 0}
-  AceMenuChilds_CockTail: []
+  - {fileID: 21300000, guid: 70c38798032ce4d49bb8d973df7a82cd, type: 3}
+  - {fileID: 21300000, guid: dd88daa40b44586488826b97c65f5332, type: 3}
+  AceMenuChilds_CockTail:
+  - {fileID: 4324684279050923644, guid: a5d6626ad6dc0044ebd940ae93210aae, type: 3}
+  - {fileID: 4591555512764148979, guid: 51631f05bb8cecf4a97729a1866a14b7, type: 3}
   AceMenuFilter_CockTail: {fileID: 0}
 --- !u!1 &1811430347
 GameObject:
@@ -40431,17 +40452,19 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 
+  m_text: 'Scan the QR Code
+
+'
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: f6ba354b91108fe469f9d74ba5d8c41a, type: 2}
-  m_sharedMaterial: {fileID: -3460747362446236463, guid: f6ba354b91108fe469f9d74ba5d8c41a, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: ad47f77ecf60d444ebd3f987e38cc3ff, type: 2}
+  m_sharedMaterial: {fileID: -6330723350756374847, guid: ad47f77ecf60d444ebd3f987e38cc3ff, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4278190080
-  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
+    rgba: 4294967295
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -40458,8 +40481,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 12
-  m_fontSizeBase: 12
+  m_fontSize: 16
+  m_fontSizeBase: 16
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -40756,7 +40779,7 @@ RectTransform:
   - {fileID: 4986404879041554937}
   - {fileID: 1182753684}
   m_Father: {fileID: 234090846}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
