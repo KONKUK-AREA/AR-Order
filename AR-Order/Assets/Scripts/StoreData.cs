@@ -2,8 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.InteropServices.WindowsRuntime;
 using Unity.VisualScripting;
-using UnityEditor.Timeline.Actions;
 using UnityEngine;
+using UnityEngine.Video;
 
 public class StoreData : MonoBehaviour
 {
@@ -23,10 +23,11 @@ public class StoreData : MonoBehaviour
     [SerializeField]
     private string[] MenuDescription_CockTail;
     [SerializeField]
-    private Sprite AceMenuSprite_CockTail;
+    private Sprite[] AceMenuSprite_CockTail;
     [SerializeField]
     private GameObject[] AceMenuChilds_CockTail;
-
+    [SerializeField]
+    private VideoClip AceMenuFilter_CockTail;
     private Sprite[][] StoreSprites = new Sprite[10][];
     private GameObject[][] StoreGameObjects = new GameObject[10][];
     private int menuIndex = 0;
@@ -42,49 +43,51 @@ public class StoreData : MonoBehaviour
     public Restaurant GetMenu(string name)
     {
         Restaurant restaurant=null;
-        //ë‚˜ì¤‘ì— DBë¡œ í•´ì•¼í• ë“¯
+        //³ªÁß¿¡ DB·Î ÇØ¾ßÇÒµí
         switch (name)
         {
             case "Metamong":
                 menuIndex = 0;
-                Menu[] menus = { 
-                                new Menu("ì¹µí…Œì¼1", 4000), new Menu("ì¹µí…Œì¼2", 5000), 
-                                new Menu("ì¹µí…Œì¼3", 5500),new Menu("ì¹µí…Œì¼4", 6000),new Menu("ì¹µí…Œì¼5", 5500),new Menu("ì¹µí…Œì¼6", 6000),
-                                new Menu("ì¹µí…Œì¼7", 5500),new Menu("ì¹µí…Œì¼8", 6000),new Menu("ì¹µí…Œì¼9", 5500),new Menu("ì¹µí…Œì¼10", 6000),
-                                new Menu("ì¹µí…Œì¼11", 5500),new Menu("ì¹µí…Œì¼12", 6000),new Menu("ì¹µí…Œì¼13", 5500),new Menu("ì¹µí…Œì¼14", 6000),
-                                new Menu("ì¹µí…Œì¼15", 5500),new Menu("ì¹µí…Œì¼16", 6000),new Menu("ì¹µí…Œì¼17", 5500),new Menu("ì¹µí…Œì¼18", 6000),
-                                new Menu("ì¹µí…Œì¼19", 5500),new Menu("ì¹µí…Œì¼20", 6000),new Menu("ì¹µí…Œì¼21", 5500),new Menu("ì¹µí…Œì¼22", 6000),
-                    
-                                // new Menu("ì•„ë©”ë¦¬ì¹´ë…¸", 4000), new Menu("ìš°ì£¼ë¥¼ ì¤„ê²Œ", 5000), new Menu("íŠ¸ë¡œí”¼ì¹¼ ì¬ìƒ¤ì¸", 5500),new Menu("ì‹œê·¸ë‹ˆì²˜ ì•„ì¸ìŠˆí˜ë„ˆ", 6000), new Menu("í† ë„¤ì´ë„ ì´ˆì½”", 6000),new Menu("íë‹¹íë‹¹ ë¼ë–¼", 6500),
-                                // new Menu("ìˆ²ì† í”„ë£¨ì¸  í¬ë¡œí”Œ", 8500),new Menu("ì•„ë©”ë¦¬ì¹¸ ë¸Œë ‰í¼ìŠ¤íŠ¸", 9500),new Menu("ë£¨ê¼´ë¼ ì ë´‰ëµˆë¥´ ìƒŒë“œìœ„ì¹˜", 8500),
-                                // new Menu("ì˜¤ìŠ¤í‹´ ì•ˆì‹¬ ìŠ¤í…Œì´í¬", 25000),new Menu("í† ë§ˆí†  ë¯¸íŠ¸ë³¼ íŒŒìŠ¤íƒ€", 18000), new Menu("ìŠ¤íŒŒì´ì‹œ ì¹´í¬ë‚˜íƒ€ ë¼êµ¬ íŒŒìŠ¤íƒ€", 19000),
-                                // new Menu("ì•„ë©”ë¦¬ì¹¸ ë¸Œë ˆë“œ í”Œë ˆì´íŠ¸ ",12000),new Menu("ë´„ í”¼í¬ë‹‰ì„¸íŠ¸",13000),new Menu("ë¸Œë ˆë“œ í•œ ë°”êµ¬ë‹ˆ",11000),
-                                // new Menu("ê·¸ë¦°ìŠ¤í”„ & ìƒëŸ¬ë“œ ì„¸íŠ¸",12000),new Menu("ë©”ì´í”Œíƒ‘ íŒ¬ì¼€ì´í¬",12000),new Menu("ë ˆì˜¹",10000), 
-                                
-                                
-                                };
-                //Menu[] menus = {new Menu("ì»¤í”¼1", 5000), new Menu("ì»¤í”¼2",6500), new Menu("ì»¤í”¼3",7500), new Menu("ì»¤í”¼4",5000),
-                //new Menu("ì¼€ÂŸ1",7500), new Menu("ì¼€ÂŸ2",6500), new Menu("í”¼ì1",8500)};
-                for(int i =0; i < menus.Length; i++)
+                Menu[] menus = { new Menu("¾Æ¸Ş¸®Ä«³ë", 4000), new Menu("¿ìÁÖ¸¦ ÁÙ°Ô", 5000), new Menu("Æ®·ÎÇÇÄ® ½ã»şÀÎ", 5500),new Menu("½Ã±×´ÏÃ³ ¾ÆÀÎ½´Æä³Ê", 6000), new Menu("Åä³×ÀÌµµ ÃÊÄÚ", 6000),new Menu("Æş´çÆş´ç ¶ó¶¼", 6500),
+                                new Menu("½£¼Ó ÇÁ·çÃ÷ Å©·ÎÇÃ", 8500),new Menu("¾Æ¸Ş¸®Ä­ ºê·ºÆÛ½ºÆ®", 9500),new Menu("·ç²Ã¶ó ÀáºÀºÆ¸£ »÷µåÀ§Ä¡", 8500),
+                                new Menu("¿À½ºÆ¾ ¾È½É ½ºÅ×ÀÌÅ©", 25000),new Menu("Åä¸¶Åä ¹ÌÆ®º¼ ÆÄ½ºÅ¸", 18000), new Menu("½ºÆÄÀÌ½Ã Ä«Æ÷³ªÅ¸ ¶ó±¸ ÆÄ½ºÅ¸", 19000),
+                                new Menu("¾Æ¸Ş¸®Ä­ ºê·¹µå ÇÃ·¹ÀÌÆ® ",12000),new Menu("º½ ÇÇÅ©´Ğ¼¼Æ®",13000),new Menu("ºê·¹µå ÇÑ ¹Ù±¸´Ï",11000),
+                                new Menu("±×¸°½ºÇÁ & »ø·¯µå ¼¼Æ®",12000),new Menu("¸ŞÀÌÇÃÅ¾ ÆÒÄÉÀÌÅ©",12000),new Menu("·¹¿Ë",10000), };
+                //Menu[] menus = {new Menu("Ä¿ÇÇ1", 5000), new Menu("Ä¿ÇÇ2",6500), new Menu("Ä¿ÇÇ3",7500), new Menu("Ä¿ÇÇ4",5000),
+                //new Menu("ÄÉŸå1",7500), new Menu("ÄÉŸå2",6500), new Menu("ÇÇÀÚ1",8500)};
+                for (int i = 0; i < menus.Length; i++)
                 {
                     menus[i].Img = MenuSprite_brunchCafeKKU[i];
                     menus[i].menuPrefab = MenuGameObject_brunchCafeKKU[i];
                     menus[i].Description = MenuDescription_brunchCafeKKU[i];
                 }
+                int[] info = { 5, 6, 3, 3, 3, 3 };
                 AceMenu[] AceMetamong = { };
-                int[] info = { 5,       2,3,4,3,3};     //í–‰ ê°¯ìˆ˜, í–‰ ë³„ ë²„íŠ¼ ê°¯ìˆ˜
+                string[] BrunchCafeType = { "Coffee & Drinks", "Brunch", "Dinner", "Bread", "Side" };
                 //int[] info = { 4, 4, 2, 1 };
-                restaurant = new Restaurant("ë¸ŒëŸ°ì¹˜ì¹´í˜ ê±´ëŒ€ì…êµ¬ì ", info, menus,AceMetamong);
+                restaurant = new Restaurant("ºê·±Ä¡Ä«Æä °Ç´ëÀÔ±¸Á¡", info, menus,AceMetamong,BrunchCafeType,0);
                 break;
             case "Cocktail":
-                Menu[] Cocktails = { };
+                Menu[] Cocktails = {new Menu("¸ğÈ÷¶Ç (Mojito)",15000), new Menu("µ¥Å³¶ó ¼±¶óÀÌÁî (Tequila Sunrise",13000), new Menu("¿¤ µğ¾Æºí·Î (El Diablo)", 12000),new Menu("ÇÎÅ©·¹ÀÌµğ (Pink Lady)", 15000), new Menu("ÇÇ³ÄÄİ¶ó´Ù (Pina Colada)",15000) ,
+                new Menu("µµÄì ¾ÆÀÌ½ºÆ¼ (Tokyo Iced Tea)", 12000), new Menu("ÇÏ¿ÍÀÌ¾È »çÆÄÀÌ¾î (Hawaiian Sapphire)", 17000), new Menu("¸¶Æ¼´Ï (Martini)", 15000), new Menu("¸¶°¡¸®Å¸ (Margarita)", 14000), new Menu("¸ÇÇÏÅº (Manhattan)", 16000),
+                new Menu("º£ÀÏ¸®½º ¹ĞÅ© (Baileys Milk)", 9000), new Menu("¿Ãµå ÆĞ¼Çµå (Old Fashioned)",16000), new Menu("ÆÄ¿ì½ºÆ® (Fause)", 10000)};
 
                 for(int i = 0; i< Cocktails.Length; i++)
                 {
-
+                    Cocktails[i].Img = MenuSprite_CockTail[i];
+                    Cocktails[i].menuPrefab = MenuGameObject_CockTail[i];
+                    Cocktails[i].Description = MenuDescription_CockTail[i];
                 }
-                int[] InfoCocktails = { };
-                AceMenu[] AceCocktails = { };
+                int[] InfoCocktails = { 4,3,4,3,3};
+                AceMenu[] AceCocktails = {new AceMenu(Cocktails[6],1), new AceMenu(Cocktails[1],2)};
+                for(int i = 0; i< AceCocktails.Length; i++)
+                {
+                    AceCocktails[i].aceImage = AceMenuSprite_CockTail[i];
+                }
+                AceCocktails[0].filter = AceMenuFilter_CockTail;
+                AceCocktails[1].childs = AceMenuChilds_CockTail;
+                string[] CocktailType = { "Ã»·®ÇÔÀ» ´À³¥ ¼ö ÀÖ´Â", "¿©¼ºµéÀ» À§ÇÑ ¸Ş´º", "±ò²ûÇÏ°í µ¶ÇÑ ¸ÀÀ» Áñ±â°í ½ÍÀº", "±íÀº ¸ÀÀ» ´À³¢°í ½ÍÀº" };
+                restaurant = new Restaurant("¼¼Å¸¸ù Ä¬Å×ÀÏ¹Ù", InfoCocktails, Cocktails, AceCocktails, CocktailType,1);
                 break;
         
         }
@@ -95,10 +98,12 @@ public class Restaurant
 {
     public Menu[][] totalMenu;
     public AceMenu[] aceMenus;
+    public string[] MenuType;
     public string Name;
+    public int CharacterIdx;
     public int ListLength = 0;
     public int Length=0;
-    public Restaurant(string Name, int[] split, Menu[] menus, AceMenu[] Ace) // split[0] = ë©”ë‰´ ì¤„, split[1],split[2].... = ê° ì¤„ë‹¹ ë©”ë‰´ê°œìˆ˜
+    public Restaurant(string Name, int[] split, Menu[] menus, AceMenu[] Ace, string[] type, int CharacterIdx) // split[0] = ¸Ş´º ÁÙ, split[1],split[2].... = °¢ ÁÙ´ç ¸Ş´º°³¼ö
     {
         ListLength = split[0];
         this.Name = Name;
@@ -111,8 +116,10 @@ public class Restaurant
                 totalMenu[i][j] = menus[Length++];
             }
         }
+        this.CharacterIdx = CharacterIdx;
         aceMenus = Ace;
-        Debug.Log("ë©”íƒ€ëª½ ë””ë²„ê¹… : " + Name + " " + ListLength + " " + Length);
+        MenuType = type;
+        Debug.Log("¸ŞÅ¸¸ù µğ¹ö±ë : " + Name + " " + ListLength + " " + Length);
     }
     
 }
@@ -136,10 +143,11 @@ public class Menu
 public class AceMenu
 {
     public Menu baseMenu;
-    public Sprite filter;
+    public Sprite aceImage;
+    public VideoClip filter;
     public GameObject[] childs;
     public int type;
-    public AceMenu(Menu menu, int type)
+    public AceMenu(Menu menu, int type) // 1 ÇÊÅÍ 2 ÆÄÆ¼Å¬
     {
         baseMenu = menu;
         this.type = type;

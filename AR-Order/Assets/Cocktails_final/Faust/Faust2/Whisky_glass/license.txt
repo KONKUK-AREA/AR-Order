@@ -1,0 +1,11 @@
+Model Information:
+* title:	Whisky glass
+* source:	https://sketchfab.com/3d-models/whisky-glass-b945af7e08e44315b36182a1c3d3f326
+* author:	ale3Dartist (https://sketchfab.com/alek492)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Whisky glass" (https://sketchfab.com/3d-models/whisky-glass-b945af7e08e44315b36182a1c3d3f326) by ale3Dartist (https://sketchfab.com/alek492) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
