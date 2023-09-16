@@ -69,8 +69,8 @@ public class StoreData : MonoBehaviour
                 break;
             case "Cocktail":
                 Menu[] Cocktails = {new Menu("모히또 (Mojito)",15000), new Menu("데킬라 선라이즈 (Tequila Sunrise",13000), new Menu("엘 디아블로 (El Diablo)", 12000),new Menu("핑크레이디 (Pink Lady)", 15000), new Menu("피냐콜라다 (Pina Colada)",15000) ,
-                new Menu("도쿄 아이스티 (Tokyo Iced Tea)", 12000), new Menu("하와이안 사파이어 (Hawaiian Sapphire)", 17000), new Menu("마티니 (Martini)", 15000), new Menu("마가리타 (Margarita)", 14000), new Menu("맨하탄 (Manhattan)", 16000),
-                new Menu("베일리스 밀크 (Baileys Milk)", 9000), new Menu("올드 패션드 (Old Fashioned)",16000), new Menu("파우스트 (Fause)", 10000)};
+                new Menu("블루 도쿄 아이스티 (Blue Tokyo Iced Tea)", 12000), new Menu("하와이안 사파이어 (Hawaiian Sapphire)", 17000), new Menu("마티니 (Martini)", 15000), new Menu("마가리타 (Margarita)", 14000), new Menu("맨하탄 (Manhattan)", 16000),
+                new Menu("스트로베리 보드카 (StarawBerry Vodka)", 9000), new Menu("올드 패션드 (Old Fashioned)",16000), new Menu("파우스트 (Fause)", 10000)};
 
                 for(int i = 0; i< Cocktails.Length; i++)
                 {
@@ -85,7 +85,8 @@ public class StoreData : MonoBehaviour
                     AceCocktails[i].aceImage = AceMenuSprite_CockTail[i];
                 }
                 AceCocktails[0].filter = AceMenuFilter_CockTail;
-                AceCocktails[1].childs = AceMenuChilds_CockTail;
+                GameObject[] SunriseChilds = { AceCocktails[1].baseMenu.menuPrefab.transform.GetChild(1).gameObject, AceCocktails[1].baseMenu.menuPrefab.transform.GetChild(2).gameObject, AceCocktails[1].baseMenu.menuPrefab.transform.GetChild(3).gameObject};
+                AceCocktails[1].childs = SunriseChilds;
                 string[] CocktailType = { "청량함을 느낄 수 있는", "여성들을 위한 메뉴", "깔끔하고 독한 맛을 즐기고 싶은", "깊은 맛을 느끼고 싶은" };
                 restaurant = new Restaurant("세타몽 칵테일바", InfoCocktails, Cocktails, AceCocktails, CocktailType,1);
                 break;
