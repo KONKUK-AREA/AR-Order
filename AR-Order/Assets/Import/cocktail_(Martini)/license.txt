@@ -1,0 +1,11 @@
+Model Information:
+* title:	cocktail (Martini)
+* source:	https://sketchfab.com/3d-models/cocktail-martini-ea3c2447dd1442a3bda1322b4b1001bd
+* author:	Akiko.Tomiyoshi (https://sketchfab.com/Akiko.Tomiyoshi)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "cocktail (Martini)" (https://sketchfab.com/3d-models/cocktail-martini-ea3c2447dd1442a3bda1322b4b1001bd) by Akiko.Tomiyoshi (https://sketchfab.com/Akiko.Tomiyoshi) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

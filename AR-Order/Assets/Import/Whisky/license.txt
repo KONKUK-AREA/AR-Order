@@ -1,0 +1,11 @@
+Model Information:
+* title:	Whisky
+* source:	https://sketchfab.com/3d-models/whisky-32f15b0f62eb4deb8e5ba7d1c960f86a
+* author:	Jiaxing (https://sketchfab.com/saitoyang)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Whisky" (https://sketchfab.com/3d-models/whisky-32f15b0f62eb4deb8e5ba7d1c960f86a) by Jiaxing (https://sketchfab.com/saitoyang) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

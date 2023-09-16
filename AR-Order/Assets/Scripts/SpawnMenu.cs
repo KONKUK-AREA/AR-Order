@@ -8,16 +8,17 @@ using UnityEngine.Rendering.RendererUtils;
 using UnityEngine.UIElements;
 using Unity.VisualScripting;
 using System.Runtime.InteropServices;
+using UnityEngine.Video;
 
 public class SpawnMenu : MonoBehaviour
 {
-    public GameObject character;
+    private GameObject character;
     public GameObject foodSet;
     public GameObject Spawn;
     public GameObject plane;
     public GameObject FoodFilter;
     //public GameObject qrFrame;
-
+    public GameObject[] MarketCharacters;
     public Menu[][] foodPrefabs;
     public AceMenu[] AceMenus;
     // Start is called before the first frame update
@@ -211,7 +212,7 @@ public class SpawnMenu : MonoBehaviour
                 FoodType = AceMenus[idx].type;
                 if(FoodType == 1)
                 {
-                    FoodFilter.GetComponent<Image>().sprite = AceMenus[idx].filter;
+                    GameObject.Find("Video Player").GetComponent<VideoPlayer>().clip = AceMenus[idx].filter;
                     FoodFilter.SetActive(true);
                 }
                 Debug.Log("¸ÞÅ¸¸ù µð¹ö±ë : " + SpawnedObject.transform.position);
@@ -360,5 +361,9 @@ public class SpawnMenu : MonoBehaviour
         {
             FoodFilter.SetActive(false);
         }
+    }
+    public void SetCharacter(int idx)
+    {
+        character = MarketCharacters[idx];
     }
 }
