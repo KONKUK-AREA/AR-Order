@@ -9,6 +9,7 @@ using UnityEngine.UIElements;
 using Unity.VisualScripting;
 using System.Runtime.InteropServices;
 using UnityEngine.Video;
+using System.IO;
 
 public class SpawnMenu : MonoBehaviour
 {
@@ -23,7 +24,7 @@ public class SpawnMenu : MonoBehaviour
     public AceMenu[] AceMenus;
     [SerializeField]
     private VideoPlayer VP;
-    private List<GameObject> Particles;
+    private List<GameObject> Particles = new List<GameObject>();
     // Start is called before the first frame update
     GameObject DetectAR;
     GameObject SpawnedObject = null;
@@ -230,21 +231,21 @@ public class SpawnMenu : MonoBehaviour
                 FoodType = AceMenus[idx].type;
                 if(FoodType == 1)
                 {
-#if UNITY_ANDROID
-                    VP.clip = Resources.Load<VideoClip>("FilterAnd.webm");
-#else
                     VP.clip = AceMenus[idx].filter;
-#endif
+                    Debug.Log("¸ÞÅ¸¸ù µð¹ö±ë : " + VP.clip);
                     FoodFilter.SetActive(true);
                     VP.Play();
                 }
                 else if(FoodType == 2)
                 {
+                    Particles.Clear();
                     for(int i = 0; i < showFood.transform.childCount; i++)
                     {
                         if (showFood.transform.GetChild(i).CompareTag("Particles"))
                         {
-                            Particles.Add(showFood.transform.GetChild(i).gameObject);
+                            int tmp = i;
+                            Particles.Add(showFood.transform.GetChild(tmp).gameObject);
+                            Debug.Log("¸ÞÅ¸¸ù µð¹ö±ë : " + Particles.Count);
                         }
                     }
                 }
@@ -305,10 +306,6 @@ public class SpawnMenu : MonoBehaviour
                 Pos = hitLayerMask.point;
                 Rot = hitLayerMask.transform.eulerAngles;
                 charObject = Instantiate(character, Pos, Quaternion.Euler(Rot));
-                if (charObject.gameObject.CompareTag("PineApple"))
-                {
-                    charObject.transform.localScale *= 0.5f;
-                }
                 Debug.Log("¸ÞÅ¸¸ù µð¹ö±ë : " + charObject.transform.position);
             }
         }

@@ -349,7 +349,7 @@ public class UIControlManager : MonoBehaviour
             showCartCount[0].SetActive(false);
             showCartCount[1].SetActive(false);
             showCartCount[2].SetActive(false);
-
+            showCartCount[3].SetActive(false);
         }
 
     }

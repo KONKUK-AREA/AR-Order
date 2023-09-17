@@ -66,9 +66,9 @@ public class StoreData : MonoBehaviour
                 restaurant = new Restaurant("브런치카페 건대입구점", info, menus,AceMetamong,BrunchCafeType,0);
                 break;
             case "Metamong"://Cocktail
-                Menu[] Cocktails = {new Menu("모히또 (Mojito)",15000), new Menu("데킬라 선라이즈 (Tequila Sunrise",13000), new Menu("엘 디아블로 (El Diablo)", 12000),new Menu("핑크레이디 (Pink Lady)", 15000), new Menu("피냐콜라다 (Pina Colada)",15000) ,
-                new Menu("블루 도쿄 아이스티 (Blue Tokyo Iced Tea)", 12000), new Menu("하와이안 사파이어 (Hawaiian Sapphire)", 17000), new Menu("마티니 (Martini)", 15000), new Menu("마가리타 (Margarita)", 14000), new Menu("맨하탄 (Manhattan)", 16000),
-                new Menu("스트로베리 보드카 (StarawBerry Vodka)", 9000), new Menu("올드 패션드 (Old Fashioned)",16000), new Menu("파우스트 (Faust)", 10000)};
+                Menu[] Cocktails = {new Menu("모히또",15000), new Menu("데킬라 선라이즈",13000), new Menu("엘 디아블로", 12000),new Menu("핑크레이디", 15000), new Menu("피냐콜라다",15000) ,
+                new Menu("블루 도쿄 아이스티", 12000), new Menu("하와이안 사파이어", 17000), new Menu("마티니", 15000), new Menu("마가리타", 14000), new Menu("맨하탄", 16000),
+                new Menu("스트로베리 보드카", 9000), new Menu("올드 패션드",16000), new Menu("파우스트", 10000)};
 
                 for(int i = 0; i< Cocktails.Length; i++)
                 {
@@ -77,12 +77,12 @@ public class StoreData : MonoBehaviour
                     Cocktails[i].Description = MenuDescription_CockTail[i];
                 }
                 int[] InfoCocktails = { 4,3,4,3,3};
-                AceMenu[] AceCocktails = {new AceMenu(Cocktails[6], 2,1,3), new AceMenu(Cocktails[1], 1,0,1)};
+                AceMenu[] AceCocktails = { new AceMenu(Cocktails[1], 1,0,1), new AceMenu(Cocktails[6], 2, 1, 3) };
                 for(int i = 0; i< AceCocktails.Length; i++)
                 {
                     AceCocktails[i].aceImage = AceMenuSprite_CockTail[i];
                 }
-                AceCocktails[1].filter = AceMenuFilter_CockTail;
+                AceCocktails[0].filter = AceMenuFilter_CockTail;
                 string[] CocktailType = { "청량함을 느낄 수 있는", "여성들을 위한 메뉴", "깔끔하고 독한 맛을 즐기고 싶은", "깊은 맛을 느끼고 싶은" };
                 restaurant = new Restaurant("세타몽 칵테일바", InfoCocktails, Cocktails, AceCocktails, CocktailType,1);
                 break;
@@ -151,7 +151,6 @@ public class AceMenu
     public Menu baseMenu;
     public Sprite aceImage;
     public VideoClip filter;
-    public string filterPath;
     public int type;
     public int[] index = new int[2];
     public AceMenu(Menu menu, int type, int idx1, int idx2) // 1 필터 2 파티클

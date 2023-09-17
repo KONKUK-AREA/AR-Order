@@ -653,9 +653,9 @@ GameObject:
   - component: {fileID: 5176190477401703170}
   - component: {fileID: 4355141608700947060}
   - component: {fileID: 5593594950967412602}
-  - component: {fileID: 5212573211005905837}
   - component: {fileID: 6155276926278483853}
   - component: {fileID: 2623493945283891467}
+  - component: {fileID: 5015849913912162446}
   m_Layer: 7
   m_Name: Pineapple_by_Christian_Segundo
   m_TagString: PineApple
@@ -672,7 +672,7 @@ Transform:
   m_GameObject: {fileID: 3038339207137114654}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.05, y: 0.05, z: 0.05}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 5568067835375999819}
@@ -715,21 +715,8 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 80
   m_CollisionDetection: 0
---- !u!65 &5212573211005905837
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3038339207137114654}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 2.7979221, y: 7.012783, z: 3.7599688}
-  m_Center: {x: 0.3469677, y: 3.4637575, z: -0.29176807}
 --- !u!114 &6155276926278483853
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -742,9 +729,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 848cc91f3a8e9da4ba670a8565db05f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  eatPrefab: {fileID: 919132149155446097, guid: b1e7f72127417a14eabe9911adec18a9, type: 3}
+  eatPrefab: {fileID: 9182603847126994807, guid: cf73da606a1657c40a68b9d889232bde, type: 3}
   particle: {fileID: 8685677311337702267}
   audioSource: {fileID: 2623493945283891467}
+  EatSize: 1
 --- !u!82 &2623493945283891467
 AudioSource:
   m_ObjectHideFlags: 0
@@ -755,7 +743,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 62b04b3350c36514f90b19a2e1a5d0ab, type: 3}
+  m_audioClip: {fileID: 8300000, guid: f1bef0425770abe40bb1eb2bccf2a6cf, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -841,6 +829,19 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!65 &5015849913912162446
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3038339207137114654}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.16703469, y: 0.36652327, z: 0.19580996}
+  m_Center: {x: 0.015144795, y: 0.17740598, z: -0.012873083}
 --- !u!1 &3193829525227772303
 GameObject:
   m_ObjectHideFlags: 0
@@ -3268,7 +3269,7 @@ Transform:
   m_GameObject: {fileID: 9173871555863984685}
   m_LocalRotation: {x: -0.70680904, y: 0.00010601585, z: 0.00010610515, w: -0.70740443}
   m_LocalPosition: {x: 0, y: 0, z: -0}
-  m_LocalScale: {x: 0.4, y: 0.4, z: 0.4}
+  m_LocalScale: {x: 0.05, y: 0.05, z: 0.05}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1640294346465634708}
@@ -3372,6 +3373,22 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8675032312799600967, guid: 035a5c350b1cf004cb384b173e4419a7, type: 3}
       propertyPath: playOnAwake
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8675032312799600967, guid: 035a5c350b1cf004cb384b173e4419a7, type: 3}
+      propertyPath: InitialModule.startSize.scalar
+      value: 0.01
+      objectReference: {fileID: 0}
+    - target: {fileID: 8675032312799600967, guid: 035a5c350b1cf004cb384b173e4419a7, type: 3}
+      propertyPath: InitialModule.startColor.maxColor.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8675032312799600967, guid: 035a5c350b1cf004cb384b173e4419a7, type: 3}
+      propertyPath: InitialModule.startColor.maxColor.g
+      value: 0.7442708
+      objectReference: {fileID: 0}
+    - target: {fileID: 8675032312799600967, guid: 035a5c350b1cf004cb384b173e4419a7, type: 3}
+      propertyPath: InitialModule.startColor.maxColor.r
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
