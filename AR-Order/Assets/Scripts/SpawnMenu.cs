@@ -272,6 +272,7 @@ public class SpawnMenu : MonoBehaviour
             //showFood.transform.localScale = Vector3.one * 0.7f;
             //showFood.transform.localEulerAngles = Vector3.zero;
             showFood.transform.localPosition = Vector3.zero;
+            showFood.transform.localEulerAngles = Vector3.zero; 
             Debug.Log("¸ÞÅ¸¸ù µð¹ö±ë :" + showFood.transform.parent.name);
         }
     }
@@ -379,14 +380,15 @@ public class SpawnMenu : MonoBehaviour
     }
     public void DestroyObjects()
     {
-        if(SpawnedObject != null)
-        {
-            Destroy(SpawnedObject);
-        }
-        if(showFood != null)
+        if (showFood != null)
         {
             Destroy(showFood);
         }
+        if (SpawnedObject != null)
+        {
+            Destroy(SpawnedObject);
+        }
+
         if(charObject != null)
         {
             Destroy(charObject);

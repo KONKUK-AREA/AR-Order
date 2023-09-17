@@ -44901,6 +44901,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotationSpeed: 60
+  Cocktail: {fileID: 2054558875574310932}
 --- !u!1 &4591555512291275986
 GameObject:
   m_ObjectHideFlags: 0

@@ -46,6 +46,10 @@ public class MiniCharacterGame : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (!anim.GetBool("isEat") && eat != null)
+        {
+            Destroy(eat);
+        }
         if (Input.touchCount != 0)
         {
 
@@ -281,10 +285,10 @@ public class MiniCharacterGame : MonoBehaviour
     public float EatSize;
     private void Event()
     {
-        isAnim = true;   
+        isAnim = true;
+        anim.SetBool("isEat", true);
         eat = Instantiate(eatPrefab, transform.position + transform.forward * -1*0.16f, transform.rotation);
         eat.transform.localScale = Vector3.one * EatSize;
-        anim.SetBool("isEat",true);
         particle.Play();
         audioSource.Play();
         StartCoroutine(EatAnim());

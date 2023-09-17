@@ -84,7 +84,7 @@ public class StoreData : MonoBehaviour
                 }
                 AceCocktails[0].filter = AceMenuFilter_CockTail;
                 string[] CocktailType = { "청량함을 느낄 수 있는", "여성들을 위한 메뉴", "깔끔하고 독한 맛을 즐기고 싶은", "깊은 맛을 느끼고 싶은" };
-                restaurant = new Restaurant("세타몽 칵테일바", InfoCocktails, Cocktails, AceCocktails, CocktailType,1);
+                restaurant = new Restaurant("칵테일바 건대입구점", InfoCocktails, Cocktails, AceCocktails, CocktailType,1);
                 break;
         
         }
