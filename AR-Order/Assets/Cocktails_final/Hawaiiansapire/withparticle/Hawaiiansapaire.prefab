@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 2901916887486874561}
   - component: {fileID: 5499656357556677794}
   - component: {fileID: 5478407620991473303}
-  - component: {fileID: 5499656357556677793}
   - component: {fileID: 4878619774944100472}
   m_Layer: 6
   m_Name: Cocktail
@@ -28,7 +27,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2054558875574310932}
   m_LocalRotation: {x: 0.005815157, y: 0.7070829, z: 0.7070829, w: -0.005815157}
-  m_LocalPosition: {x: -0.00018726, y: -0.39025176, z: 0.8999825}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.53367776, y: 0.5336776, z: 0.5336775}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -85,19 +84,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &5499656357556677793
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2054558875574310932}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ed1056591256f7a458505e7157b32e65, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  rotationSpeed: 60
 --- !u!64 &4878619774944100472
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -69896,7 +69882,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4591555512764148979}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.48999977, z: -0.9000001}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:

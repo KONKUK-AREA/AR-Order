@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 247286121819536390}
   - component: {fileID: 3624046726631708818}
   - component: {fileID: 993813892603847750}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Mojito
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -239,7 +239,7 @@ VideoPlayer:
   m_AudioOutputMode: 2
   m_TargetAudioSources: []
   m_DirectAudioVolumes: []
-  m_Url: 
+  m_Url: file://C:/Users/wnsrb/AR-Order/AR-Order/Assets/StreamingAssets/FilterAnd.webm
   m_EnabledAudioTracks: 
   m_DirectAudioMutes: 
   m_ControlledAudioTrackCount: 0
@@ -25275,6 +25275,11 @@ MonoBehaviour:
   - {fileID: 2069391241}
   - {fileID: 713031494}
   - {fileID: 1433195605}
+  TXT_AceMenuName: {fileID: 338050456}
+  TXT_AceMenuPrice: {fileID: 1088284040}
+  AceMenuExplanation:
+  - {fileID: 1987472384}
+  - {fileID: 1402545816}
   cartList: []
 --- !u!1 &1366254583
 GameObject:
@@ -34220,15 +34225,15 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 05ce19629082a4745a93526e8847360b, type: 3}
   MenuGameObject_CockTail:
   - {fileID: 6129268563796809335, guid: 7ed88f989736acf439ea8897af330ec3, type: 3}
-  - {fileID: 4324684279050923644, guid: a5d6626ad6dc0044ebd940ae93210aae, type: 3}
+  - {fileID: 9182603847126994807, guid: cf73da606a1657c40a68b9d889232bde, type: 3}
   - {fileID: 4743646564419062505, guid: f5c0877091fbfa7489cbcf99420e3b26, type: 3}
   - {fileID: 2380044231616566257, guid: ed7d46bca3e34864b87c35911f04a924, type: 3}
   - {fileID: 4440914350099591968, guid: 067994e964d36434db89bba4d020b0de, type: 3}
-  - {fileID: 6703535345317207175, guid: f999691619bbd68459de9fe3580791bc, type: 3}
+  - {fileID: 6879698920704325364, guid: 0801299680b084f40ba4b1accd548a08, type: 3}
   - {fileID: 4591555512764148979, guid: 51631f05bb8cecf4a97729a1866a14b7, type: 3}
-  - {fileID: 2213622731164305154, guid: ed4346ce8dbbbc14aa8a3cc23259ce5c, type: 3}
-  - {fileID: 4836518773659817329, guid: 22bc0de5dc81d24499201df2e2db1464, type: 3}
-  - {fileID: 5361801035520932982, guid: 60a1925f76743b8448221e7612ab9822, type: 3}
+  - {fileID: 3481806066484792036, guid: 55bc2470e8395354e8fd82df461baa1d, type: 3}
+  - {fileID: 1729181390485901909, guid: c6164f00b2908e345a9fad16e24db727, type: 3}
+  - {fileID: 3326996353363372638, guid: a374eb490f47ee1448dffd27fd0ead5c, type: 3}
   - {fileID: 4418834316403783777, guid: 7105e96ee49252d43967c7a4b25d3597, type: 3}
   - {fileID: 2733408527504927284, guid: ff8c84730fe24124e834444a53e75879, type: 3}
   - {fileID: 8083192967676245310, guid: bb19e5582022e554489dd9bf7503bfea, type: 3}

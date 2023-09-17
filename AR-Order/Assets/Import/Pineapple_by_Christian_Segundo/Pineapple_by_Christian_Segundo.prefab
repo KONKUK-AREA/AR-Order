@@ -658,7 +658,7 @@ GameObject:
   - component: {fileID: 2623493945283891467}
   m_Layer: 7
   m_Name: Pineapple_by_Christian_Segundo
-  m_TagString: Character
+  m_TagString: PineApple
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3268,7 +3268,7 @@ Transform:
   m_GameObject: {fileID: 9173871555863984685}
   m_LocalRotation: {x: -0.70680904, y: 0.00010601585, z: 0.00010610515, w: -0.70740443}
   m_LocalPosition: {x: 0, y: 0, z: -0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.4, y: 0.4, z: 0.4}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1640294346465634708}

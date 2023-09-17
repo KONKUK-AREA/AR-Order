@@ -13,6 +13,7 @@ TagManager:
   - MenuCountTag
   - MenuImageTag
   - Particles
+  - PineApple
   layers:
   - Default
   - TransparentFX

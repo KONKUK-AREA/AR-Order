@@ -31,7 +31,7 @@ public class SpawnMenu : MonoBehaviour
     GameObject _plane;
     public ARSessionOrigin arSessionOrigin;
 
-    private Restaurant MainRestaurant;
+    private Restaurant MainRestaurant = null;
     private GetDataFromQR _GetDataFromQR;
     private StoreData _StoreData;
     // À½½Ä ÀÌµ¿
@@ -168,9 +168,12 @@ public class SpawnMenu : MonoBehaviour
         Debug.Log("¸ÞÅ¸¸ù µð¹ö±ë : "+DetectAR);
         if (_GetDataFromQR.isGetInfo())
         {
-            MainRestaurant = _StoreData.GetMenu(_GetDataFromQR.marketInfo().name);
-            foodPrefabs = MainRestaurant.totalMenu;
-            AceMenus = MainRestaurant.aceMenus;
+            if (MainRestaurant == null)
+            {
+                MainRestaurant = _StoreData.GetMenu(_GetDataFromQR.marketInfo().name);
+                foodPrefabs = MainRestaurant.totalMenu;
+                AceMenus = MainRestaurant.aceMenus;
+            }
         }
         return _GetDataFromQR.isGetInfo() && (DetectAR != null);
     }
@@ -206,6 +209,7 @@ public class SpawnMenu : MonoBehaviour
     {
         if (IsReady())
         {
+            FoodFilter.SetActive(false);
             if (SpawnedObject != null) Destroy(SpawnedObject);
             Ray ray = arSessionOrigin.camera.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0f));
             LayerMask layerMask = LayerMask.GetMask("Plane");
@@ -214,26 +218,33 @@ public class SpawnMenu : MonoBehaviour
             RaycastHit hitLayerMask;
             Vector3 Pos;
             Vector3 Rot;
+            Debug.Log("¸ÞÅ¸¸ù µð¹ö±ë : »ý¼ºÀü " + AceMenus[idx].baseMenu.menuPrefab.name);
             if (Physics.Raycast(ray, out hitLayerMask, Mathf.Infinity, layerMask))
             {
                 Pos = hitLayerMask.point;
                 Rot = hitLayerMask.transform.eulerAngles;
                 SpawnedObject = Instantiate(foodSet, Pos, Quaternion.Euler(Rot));
                 SpawnedObject.transform.localScale = new Vector3(0.7f, 0.7f, 0.7f);
+                Debug.Log("¸ÞÅ¸¸ù µð¹ö±ë : ´ëÇ¥¸Þ´º SpawnedObject"+SpawnedObject.transform.position);
                 InstantiateAceFood(idx);
                 FoodType = AceMenus[idx].type;
                 if(FoodType == 1)
                 {
+#if UNITY_ANDROID
+                    VP.clip = Resources.Load<VideoClip>("FilterAnd.webm");
+#else
                     VP.clip = AceMenus[idx].filter;
+#endif
                     FoodFilter.SetActive(true);
+                    VP.Play();
                 }
                 else if(FoodType == 2)
                 {
-                    for(int i = 0; i < AceMenus[idx].baseMenu.menuPrefab.transform.childCount; i++)
+                    for(int i = 0; i < showFood.transform.childCount; i++)
                     {
-                        if (AceMenus[idx].baseMenu.menuPrefab.transform.GetChild(i).CompareTag("Particles"))
+                        if (showFood.transform.GetChild(i).CompareTag("Particles"))
                         {
-                            Particles.Add(AceMenus[idx].baseMenu.menuPrefab.transform.GetChild(i).gameObject);
+                            Particles.Add(showFood.transform.GetChild(i).gameObject);
                         }
                     }
                 }
@@ -257,8 +268,8 @@ public class SpawnMenu : MonoBehaviour
             Debug.Log("¸ÞÅ¸¸ù µð¹ö±ë : " + showFood.transform.position);
             Debug.Log("¸ÞÅ¸¸ù µð¹ö±ë : " + showFood);
             showFood.transform.parent = SpawnedObject.transform;
-            showFood.transform.localScale = Vector3.one * 0.7f;
-            showFood.transform.localEulerAngles = Vector3.zero;
+            //showFood.transform.localScale = Vector3.one * 0.7f;
+            //showFood.transform.localEulerAngles = Vector3.zero;
             showFood.transform.localPosition = Vector3.zero;
             Debug.Log("¸ÞÅ¸¸ù µð¹ö±ë :" + showFood.transform.parent.name);
         }
@@ -294,7 +305,11 @@ public class SpawnMenu : MonoBehaviour
                 Pos = hitLayerMask.point;
                 Rot = hitLayerMask.transform.eulerAngles;
                 charObject = Instantiate(character, Pos, Quaternion.Euler(Rot));
-                Debug.Log("¸ÞÅ¸¸ù µð¹ö±ë : " + SpawnedObject.transform.position);
+                if (charObject.gameObject.CompareTag("PineApple"))
+                {
+                    charObject.transform.localScale *= 0.5f;
+                }
+                Debug.Log("¸ÞÅ¸¸ù µð¹ö±ë : " + charObject.transform.position);
             }
         }
         else

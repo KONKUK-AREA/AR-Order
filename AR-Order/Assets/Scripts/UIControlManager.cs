@@ -152,7 +152,8 @@ public class UIControlManager : MonoBehaviour
                 aceMenu.SetActive(false);
                 continue;
             }
-            aceMenu.GetComponent<Button>().onClick.AddListener(() => ClickAceMenu(i));
+            int temp = i;
+            aceMenu.GetComponent<Button>().onClick.AddListener(() => ClickAceMenu(temp));
             aceMenu.transform.GetChild(1).GetComponent<TextMeshProUGUI>().text = MainRestaurant.aceMenus[i].baseMenu.name;
             aceMenu.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = MainRestaurant.aceMenus[i].baseMenu.price.ToString()+"원";
             aceMenu.GetComponent<Image>().sprite = MainRestaurant.aceMenus[i].aceImage;
@@ -196,14 +197,20 @@ public class UIControlManager : MonoBehaviour
         ChangeLayer(2);
         ShowTutorial();
     }
+    public TextMeshProUGUI TXT_AceMenuName;
+    public TextMeshProUGUI TXT_AceMenuPrice;
+    public TextMeshProUGUI[] AceMenuExplanation;
     public void ClickAceMenu(int index)
     {
-        _SpawnMenu.SpawnAceItem(index);
-        TXT_ChoosedMenuName.text = MainRestaurant.aceMenus[index].baseMenu.name;
-        TXT_ChoosedMenuPrice.text = MainRestaurant.aceMenus[index].baseMenu.price.ToString() + "원";
+        ARMenuIndex = MainRestaurant.aceMenus[index].index[1];
+        ListIndex = MainRestaurant.aceMenus[index].index[0];
+        TXT_AceMenuName.text = MainRestaurant.aceMenus[index].baseMenu.name;
+        TXT_AceMenuPrice.text = MainRestaurant.aceMenus[index].baseMenu.price.ToString() + "원";
         string[] splitDesc = MainRestaurant.aceMenus[index].baseMenu.Description.Split(new char[] { ':' });
-        MenuExplanation[0].text = splitDesc[0];
-        MenuExplanation[1].text = splitDesc[1];
+        AceMenuExplanation[0].text = splitDesc[0];
+        AceMenuExplanation[1].text = splitDesc[1];
+        Debug.Log("메타몽 디버깅 : " + TXT_AceMenuName.text + " " + AceMenuExplanation[0].text);
+        _SpawnMenu.SpawnAceItem(index);
         ChangeLayer(7); // 대표메뉴 UI로 바꾸기
     }
     public void GetMenuInfo()
@@ -311,7 +318,7 @@ public class UIControlManager : MonoBehaviour
             showCartCount[0].SetActive(true);
             showCartCount[1].SetActive(true);
             showCartCount[2].SetActive(true);
-
+            showCartCount[3].SetActive(true);
         }
         
     }
@@ -352,6 +359,7 @@ public class UIControlManager : MonoBehaviour
         StartCoroutine(AddCartAnim(0));
         StartCoroutine(AddCartAnim(1));
         StartCoroutine(AddCartAnim(2));
+        StartCoroutine(AddCartAnim(3));
     }
     IEnumerator AddCartAnim(int idx)
     {
@@ -599,9 +607,10 @@ public class UIControlManager : MonoBehaviour
             _SpawnMenu.DestroyObjects();
         }
         previousLayer = CurrentLayer;
-        if(CurrentLayer == 2)
+        if(CurrentLayer == 2 || CurrentLayer == 7)
         {
             _SpawnMenu.DestroyObjects();
+            
         }
         UIForEachScreen[CurrentLayer].SetActive(false);
         UIForEachScreen[layer].SetActive(true);
