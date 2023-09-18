@@ -104,6 +104,7 @@ public class UIControlManager : MonoBehaviour
     private GameObject spawnedMenuObject = null;
     private GameObject spawnedObject = null;
     private int Layer_AROrderTutorial_Activated = 0;
+    
     private int CurrentCharacter;
 
 
@@ -161,8 +162,6 @@ public class UIControlManager : MonoBehaviour
             }
             int temp = i;
             aceMenu.GetComponent<Button>().onClick.AddListener(() => ClickAceMenu(temp));
-            aceMenu.transform.GetChild(2).GetComponent<TextMeshProUGUI>().text = MainRestaurant.aceMenus[i].baseMenu.name;
-            aceMenu.transform.GetChild(1).GetComponent<TextMeshProUGUI>().text = MainRestaurant.aceMenus[i].baseMenu.price.ToString()+"원";
             aceMenu.GetComponent<Image>().sprite = MainRestaurant.aceMenus[i].aceImage;
         }
         Debug.Log("메타몽 디버깅 : 대표메뉴 설정 끝");

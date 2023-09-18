@@ -232,9 +232,9 @@ public class SpawnMenu : MonoBehaviour
                 if(FoodType == 1)
                 {
                     VP.clip = AceMenus[idx].filter;
+                    VP.Play();
                     Debug.Log("¸ÞÅ¸¸ù µð¹ö±ë : " + VP.clip);
                     FoodFilter.SetActive(true);
-                    VP.Play();
                 }
                 else if(FoodType == 2)
                 {
@@ -396,6 +396,11 @@ public class SpawnMenu : MonoBehaviour
         if (FoodFilter.activeSelf)
         {
             FoodFilter.SetActive(false);
+        }
+        GameObject[] charFoods = GameObject.FindGameObjectsWithTag("CharFood");
+        foreach(GameObject obj in charFoods)
+        {
+            Destroy(obj);
         }
     }
     public void SetCharacter(int idx)

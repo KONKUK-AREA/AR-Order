@@ -17,6 +17,8 @@ public class StoreData : MonoBehaviour
     [SerializeField]
     private string[] MenuDescription_brunchCafeKKU;
     [SerializeField]
+    private Sprite[] AceMenuSprite_brunchCafeKKU;
+    [SerializeField]
     private Sprite[] MenuSprite_CockTail;
     [SerializeField]
     private GameObject[] MenuGameObject_CockTail;
@@ -44,7 +46,7 @@ public class StoreData : MonoBehaviour
         //나중에 DB로 해야할듯
         switch (name)
         {
-            case "Cocktail": // Metamong
+            case "Metamong": // Metamong
                 menuIndex = 0;
                 Menu[] menus = { new Menu("아메리카노", 4000), new Menu("우주를 줄게", 5000), new Menu("트로피칼 썬샤인", 5500),new Menu("시그니처 아인슈페너", 6000), new Menu("토네이도 초코", 6000),new Menu("퐁당퐁당 라떼", 6500),
                                 new Menu("숲속 프루츠 크로플", 8500),new Menu("아메리칸 브렉퍼스트", 9500),new Menu("루꼴라 잠봉뵈르 샌드위치", 8500),
@@ -60,12 +62,16 @@ public class StoreData : MonoBehaviour
                     menus[i].Description = MenuDescription_brunchCafeKKU[i];
                 }
                 int[] info = { 5, 6, 3, 3, 3, 3 };
-                AceMenu[] AceMetamong = { };
+                AceMenu[] AceMetamong = { new AceMenu(menus[16],1,4,2), new AceMenu(menus[11],2,2,2)};
+                for(int i = 0; i<AceMetamong.Length; i++)
+                {
+                    AceMetamong[i].aceImage = AceMenuSprite_brunchCafeKKU[i];
+                }
                 string[] BrunchCafeType = { "Coffee & Drinks", "Brunch", "Dinner", "Bread", "Side" };
                 //int[] info = { 4, 4, 2, 1 };
                 restaurant = new Restaurant("브런치카페 건대입구점", info, menus,AceMetamong,BrunchCafeType,0);
                 break;
-            case "Metamong"://Cocktail
+            case "Cocktail"://Cocktail
                 Menu[] Cocktails = {new Menu("모히또",15000), new Menu("데킬라 선라이즈",13000), new Menu("엘 디아블로", 12000),new Menu("핑크레이디", 15000), new Menu("피냐콜라다",15000) ,
                 new Menu("블루 도쿄 아이스티", 12000), new Menu("하와이안 사파이어", 17000), new Menu("마티니", 15000), new Menu("마가리타", 14000), new Menu("맨하탄", 16000),
                 new Menu("스트로베리 보드카", 9000), new Menu("올드 패션드",16000), new Menu("파우스트", 10000)};
