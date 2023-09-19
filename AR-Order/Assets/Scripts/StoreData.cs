@@ -67,6 +67,7 @@ public class StoreData : MonoBehaviour
                 {
                     AceMetamong[i].aceImage = AceMenuSprite_brunchCafeKKU[i];
                 }
+                AceMetamong[0].filter = AceMenuFilter_CockTail;
                 string[] BrunchCafeType = { "Coffee & Drinks", "Brunch", "Dinner", "Bread", "Side" };
                 //int[] info = { 4, 4, 2, 1 };
                 restaurant = new Restaurant("브런치카페 건대입구점", info, menus,AceMetamong,BrunchCafeType,0);

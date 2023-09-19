@@ -31,12 +31,15 @@ public class MiniCharacterGame : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        if (eat != null) Destroy(eat);
+        GameObject[] charFoods = GameObject.FindGameObjectsWithTag("CharFood");
+        foreach (GameObject obj in charFoods)
+        {
+            Destroy(obj);
+        }
         anim = GetComponentInChildren<Animator>();
         arSessionOrigin = GameObject.Find("AR Session Origin").GetComponent<ARSessionOrigin>();
         transform.localScale = Vector3.one;
         rigid = GetComponent<Rigidbody>();
-
     }
     Vector3 prePos = Vector3.zero;
     Transform hitTransform;

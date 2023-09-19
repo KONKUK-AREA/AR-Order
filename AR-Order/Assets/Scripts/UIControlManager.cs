@@ -570,6 +570,10 @@ public class UIControlManager : MonoBehaviour
         }
 
         GameManager.instance.Coupon++;
+        if(GameManager.instance.Coupon > 8) // 맥스찍고 뭐 있어야할듯
+        {
+            GameManager.instance.Coupon = 0;
+        }
         DM.JsonSave();
         UpdateTotal(0, 0);
         ChangeLayer(4);
