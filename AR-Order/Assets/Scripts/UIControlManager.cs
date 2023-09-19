@@ -32,6 +32,7 @@ public class UIControlManager : MonoBehaviour
 
     public GameObject[] UIForEachScreen;   // element 0이 시작화면이고 element 0부터 각 ui레이어의 값    
     public GameObject[] LayersARTutorial;
+    public GameObject[] LayersGameARTutorial;
     public Sprite[] Characters;
     public GameObject CharacterList;
     public GameObject Coupon;
@@ -599,6 +600,35 @@ public class UIControlManager : MonoBehaviour
      {
          // 최대 인덱스 이상으로 넘어갈 때의 처리
          LayersARTutorial[LayersARTutorial_currentIndex].SetActive(false);
+         if (UIForEachScreen_currentIndex < UIForEachScreen.Length)
+         {
+             UIForEachScreen[UIForEachScreen_currentIndex].SetActive(true);
+         }
+     }
+    }
+
+
+
+    
+    public void ClickedGameTutorialNextBtn()
+    {
+     if (LayersGameARTutorial_currentIndex < 3)
+     {
+         // 현재 Layer 오브젝트를 비활성화
+         LayersGameARTutorial[LayersGameARTutorial_currentIndex].SetActive(false);
+
+         LayersGameARTutorial_currentIndex++;   
+
+        // 다음 튜토리얼 화면을 활성화
+            if (LayersGameARTutorial_currentIndex < LayersGameARTutorial.Length)
+         {
+             LayersGameARTutorial[LayersGameARTutorial_currentIndex].SetActive(true);
+         }
+     }
+     else
+     {
+         // 최대 인덱스 이상으로 넘어갈 때의 처리
+         LayersGameARTutorial[LayersGameARTutorial_currentIndex].SetActive(false);
          if (UIForEachScreen_currentIndex < UIForEachScreen.Length)
          {
              UIForEachScreen[UIForEachScreen_currentIndex].SetActive(true);
