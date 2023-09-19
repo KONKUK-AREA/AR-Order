@@ -4708,6 +4708,7 @@ MonoBehaviour:
   eatPrefab: {fileID: 332759404587258152, guid: c65d22de267f74348a1a8c878d149e8a, type: 3}
   particle: {fileID: 3267646359530209607}
   audioSource: {fileID: 5315170890818655418}
+  EatSize: 0.3
 --- !u!82 &5315170890818655418
 AudioSource:
   m_ObjectHideFlags: 0

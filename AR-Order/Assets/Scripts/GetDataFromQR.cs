@@ -46,7 +46,7 @@ public class GetDataFromQR : MonoBehaviour
                 var result = barcodeReader.Decode(qrTexture.GetPixels32(), qrTexture.width, qrTexture.height);
                 if (result != null)
                 {
-                    Debug.Log(result.Text);
+                    Debug.Log("¸ÞÅ¸¸ù µð¹ö±ë : "+result.Text);
                     strQRCodeRead = result.Text;
                     data = JsonLoader.loadJson(result.Text);
                     Debug.Log(data.name);

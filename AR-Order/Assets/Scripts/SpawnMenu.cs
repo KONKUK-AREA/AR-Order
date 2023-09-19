@@ -8,16 +8,23 @@ using UnityEngine.Rendering.RendererUtils;
 using UnityEngine.UIElements;
 using Unity.VisualScripting;
 using System.Runtime.InteropServices;
+using UnityEngine.Video;
+using System.IO;
 
 public class SpawnMenu : MonoBehaviour
 {
-    public GameObject character;
+    private GameObject character;
     public GameObject foodSet;
     public GameObject Spawn;
     public GameObject plane;
+    public GameObject FoodFilter;
     //public GameObject qrFrame;
-
+    public GameObject[] MarketCharacters;
     public Menu[][] foodPrefabs;
+    public AceMenu[] AceMenus;
+    [SerializeField]
+    private VideoPlayer VP;
+    private List<GameObject> Particles = new List<GameObject>();
     // Start is called before the first frame update
     GameObject DetectAR;
     GameObject SpawnedObject = null;
@@ -25,7 +32,7 @@ public class SpawnMenu : MonoBehaviour
     GameObject _plane;
     public ARSessionOrigin arSessionOrigin;
 
-    private Restaurant MainRestaurant;
+    private Restaurant MainRestaurant = null;
     private GetDataFromQR _GetDataFromQR;
     private StoreData _StoreData;
     // À½½Ä ÀÌµ¿
@@ -42,6 +49,8 @@ public class SpawnMenu : MonoBehaviour
     private int menuIndex = 0;
     private GameObject showFood = null;
 
+    private int FoodType=0;
+
     private void Start()
     {
         ARCameraManager aR= new ARCameraManager();
@@ -51,6 +60,7 @@ public class SpawnMenu : MonoBehaviour
     }
     // Update is called once per frame
 
+    
     void Update()
     {
 
@@ -80,6 +90,22 @@ public class SpawnMenu : MonoBehaviour
             {
                 offset = hitLayerDish.point - SpawnedObject.transform.position;
                 isDrag = true;
+            }
+            else
+            {
+                if(FoodType == 2)
+                {
+                    if(!Physics.Raycast(ray,out hitLayerDish, Mathf.Infinity, dishLayerMask))
+                    {
+                        foreach(GameObject obj in Particles)
+                        {
+                            if (!obj.activeSelf)
+                            {
+                                obj.SetActive(true);
+                            }
+                        }
+                    }
+                }
             }
         }
         if(isSecond && secondTouch.phase == TouchPhase.Began)
@@ -143,8 +169,12 @@ public class SpawnMenu : MonoBehaviour
         Debug.Log("¸ÞÅ¸¸ù µð¹ö±ë : "+DetectAR);
         if (_GetDataFromQR.isGetInfo())
         {
-            MainRestaurant = _StoreData.GetMenu(_GetDataFromQR.marketInfo().name);
-            foodPrefabs = MainRestaurant.totalMenu;
+            if (MainRestaurant == null)
+            {
+                MainRestaurant = _StoreData.GetMenu(_GetDataFromQR.marketInfo().name);
+                foodPrefabs = MainRestaurant.totalMenu;
+                AceMenus = MainRestaurant.aceMenus;
+            }
         }
         return _GetDataFromQR.isGetInfo() && (DetectAR != null);
     }
@@ -152,6 +182,7 @@ public class SpawnMenu : MonoBehaviour
     {
         if (IsReady())
         {
+            FoodType = 0;
             if (SpawnedObject != null) Destroy(SpawnedObject);
             Ray ray = arSessionOrigin.camera.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0f));
             LayerMask layerMask = LayerMask.GetMask("Plane");
@@ -175,7 +206,76 @@ public class SpawnMenu : MonoBehaviour
             Debug.Log("¸ÞÅ¸¸ù µð¹ö±ë : QR´Ù½Ã Âï¾î¶ó");
         }
     }
+    public void SpawnAceItem(int idx)
+    {
+        if (IsReady())
+        {
+            FoodFilter.SetActive(false);
+            if (SpawnedObject != null) Destroy(SpawnedObject);
+            Ray ray = arSessionOrigin.camera.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0f));
+            LayerMask layerMask = LayerMask.GetMask("Plane");
 
+            //RaycastHit[] hits = Physics.RaycastAll(ray);
+            RaycastHit hitLayerMask;
+            Vector3 Pos;
+            Vector3 Rot;
+            Debug.Log("¸ÞÅ¸¸ù µð¹ö±ë : »ý¼ºÀü " + AceMenus[idx].baseMenu.menuPrefab.name);
+            if (Physics.Raycast(ray, out hitLayerMask, Mathf.Infinity, layerMask))
+            {
+                Pos = hitLayerMask.point;
+                Rot = hitLayerMask.transform.eulerAngles;
+                SpawnedObject = Instantiate(foodSet, Pos, Quaternion.Euler(Rot));
+                SpawnedObject.transform.localScale = new Vector3(0.7f, 0.7f, 0.7f);
+                Debug.Log("¸ÞÅ¸¸ù µð¹ö±ë : ´ëÇ¥¸Þ´º SpawnedObject"+SpawnedObject.transform.position);
+                InstantiateAceFood(idx);
+                FoodType = AceMenus[idx].type;
+                if(FoodType == 1)
+                {
+                    VP.clip = AceMenus[idx].filter;
+                    VP.Play();
+                    Debug.Log("¸ÞÅ¸¸ù µð¹ö±ë : " + VP.clip);
+                    FoodFilter.SetActive(true);
+                }
+                else if(FoodType == 2)
+                {
+                    Particles.Clear();
+                    for(int i = 0; i < showFood.transform.childCount; i++)
+                    {
+                        if (showFood.transform.GetChild(i).CompareTag("Particles"))
+                        {
+                            int tmp = i;
+                            Particles.Add(showFood.transform.GetChild(tmp).gameObject);
+                            Debug.Log("¸ÞÅ¸¸ù µð¹ö±ë : " + Particles.Count);
+                        }
+                    }
+                }
+                Debug.Log("¸ÞÅ¸¸ù µð¹ö±ë : " + SpawnedObject.transform.position);
+            }
+        }
+        else
+        {
+            Debug.Log("¸ÞÅ¸¸ù µð¹ö±ë : QR´Ù½Ã Âï¾î¶ó");
+        }
+    }
+    private void InstantiateAceFood(int index)
+    {
+        if (SpawnedObject != null)
+        {
+            if (showFood != null)
+            {
+                Destroy(showFood);
+            }
+            showFood = Instantiate(AceMenus[index].baseMenu.menuPrefab);
+            Debug.Log("¸ÞÅ¸¸ù µð¹ö±ë : " + showFood.transform.position);
+            Debug.Log("¸ÞÅ¸¸ù µð¹ö±ë : " + showFood);
+            showFood.transform.parent = SpawnedObject.transform;
+            //showFood.transform.localScale = Vector3.one * 0.7f;
+            //showFood.transform.localEulerAngles = Vector3.zero;
+            showFood.transform.localPosition = Vector3.zero;
+            showFood.transform.localEulerAngles = Vector3.zero; 
+            Debug.Log("¸ÞÅ¸¸ù µð¹ö±ë :" + showFood.transform.parent.name);
+        }
+    }
 
     public void SetPlane()
     {
@@ -207,7 +307,7 @@ public class SpawnMenu : MonoBehaviour
                 Pos = hitLayerMask.point;
                 Rot = hitLayerMask.transform.eulerAngles;
                 charObject = Instantiate(character, Pos, Quaternion.Euler(Rot));
-                Debug.Log("¸ÞÅ¸¸ù µð¹ö±ë : " + SpawnedObject.transform.position);
+                Debug.Log("¸ÞÅ¸¸ù µð¹ö±ë : " + charObject.transform.position);
             }
         }
         else
@@ -264,7 +364,7 @@ public class SpawnMenu : MonoBehaviour
             {
                 Destroy(showFood);
             }
-            showFood = Instantiate(foodPrefabs[ListIndex][index].menuPrefab);
+            showFood = Instantiate(foodPrefabs[ListIndex][index].menuPrefab,SpawnedObject.transform.position,Quaternion.identity);
             Debug.Log("¸ÞÅ¸¸ù µð¹ö±ë : " + showFood.transform.position);
             Debug.Log("¸ÞÅ¸¸ù µð¹ö±ë : " + showFood);
             showFood.transform.parent = SpawnedObject.transform;
@@ -274,25 +374,37 @@ public class SpawnMenu : MonoBehaviour
             Debug.Log("¸ÞÅ¸¸ù µð¹ö±ë :" + showFood.transform.parent.name);
         }
     }
-    
-    
     public void ChangeReact()
     {
         charObject.GetComponent<MiniCharacterGame>().ChangeReact();
     }
     public void DestroyObjects()
     {
-        if(SpawnedObject != null)
-        {
-            Destroy(SpawnedObject);
-        }
-        if(showFood != null)
+        if (showFood != null)
         {
             Destroy(showFood);
         }
+        if (SpawnedObject != null)
+        {
+            Destroy(SpawnedObject);
+        }
+
         if(charObject != null)
         {
             Destroy(charObject);
         }
+        if (FoodFilter.activeSelf)
+        {
+            FoodFilter.SetActive(false);
+        }
+        GameObject[] charFoods = GameObject.FindGameObjectsWithTag("CharFood");
+        foreach(GameObject obj in charFoods)
+        {
+            Destroy(obj);
+        }
+    }
+    public void SetCharacter(int idx)
+    {
+        character = MarketCharacters[idx];
     }
 }

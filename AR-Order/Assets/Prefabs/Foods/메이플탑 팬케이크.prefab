@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 4997563348345463382}
   m_Layer: 6
   m_Name: "\uBA54\uC774\uD50C\uD0D1 \uD32C\uCF00\uC774\uD06C"
-  m_TagString: Untagged
+  m_TagString: CharFood
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

@@ -46,6 +46,10 @@ public class MiniCharacterGame : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (!anim.GetBool("isEat") && eat != null)
+        {
+            Destroy(eat);
+        }
         if (Input.touchCount != 0)
         {
 
@@ -71,8 +75,12 @@ public class MiniCharacterGame : MonoBehaviour
                     hitTransform = hitLayerChar.transform;
                     dist = hitTransform.position.z - arSessionOrigin.camera.transform.position.z;
                     hitVec = new Vector3(prePos.x, prePos.y, dist);
-                    hitVec = arSessionOrigin.camera.ScreenToWorldPoint(hitVec);
-                    offset = hitTransform.position - hitVec;
+                    Vector3 ScreenCharPoint = arSessionOrigin.camera.WorldToScreenPoint(hitTransform.position);
+                    offset = ScreenCharPoint - hitVec;
+                    //offset = arSessionOrigin.camera.ScreenToWorldPoint(offset);
+
+                    //hitVec = arSessionOrigin.camera.ScreenToWorldPoint(hitVec);
+                    //offset = hitTransform.position - hitVec;
 
                 }
             }
@@ -85,8 +93,10 @@ public class MiniCharacterGame : MonoBehaviour
                     if(!anim.GetBool("isGrab"))
                         anim.SetBool("isGrab", true);
                     hitVec = new Vector3(Input.mousePosition.x,Input.mousePosition.y, dist);
-                    hitVec = arSessionOrigin.camera.ScreenToWorldPoint(hitVec);
-                    hitTransform.position = hitVec + offset;
+                    
+                    hitTransform.position = arSessionOrigin.camera.ScreenToWorldPoint(hitVec + offset);
+                    //hitVec = arSessionOrigin.camera.ScreenToWorldPoint(hitVec);
+                   // hitTransform.position = hitVec + offset;
                 }
             }
             if(isClick && touch.phase == TouchPhase.Ended)
@@ -278,12 +288,13 @@ public class MiniCharacterGame : MonoBehaviour
 
     }
     GameObject eat;
+    public float EatSize;
     private void Event()
     {
-        isAnim = true;   
+        isAnim = true;
+        anim.SetBool("isEat", true);
         eat = Instantiate(eatPrefab, transform.position + transform.forward * -1*0.16f, transform.rotation);
-        eat.transform.localScale = Vector3.one * 0.3f;
-        anim.SetBool("isEat",true);
+        eat.transform.localScale = Vector3.one * EatSize;
         particle.Play();
         audioSource.Play();
         StartCoroutine(EatAnim());
