@@ -39,7 +39,7 @@ public class UIControlManager : MonoBehaviour
     public TextMeshProUGUI TXT_MyPage;
     private int UIForEachScreen_currentIndex = 0;
     private int LayersARTutorial_currentIndex = 0;
-
+    private int LayersGameARTutorial_currentIndex = 0;
     public DataManager DM;
      
 
@@ -105,7 +105,6 @@ public class UIControlManager : MonoBehaviour
     private GameObject spawnedMenuObject = null;
     private GameObject spawnedObject = null;
     private int Layer_AROrderTutorial_Activated = 0;
-    
     private int CurrentCharacter;
 
 
@@ -141,9 +140,11 @@ public class UIControlManager : MonoBehaviour
     }
     public GameObject AceMenuContent;
     public GameObject[] MenuListContent;
+    private bool FirstVisit = true;
     public void InitMenu()
     {
-        
+        if (!FirstVisit) return;
+        FirstVisit = false;
         _SpawnMenu.SetCharacter(MainRestaurant.CharacterIdx);
         RestaurantNameText.text = MainRestaurant.Name;
         TXT_MyPage.text = MainRestaurant.Name;

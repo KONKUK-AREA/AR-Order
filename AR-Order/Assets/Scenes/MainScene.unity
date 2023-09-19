@@ -1871,6 +1871,7 @@ GameObject:
   - component: {fileID: 92208671}
   - component: {fileID: 92208670}
   - component: {fileID: 92208669}
+  - component: {fileID: 92208672}
   m_Layer: 5
   m_Name: ScrollView_Tab6
   m_TagString: Untagged
@@ -1968,6 +1969,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 92208667}
   m_CullTransparentMesh: 1
+--- !u!114 &92208672
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 92208667}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 36a52c6b479e3354198ee6ffb04ec95f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scrollView: {fileID: 1194936964}
 --- !u!1 &93972106
 GameObject:
   m_ObjectHideFlags: 0
@@ -15904,6 +15918,7 @@ GameObject:
   - component: {fileID: 824230317}
   - component: {fileID: 824230316}
   - component: {fileID: 824230315}
+  - component: {fileID: 824230318}
   m_Layer: 5
   m_Name: ScrollView_Tab4
   m_TagString: Untagged
@@ -16001,6 +16016,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 824230313}
   m_CullTransparentMesh: 1
+--- !u!114 &824230318
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 824230313}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 36a52c6b479e3354198ee6ffb04ec95f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scrollView: {fileID: 1194936964}
 --- !u!1 &843031084
 GameObject:
   m_ObjectHideFlags: 0
@@ -17476,6 +17504,7 @@ GameObject:
   - component: {fileID: 950323027}
   - component: {fileID: 950323026}
   - component: {fileID: 950323025}
+  - component: {fileID: 950323028}
   m_Layer: 5
   m_Name: ScrollView_Tab3
   m_TagString: Untagged
@@ -17573,6 +17602,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 950323023}
   m_CullTransparentMesh: 1
+--- !u!114 &950323028
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 950323023}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 36a52c6b479e3354198ee6ffb04ec95f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scrollView: {fileID: 1194936964}
 --- !u!1 &950509608
 GameObject:
   m_ObjectHideFlags: 0
@@ -20703,6 +20745,7 @@ GameObject:
   - component: {fileID: 1126825650}
   - component: {fileID: 1126825649}
   - component: {fileID: 1126825648}
+  - component: {fileID: 1126825651}
   m_Layer: 5
   m_Name: ScrollView_ Tab2
   m_TagString: Untagged
@@ -20800,6 +20843,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1126825646}
   m_CullTransparentMesh: 1
+--- !u!114 &1126825651
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1126825646}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 36a52c6b479e3354198ee6ffb04ec95f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scrollView: {fileID: 1194936964}
 --- !u!1 &1134833384
 GameObject:
   m_ObjectHideFlags: 0
@@ -24579,6 +24635,7 @@ MonoBehaviour:
   - {fileID: 1016360433}
   - {fileID: 1582653583}
   - {fileID: 217083752}
+  LayersGameARTutorial: []
   Characters:
   - {fileID: 21300000, guid: c56110857f5190a40960b0fe08ddc6d9, type: 3}
   - {fileID: 21300000, guid: 163b4d315d45e5e49af38bc6831cade6, type: 3}
@@ -33713,18 +33770,18 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 47611e5bd8c022143904a1ab89d5bd05, type: 3}
   - {fileID: 21300000, guid: 4d87f29f5b2ad804eac2207a8ae1f567, type: 3}
   - {fileID: 21300000, guid: 78e9e7c5418e2b44ea29a97818a87cfe, type: 3}
-  - {fileID: 21300000, guid: 69d03b2290b07914a9f3545c8129f121, type: 3}
+  - {fileID: 21300000, guid: 1c57761c891d7b64b9a77938ab2ec6fb, type: 3}
   - {fileID: 21300000, guid: dd88daa40b44586488826b97c65f5332, type: 3}
   - {fileID: 21300000, guid: d054aef53319c084b9b3bffbe9a6b35a, type: 3}
   - {fileID: 21300000, guid: f0181328704ea4e41a637b8a1712d899, type: 3}
   - {fileID: 21300000, guid: 292aa749b3bf8e64f9b96db660decd81, type: 3}
-  - {fileID: 21300000, guid: 97061b3a04f6b5844946f6940f1cbf22, type: 3}
+  - {fileID: 21300000, guid: 38b9fbc4e7397a444a9a98be8537c7d5, type: 3}
   - {fileID: 21300000, guid: ed2b9220121f03845884e8d16fff54b2, type: 3}
   - {fileID: 21300000, guid: 05ce19629082a4745a93526e8847360b, type: 3}
   MenuGameObject_CockTail:
-  - {fileID: 6129268563796809335, guid: 7ed88f989736acf439ea8897af330ec3, type: 3}
+  - {fileID: 3687760899845680231, guid: 81ae49c54e3b9964bbd3f8f40432dea6, type: 3}
   - {fileID: 9182603847126994807, guid: cf73da606a1657c40a68b9d889232bde, type: 3}
-  - {fileID: 4743646564419062505, guid: f5c0877091fbfa7489cbcf99420e3b26, type: 3}
+  - {fileID: 4961359969066733163, guid: dbae516eb1794374792a0725c0aa24b2, type: 3}
   - {fileID: 2380044231616566257, guid: ed7d46bca3e34864b87c35911f04a924, type: 3}
   - {fileID: 4440914350099591968, guid: 067994e964d36434db89bba4d020b0de, type: 3}
   - {fileID: 6879698920704325364, guid: 0801299680b084f40ba4b1accd548a08, type: 3}
@@ -33732,9 +33789,9 @@ MonoBehaviour:
   - {fileID: 3481806066484792036, guid: 55bc2470e8395354e8fd82df461baa1d, type: 3}
   - {fileID: 1729181390485901909, guid: c6164f00b2908e345a9fad16e24db727, type: 3}
   - {fileID: 3326996353363372638, guid: a374eb490f47ee1448dffd27fd0ead5c, type: 3}
-  - {fileID: 4418834316403783777, guid: 7105e96ee49252d43967c7a4b25d3597, type: 3}
-  - {fileID: 2733408527504927284, guid: ff8c84730fe24124e834444a53e75879, type: 3}
-  - {fileID: 8083192967676245310, guid: bb19e5582022e554489dd9bf7503bfea, type: 3}
+  - {fileID: 9143731416738731653, guid: 9b2d3558a574604489c27c1f05ad99c8, type: 3}
+  - {fileID: 2518324479226231435, guid: c5e6b6660df551d46b726c4623f6baf3, type: 3}
+  - {fileID: 4698844533478439954, guid: 120bb75d5be33f34b9b0040605e3c551, type: 3}
   MenuDescription_CockTail:
   - "**\uC0C1\uCF8C\uD558\uACE0 \uC0C1\uD07C\uD55C \uB9DB\uC774 \uD2B9\uC9D5\uC778
     \uCE75\uD14C\uC77C**:\uC8FC\uB85C \uBBFC\uD2B8, \uB77C\uC784, \uC124\uD0D5, \uD654\uC774\uD2B8
@@ -34610,6 +34667,7 @@ GameObject:
   - component: {fileID: 1844764976}
   - component: {fileID: 1844764975}
   - component: {fileID: 1844764974}
+  - component: {fileID: 1844764977}
   m_Layer: 5
   m_Name: ScrollView_ Tab1
   m_TagString: Untagged
@@ -34707,6 +34765,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1844764972}
   m_CullTransparentMesh: 1
+--- !u!114 &1844764977
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1844764972}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 36a52c6b479e3354198ee6ffb04ec95f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scrollView: {fileID: 1194936964}
 --- !u!1 &1845053767
 GameObject:
   m_ObjectHideFlags: 0
@@ -40191,6 +40262,7 @@ GameObject:
   - component: {fileID: 2132011380}
   - component: {fileID: 2132011379}
   - component: {fileID: 2132011378}
+  - component: {fileID: 2132011381}
   m_Layer: 5
   m_Name: ScrollView_Tab5
   m_TagString: Untagged
@@ -40288,6 +40360,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2132011376}
   m_CullTransparentMesh: 1
+--- !u!114 &2132011381
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2132011376}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 36a52c6b479e3354198ee6ffb04ec95f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scrollView: {fileID: 1194936964}
 --- !u!1 &2135381290
 GameObject:
   m_ObjectHideFlags: 0
