@@ -27,6 +27,8 @@ public class UIControlManager : MonoBehaviour
     [SerializeField]
     private GetDataFromQR _GetDataFromQR;
     [SerializeField]
+    private ReadQRCode _ReadQRCode;
+    [SerializeField]
     private StoreData _StoreData;
     private Restaurant MainRestaurant=null;
 
@@ -106,7 +108,7 @@ public class UIControlManager : MonoBehaviour
     private GameObject spawnedObject = null;
     private int Layer_AROrderTutorial_Activated = 0;
     private int CurrentCharacter;
-
+    private bool isInit=false;
 
 
     private void ClickedMenuBtn(int ARMenuIndex)
@@ -372,6 +374,7 @@ public class UIControlManager : MonoBehaviour
             showCartCount[2].SetActive(true);
             showCartCount[3].SetActive(true);
             showCartCount[4].SetActive(true);
+            showCartCount[5].SetActive(true);
         }
         
     }
@@ -404,6 +407,7 @@ public class UIControlManager : MonoBehaviour
             showCartCount[2].SetActive(false);
             showCartCount[3].SetActive(false);
             showCartCount[4].SetActive(false);
+            showCartCount[5].SetActive(false);
         }
 
     }
@@ -415,6 +419,7 @@ public class UIControlManager : MonoBehaviour
         StartCoroutine(AddCartAnim(2));
         StartCoroutine(AddCartAnim(3));
         StartCoroutine(AddCartAnim(4));
+        StartCoroutine(AddCartAnim(5));
     }
     IEnumerator AddCartAnim(int idx)
     {
@@ -516,7 +521,8 @@ public class UIControlManager : MonoBehaviour
     {
         if (_SpawnMenu.IsReady())
         {
-            MainRestaurant = _StoreData.GetMenu(_GetDataFromQR.marketInfo().name);
+            //MainRestaurant = _StoreData.GetMenu(_GetDataFromQR.marketInfo().name);
+            MainRestaurant = _StoreData.GetMenu(_ReadQRCode.marketInfo().name);
             InitMenu();
             ChangeLayer(1);
         }
@@ -531,7 +537,8 @@ public class UIControlManager : MonoBehaviour
         {
             if (MainRestaurant == null)
             {
-                MainRestaurant = _StoreData.GetMenu(_GetDataFromQR.marketInfo().name);
+                //MainRestaurant = _StoreData.GetMenu(_GetDataFromQR.marketInfo().name);
+                MainRestaurant = _StoreData.GetMenu(_ReadQRCode.marketInfo().name);
                 InitMenu();
             }
             // 현재 Layer 오브젝트를 비활성화
@@ -693,12 +700,17 @@ public class UIControlManager : MonoBehaviour
     int CurrentLayer = 0;
     public void ChangeLayer(int layer)
     {
+        if(layer == 0)
+        {
+            _SpawnMenu.resetQR();
+            isInit = false;
+        }
         if(layer == 6)
         {
             _SpawnMenu.DestroyObjects();
         }
         previousLayer = CurrentLayer;
-        if(layer == 2 || layer == 7)
+        if(layer == 0 || layer == 2 || layer == 7)
         {
             _SpawnMenu.DestroyObjects();
             
@@ -725,6 +737,16 @@ public class UIControlManager : MonoBehaviour
         ARGameTutorialImg.sprite = ARGameTutorial[++index];
       
     }
-
+    private void Update()
+    {
+        if (!isInit)
+        {
+            if (_SpawnMenu.SetPlane())
+            {
+                QRSuccessful();
+                isInit = true;
+            }
+        }
+    }
 
 }

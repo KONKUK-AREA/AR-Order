@@ -31,9 +31,10 @@ public class SpawnMenu : MonoBehaviour
     GameObject charObject=null;
     GameObject _plane;
     public ARSessionOrigin arSessionOrigin;
-
+    public ARSession arSession;
     private Restaurant MainRestaurant = null;
     private GetDataFromQR _GetDataFromQR;
+    private ReadQRCode _ReadQRCode;
     private StoreData _StoreData;
     // À½½Ä ÀÌµ¿
     private RaycastHit hitLayerDish;
@@ -48,22 +49,20 @@ public class SpawnMenu : MonoBehaviour
     private int ListIndex = 0;
     private int menuIndex = 0;
     private GameObject showFood = null;
-
     private int FoodType=0;
-
     private void Start()
     {
         ARCameraManager aR= new ARCameraManager();
         //GameObject gm = Instantiate(Spawn, new Vector3(0, 0, 180), Quaternion.Euler(-90, 0, 0));
         _GetDataFromQR = GetComponent<GetDataFromQR>();
         _StoreData= GetComponent<StoreData>();
+        _ReadQRCode = GetComponent<ReadQRCode>();
     }
     // Update is called once per frame
 
     
     void Update()
     {
-
         if(Input.touchCount == 0)
         {
             isDrag = false;
@@ -167,6 +166,7 @@ public class SpawnMenu : MonoBehaviour
     {
         DetectAR = GameObject.FindWithTag("Detector");
         Debug.Log("¸ÞÅ¸¸ù µð¹ö±ë : "+DetectAR);
+        /*
         if (_GetDataFromQR.isGetInfo())
         {
             if (MainRestaurant == null)
@@ -177,6 +177,17 @@ public class SpawnMenu : MonoBehaviour
             }
         }
         return _GetDataFromQR.isGetInfo() && (DetectAR != null);
+        */
+        if (_ReadQRCode.isGetInfo())
+        {
+            if (MainRestaurant == null)
+            {
+                MainRestaurant = _StoreData.GetMenu(_ReadQRCode.marketInfo().name);
+                foodPrefabs = MainRestaurant.totalMenu;
+                AceMenus = MainRestaurant.aceMenus;
+            }
+        }
+        return _ReadQRCode.isGetInfo() && ((DetectAR != null)|| (_plane!=null));
     }
     public void SpawnItem()
     {
@@ -277,16 +288,33 @@ public class SpawnMenu : MonoBehaviour
         }
     }
 
-    public void SetPlane()
+    public float GetAngle(Vector3 vStart, Vector3 vEnd)
+    {
+
+        float Angle = Mathf.Acos(Vector3.Dot(vStart, vEnd) / (Vector3.Magnitude(vStart) * Vector3.Magnitude(vEnd)));
+        //Debug.Log("¸ÞÅ¸¸ù µð¹ö±ë : " + Angle*Mathf.Rad2Deg);
+        return Angle * Mathf.Rad2Deg;
+        //return Mathf.Atan2(v.y, v.x) * Mathf.Rad2Deg;
+    }
+    public bool SetPlane()
     {
         if (IsReady())
         {
-            _plane = Instantiate(plane, DetectAR.transform.position, DetectAR.transform.rotation);
-            //qrFrame.SetActive(false);
+            Vector3 cameraAngle = DetectAR.transform.position-arSessionOrigin.camera.transform.position;
+            Debug.Log("¸ÞÅ¸¸ù µð¹ö±ë : °¢µµ " + GetAngle(cameraAngle,DetectAR.transform.up));
+            if (GetAngle(cameraAngle, DetectAR.transform.up) > 165f)
+            {
+                _plane = Instantiate(plane, DetectAR.transform.position, DetectAR.transform.rotation);
+                //qrFrame.SetActive(false);
+                Debug.Log("¸ÞÅ¸¸ù µð¹ö±ë : " + _plane.transform.position);
+                return true;
+            }
+            else return false;
         }
         else
         {
             Debug.Log("¸ÞÅ¸¸ù µð¹ö±ë : QRÀÎ½Ä¾ÈµÊ");
+            return false;
         }
     }
     public void SpawnCharacter()
@@ -406,5 +434,10 @@ public class SpawnMenu : MonoBehaviour
     public void SetCharacter(int idx)
     {
         character = MarketCharacters[idx];
+    }
+    public void resetQR()
+    {
+        Destroy(_plane);
+        arSession.Reset();
     }
 }
